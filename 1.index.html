@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Gonzalo Martinovic — Cirujano maxilofacial en Las Condes, Santiago</title>
+<meta name="description" content="Cirujano maxilofacial en Las Condes, Santiago. Implantes cigomáticos, cirugía ortognática, articulación temporomandibular e implantes con reconstrucción ósea. Planificación virtual 3D.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dr. Gonzalo Martinovic — Cirugía que cambia vidas">
+<meta property="og:description" content="Planificación virtual 3D. Implantes cigomáticos, cirugía ortognática y ATM en Santiago.">
+<meta name="theme-color" content="#121F38">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --profundo:#121F38;
+  --azul:#23477F;
+  --acero:#8FB0DC;
+  --hueso:#D8CFC0;
+  --radiografia:#EBEEF4;
+  --papel:#F6F8FB;
+  --tinta:#131B2B;
+  --gris:#5E6880;
+  --linea:#D6DBE6;
+
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --texto:'IBM Plex Sans',system-ui,sans-serif;
+  --dato:'IBM Plex Mono',ui-monospace,monospace;
+
+  --rail:76px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--papel);color:var(--tinta);
+  font-family:var(--texto);font-size:16.5px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+
+.envoltura{max-width:1080px;margin:0 auto;padding:0 22px}
+
+/* ---------- riel de medición: la regla del corte tomográfico ---------- */
+.riel{position:relative;padding-left:var(--rail)}
+.riel::before{
+  content:"";position:absolute;left:34px;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--linea) 12%,var(--linea) 88%,transparent);
+}
+.marca{
+  position:absolute;left:0;top:2px;width:var(--rail);
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.14em;
+  color:var(--acero);text-transform:uppercase;
+}
+@media(max-width:760px){
+  :root{--rail:0px}
+  .riel{padding-left:0}
+  .riel::before{display:none}
+  .marca{position:static;width:auto;display:block;margin-bottom:10px;color:var(--azul)}
+}
+
+/* ---------- navegación ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;background:rgba(246,248,251,.93);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:1080px;margin:0 auto;padding:11px 22px}
+.nav-marca{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em;line-height:1.15}
+.nav-lema{font-family:var(--dato);font-size:9.5px;letter-spacing:.17em;
+  text-transform:uppercase;color:#1A4FB5;margin-top:2px;font-weight:500}
+.nav-links{display:flex;gap:20px;font-size:13.5px;color:var(--gris)}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--azul)}
+@media(max-width:640px){.nav-links{display:none}}
+
+/* ---------- portada ---------- */
+.portada{background:var(--profundo);color:#fff;position:relative;overflow:hidden}
+.portada-in{max-width:1080px;margin:0 auto;padding:78px 22px 10px}
+@media(max-width:860px){.portada-in{padding:48px 22px 10px}}
+.portada h1{max-width:16ch}
+.bajada{max-width:50ch}
+
+.indice{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(143,176,220,.28);margin-top:56px;
+}
+.indice a{
+  display:block;padding:20px 18px 26px 0;text-decoration:none;
+  font-size:14px;line-height:1.4;color:#C3CFE4;
+  border-right:1px solid rgba(143,176,220,.16);
+  transition:color .15s ease;
+}
+.indice a:last-child{border-right:0}
+.indice a:hover{color:#fff}
+.indice span{
+  display:block;font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
+  color:var(--acero);margin-bottom:7px;
+}
+@media(max-width:860px){
+  .indice{grid-template-columns:1fr 1fr;margin-top:40px}
+  .indice a{padding:16px 14px 18px 0;font-size:13px}
+  .indice a:nth-child(2){border-right:0}
+}
+@media(max-width:460px){
+  .indice{grid-template-columns:1fr}
+  .indice a{border-right:0;border-bottom:1px solid rgba(143,176,220,.16);padding:14px 0}
+  .indice a:last-child{border-bottom:0}
+}
+.cejilla{
+  font-family:var(--dato);font-size:11px;letter-spacing:.22em;
+  color:var(--acero);text-transform:uppercase;margin-bottom:20px;
+}
+.portada h1{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(2.05rem,5.4vw,3.5rem);line-height:1.06;
+  letter-spacing:-.025em;margin:0 0 20px;
+}
+.portada h1 em{font-style:normal;color:var(--acero)}
+.bajada{font-size:17px;line-height:1.6;color:#C3CFE4;max-width:44ch;margin:0 0 28px}
+.acciones{display:flex;gap:11px;flex-wrap:wrap}
+
+.btn{
+  display:inline-block;font-family:var(--texto);font-size:14.5px;font-weight:600;
+  padding:12px 22px;border-radius:2px;text-decoration:none;
+  border:1px solid transparent;transition:transform .12s ease,background .15s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-a{background:var(--acero);color:var(--profundo)}
+.btn-a:hover{background:#AAC5E8}
+.btn-b{border-color:rgba(255,255,255,.32);color:#fff}
+.btn-b:hover{background:rgba(255,255,255,.08)}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- secciones ---------- */
+.seccion{padding:64px 0;border-top:1px solid var(--linea)}
+.seccion:first-of-type{border-top:0}
+@media(max-width:760px){.seccion{padding:44px 0}}
+
+h2{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.15;
+  letter-spacing:-.02em;margin:0 0 18px;
+}
+h3{font-family:var(--display);font-weight:500;font-size:1.15rem;
+  letter-spacing:-.01em;margin:0 0 8px}
+p{margin:0 0 15px;max-width:66ch}
+.gris{color:var(--gris)}
+
+/* ---------- quién ---------- */
+.perfil{display:grid;grid-template-columns:300px 1fr;gap:38px;align-items:start}
+@media(max-width:860px){
+  .perfil{grid-template-columns:1fr;gap:24px}
+  .retrato{max-width:300px}
+}
+.credenciales{
+  border-left:2px solid var(--acero);padding-left:18px;margin-top:26px;
+  font-family:var(--dato);font-size:12.5px;line-height:1.85;color:var(--gris);
+}
+.credenciales b{display:block;color:var(--tinta);font-weight:500;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase;margin-top:14px}
+.credenciales b:first-child{margin-top:0}
+
+.retrato{margin:0}
+.retrato img{
+  width:100%;height:auto;border-radius:2px;display:block;
+  filter:saturate(.94) contrast(1.02);
+}
+.banda-foto{margin:0 0 26px}
+.banda-foto img{width:100%;height:auto;border-radius:2px;display:block;
+  filter:saturate(.92) contrast(1.03)}
+
+/* ---------- ámbitos ---------- */
+.ambito{
+  border-top:1px solid var(--linea);padding:30px 0;
+  display:grid;grid-template-columns:1fr 1.55fr;gap:34px;
+}
+.ambito:first-of-type{border-top:0;padding-top:6px}
+@media(max-width:860px){.ambito{grid-template-columns:1fr;gap:14px}}
+.ambito-clave{
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--azul);margin-bottom:9px;
+}
+.indicacion{
+  font-family:var(--dato);font-size:12.5px;line-height:1.7;color:var(--gris);
+  background:var(--radiografia);border-radius:2px;padding:11px 13px;margin-top:14px;
+}
+.indicacion span{color:var(--azul)}
+.consultar{list-style:none;padding:0;margin:16px 0 0}
+.consultar li{
+  position:relative;padding-left:20px;margin-bottom:7px;
+  font-size:15px;line-height:1.55;
+}
+.consultar li::before{
+  content:"";position:absolute;left:2px;top:9px;
+  width:7px;height:1.5px;background:var(--acero);
+}
+
+/* ---------- casos clínicos ---------- */
+.caso{margin:26px 0 0;padding:18px;background:var(--radiografia);border-radius:3px}
+.caso img{width:100%;height:auto;display:block;border-radius:2px}
+.caso-tit{
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--azul);margin-bottom:12px;
+}
+.caso-par{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.caso-par{grid-template-columns:1fr}}
+.caso-et{
+  display:block;font-family:var(--dato);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gris);margin-top:7px;
+}
+.caso-rx{margin-top:10px}
+.caso-pie{font-size:12px;line-height:1.65;color:var(--gris);margin:12px 0 0;max-width:62ch}
+.caso-oscuro{background:rgba(255,255,255,.07);margin:24px 0}
+.caso-oscuro .caso-pie{color:#B7C6DD}
+
+/* ---------- proceso ---------- */
+.pasos{counter-reset:paso;display:grid;gap:2px;margin-top:6px}
+.paso{
+  background:var(--radiografia);padding:20px 22px;position:relative;
+  display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start;
+}
+.paso::before{
+  counter-increment:paso;content:counter(paso,decimal-leading-zero);
+  font-family:var(--dato);font-size:12px;color:var(--acero);padding-top:3px;
+}
+
+/* ---------- colegas ---------- */
+.colegas{background:var(--profundo);color:#fff}
+.colegas h2{color:#fff}
+.colegas p{color:#C3CFE4}
+.colegas .marca{color:var(--acero)}
+.colegas .riel::before{background:linear-gradient(to bottom,transparent,rgba(143,176,220,.3) 12%,rgba(143,176,220,.3) 88%,transparent)}
+.compromiso{
+  border-left:2px solid var(--acero);padding:4px 0 4px 18px;margin:22px 0 0;
+  font-size:16.5px;color:#fff;max-width:60ch;
+}
+
+/* ---------- lema: el momento de marca ---------- */
+.lema{
+  position:relative;overflow:hidden;isolation:isolate;
+  background:linear-gradient(135deg,#1A4FB5 0%,#1440A0 55%,#0F3282 100%);
+  color:#fff;padding:74px 0;text-align:center;
+}
+.lema-brillo{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,
+    rgba(255,255,255,.16) 47%,
+    rgba(255,255,255,.28) 50%,
+    rgba(255,255,255,.16) 53%,
+    transparent 62%);
+  background-size:260% 100%;background-position:180% 0;
+  animation:destello 7.5s ease-in-out 1.4s infinite;
+}
+@keyframes destello{
+  0%{background-position:180% 0}
+  38%,100%{background-position:-90% 0}
+}
+.lema-regla{
+  display:block;width:52px;height:2px;background:var(--hueso);
+  margin:0 auto 20px;opacity:.9;
+}
+.lema-texto{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(1.9rem,6vw,3.5rem);line-height:1.04;
+  letter-spacing:-.028em;margin:0;max-width:none;
+  text-shadow:0 1px 24px rgba(8,26,66,.32);
+}
+.lema-pie{
+  font-family:var(--dato);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.72);
+  margin:18px 0 0;max-width:none;
+}
+@media(max-width:560px){
+  .lema{padding:52px 0}
+}
+@media(prefers-reduced-motion:reduce){.lema-brillo{animation:none;opacity:.35}}
+
+/* ---------- contacto ---------- */
+.contacto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:22px;margin-top:8px}
+.dato{border-top:2px solid var(--profundo);padding-top:13px}
+.dato-et{font-family:var(--dato);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gris);margin-bottom:5px}
+.dato a{font-size:16.5px;text-decoration:none;color:var(--tinta);font-weight:500}
+.dato a:hover{color:var(--azul)}
+
+.pie{
+  border-top:1px solid var(--linea);padding:26px 0 40px;
+  font-size:12.5px;line-height:1.7;color:var(--gris);
+}
+
+:focus-visible{outline:2px solid var(--acero);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div class="nav-firma">
+      <div class="nav-marca">Dr. Gonzalo Martinovic</div>
+      <div class="nav-lema">Cirugía que cambia vidas</div>
+    </div>
+    <div class="nav-links">
+      <a href="#ambitos">Ámbitos</a>
+      <a href="#proceso">Cómo se trabaja</a>
+      <a href="#colegas">Para colegas</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="portada">
+  <div class="portada-in">
+    <div>
+      <div class="cejilla">Cirugía maxilofacial · Santiago</div>
+      <h1>La cirugía se diseña <em>antes</em> de operar.</h1>
+      <p class="bajada">
+        Planificación virtual sobre tu propia anatomía, en tres dimensiones, antes de
+        entrar a pabellón. Es lo que permite resolver casos que otros descartan.
+      </p>
+      <div class="acciones">
+        <a class="btn btn-a" href="#contacto">Agendar evaluación</a>
+        <a class="btn btn-b" href="#colegas">Derivar un paciente</a>
+      </div>
+
+      <nav class="indice" aria-label="Ámbitos de trabajo">
+        <a href="#cigomaticos"><span>01</span> Implantes cigomáticos</a>
+        <a href="#ortognatica"><span>02</span> Cirugía ortognática</a>
+        <a href="#atm"><span>03</span> Articulación temporomandibular</a>
+        <a href="#implantes"><span>04</span> Implantes y reconstrucción</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ QUIÉN ============ -->
+<section class="seccion">
+  <div class="envoltura riel">
+    <span class="marca">Quién</span>
+    <div class="perfil">
+      <figure class="retrato">
+        <img src="img/retrato.jpg" width="690" height="920" loading="lazy"
+             alt="Dr. Gonzalo Martinovic en su consulta">
+      </figure>
+      <div>
+        <h2>Cirujano maxilofacial</h2>
+        <p>
+          Mi trabajo está en el esqueleto facial: mandíbula, maxilar, articulación
+          temporomandibular y el hueso que sostiene los dientes. Opero lo que la
+          odontología general y la implantología derivan cuando el caso excede sus
+          herramientas.
+        </p>
+        <p>
+          Me formé como especialista en Cirugía y Traumatología Bucal y Maxilofacial
+          en la Universidad Mayor, y completé un Magíster en Ciencias Médicas con
+          mención en Cirugía en la Universidad de La Frontera. Esa formación
+          metodológica es la razón de que publique: acostumbro a revisar la evidencia
+          antes de adoptar una técnica.
+        </p>
+        <p>
+          En paralelo a la consulta, integro el equipo del Servicio de Cirugía y
+          Traumatología Bucomaxilofacial del Hospital Militar de Santiago, donde fui
+          residente jefe del Servicio de Urgencia. El volumen hospitalario es lo que
+          da oficio en trauma y en casos complejos.
+        </p>
+        <p>
+          Trabajo con tomografía de haz cónico y planificación virtual en todos los
+          casos complejos. Eso significa que el plan quirúrgico —la posición de cada
+          implante, el trazado de cada osteotomía— está resuelto en el computador
+          antes de la cirugía, y llega a pabellón en guías hechas para ese paciente.
+        </p>
+        <p class="gris">
+          Atiendo en Las Condes, Santiago. Recibo derivaciones de odontólogos,
+          implantólogos y ortodoncistas.
+        </p>
+        <div class="credenciales">
+        <b>Formación</b>
+        Cirujano dentista<br>
+        Especialista en Cirugía y Traumatología Bucal y Maxilofacial — Universidad Mayor, 2013<br>
+        Magíster en Ciencias Médicas, mención Cirugía — Universidad de La Frontera, 2019<br>
+        Diplomado en Cirugía de los Implantes — Universidad Mayor, 2008
+        <b>Experiencia hospitalaria</b>
+        Staff, Servicio de Cirugía y Traumatología Bucomaxilofacial — Hospital Militar de Santiago<br>
+        Coordinador, Servicio de Urgencia Dental y Maxilofacial<br>
+        Residente jefe, Servicio de Urgencia — 2021 a 2023
+        <b>Distinciones</b>
+        Tercer lugar, categoría Trauma Facial — XVI Congreso Latinoamericano de Cirugía Oral y Maxilofacial
+        <b>Actividad académica</b>
+        Autor y coautor de publicaciones nacionales e internacionales<br>
+        Expositor en cursos nacionales e internacionales
+        <b>Herramientas</b>
+        Tomografía de haz cónico (CBCT)<br>
+        Planificación virtual y cirugía guiada
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÁMBITOS ============ -->
+<section class="seccion" id="ambitos">
+  <div class="envoltura riel">
+    <span class="marca">Ámbitos</span>
+    <h2>Cuatro áreas de trabajo</h2>
+    <p class="gris" style="margin-bottom:30px">
+      Cada una tiene su propia indicación. Si no estás seguro de cuál corresponde a
+      tu caso, la evaluación lo aclara.
+    </p>
+
+    <!-- 1 -->
+    <article class="ambito" id="cigomaticos">
+      <div>
+        <div class="ambito-clave">Reconstrucción compleja</div>
+        <h3>Implantes cigomáticos</h3>
+      </div>
+      <div>
+        <p>
+          Cuando el maxilar perdió tanto hueso que un implante convencional no tiene
+          dónde anclarse, el implante cigomático se fija en el hueso del pómulo, que
+          permanece intacto. Permite dientes fijos sin pasar por meses de injerto, y
+          en muchos casos con carga inmediata.
+        </p>
+        <p>
+          Es un procedimiento de alta complejidad. Requiere tomografía, planificación
+          virtual y un equipo que lo realice con frecuencia.
+        </p>
+        <p class="gris">
+          El maxilar atrófico es un problema que trabajo hace años: mi presentación
+          sobre reconstrucción de maxilares atróficos con injertos de hueso de banco
+          obtuvo distinción en el XVI Congreso Latinoamericano de Cirugía Oral y
+          Maxilofacial.
+        </p>
+        <div class="indicacion">
+          <span>Indicación —</span> atrofia maxilar severa, fracaso de injertos previos,
+          rehabilitación imposible con implantes convencionales.
+        </div>
+        <ul class="consultar">
+          <li>Te dijeron que no tienes hueso suficiente para implantes</li>
+          <li>Un injerto anterior no resultó o se reabsorbió</li>
+          <li>Usas prótesis removible superior y no logras estabilidad</li>
+          <li>Te propusieron injerto de seno bilateral y buscas otra opción</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="ambito" id="ortognatica">
+      <div>
+        <div class="ambito-clave">Esqueleto facial</div>
+        <h3>Cirugía ortognática</h3>
+      </div>
+      <div>
+        <p>
+          Corrige la posición del maxilar y la mandíbula cuando el problema no está en
+          los dientes sino en los huesos que los sostienen. Cambia la mordida y,
+          con ella, el perfil facial y en muchos casos la vía aérea.
+        </p>
+        <p>
+          Es un tratamiento conjunto con tu ortodoncista y toma tiempo: hay una etapa
+          de ortodoncia previa, la cirugía, y una etapa posterior de ajuste. La
+          planificación virtual permite ver el resultado esquelético antes de decidir.
+        </p>
+        <div class="indicacion">
+          <span>Indicación —</span> discrepancias esqueléticas clase II y III, mordida
+          abierta, asimetrías faciales, apnea obstructiva de origen esquelético.
+        </div>
+        <ul class="consultar">
+          <li>Tu mandíbula se ve adelantada o retraída respecto del resto de la cara</li>
+          <li>Los dientes no calzan aunque hayas usado ortodoncia</li>
+          <li>Tu ortodoncista mencionó que hace falta cirugía</li>
+          <li>Tienes un mentón que no acompaña al resto del perfil</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="ambito" id="atm">
+      <div>
+        <div class="ambito-clave">Articulación</div>
+        <h3>Articulación temporomandibular</h3>
+      </div>
+      <div>
+        <p>
+          Dolor mandibular, ruidos al abrir, limitación del movimiento y dolores de
+          cabeza asociados. Los cuadros de ATM son frecuentes y con frecuencia mal
+          diagnosticados: no todos son bruxismo, y no todos se resuelven con un plano
+          de relajación.
+        </p>
+        <p>
+          El manejo es escalonado. Empieza por lo conservador y solo avanza a
+          procedimientos mínimamente invasivos o quirúrgicos cuando la indicación lo
+          justifica y las imágenes lo respaldan.
+        </p>
+        <div class="indicacion">
+          <span>Indicación —</span> desplazamiento discal con o sin reducción, artralgia,
+          limitación de apertura, dolor orofacial persistente.
+        </div>
+        <ul class="consultar">
+          <li>Te suena la mandíbula al abrir o masticar</li>
+          <li>No logras abrir la boca completamente</li>
+          <li>Tienes dolor mandibular que lleva meses</li>
+          <li>Usaste plano de relajación y el cuadro sigue igual</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="ambito" id="implantes">
+      <div>
+        <div class="ambito-clave">Rehabilitación</div>
+        <h3>Implantes y reconstrucción ósea</h3>
+      </div>
+      <div>
+        <p>
+          Implantes en situaciones que requieren cirugía además de la colocación:
+          injertos, elevación de seno maxilar, regeneración ósea guiada, o
+          rehabilitación completa de un maxilar.
+        </p>
+        <p>
+          La planificación define desde el principio qué hueso hay, qué hace falta
+          construir y en qué orden. La prótesis definitiva la realiza tu odontólogo
+          tratante.
+        </p>
+        <div class="indicacion">
+          <span>Indicación —</span> reborde alveolar insuficiente, neumatización del seno
+          maxilar, defectos óseos localizados, rehabilitación de arcada completa.
+        </div>
+        <ul class="consultar">
+          <li>Necesitas implantes y te indicaron injerto previo</li>
+          <li>Perdiste un diente hace tiempo y el hueso se reabsorbió</li>
+          <li>Buscas rehabilitar una arcada completa</li>
+          <li>Un implante anterior falló y hay que resolver el sitio</li>
+        </ul>
+
+        <figure class="caso">
+          <figcaption class="caso-tit">Caso documentado — rehabilitación de arcada completa</figcaption>
+          <div class="caso-par">
+            <div>
+              <img src="img/caso-antes.jpg" width="800" height="400" loading="lazy"
+                   alt="Situación inicial: dentición superior con pérdida ósea avanzada">
+              <span class="caso-et">Antes</span>
+            </div>
+            <div>
+              <img src="img/caso-despues.jpg" width="800" height="400" loading="lazy"
+                   alt="Prótesis fija instalada el mismo día de la cirugía">
+              <span class="caso-et">Después — mismo día</span>
+            </div>
+          </div>
+          <img class="caso-rx" src="img/caso-panoramica.jpg" width="1400" height="613" loading="lazy"
+               alt="Radiografía panorámica de control con la rehabilitación terminada">
+          <p class="caso-pie">
+            Control radiográfico posterior. La prótesis se instaló en la misma sesión
+            quirúrgica: el paciente salió con dientes fijos ese día. Los resultados
+            varían según el caso y solo pueden estimarse tras evaluación e imágenes.
+          </p>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="seccion" id="proceso">
+  <div class="envoltura riel">
+    <span class="marca">Proceso</span>
+    <h2>Cómo se trabaja</h2>
+    <p class="gris" style="margin-bottom:26px">
+      El orden importa: ninguna decisión quirúrgica se toma antes de tener las
+      imágenes y el plan.
+    </p>
+    <figure class="banda-foto">
+      <img src="img/operando.jpg" width="1600" height="900" loading="lazy"
+           alt="Procedimiento quirúrgico en curso">
+    </figure>
+
+    <div class="pasos">
+      <div class="paso">
+        <div>
+          <h3>Evaluación</h3>
+          <p class="gris" style="margin:0">
+            Examen clínico, revisión de tus antecedentes y de los tratamientos previos.
+            Si hace falta, se solicita tomografía de haz cónico.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>Planificación virtual</h3>
+          <p class="gris" style="margin:0">
+            Sobre tu tomografía se define la posición de cada implante o el trazado de
+            cada osteotomía. De ahí salen las guías quirúrgicas de ese caso.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>Plan por escrito</h3>
+          <p class="gris" style="margin:0">
+            Recibes el procedimiento propuesto, sus alternativas, los plazos reales y
+            el presupuesto detallado. Decides con la información completa.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>Cirugía y control</h3>
+          <p class="gris" style="margin:0">
+            Con seguimiento definido desde antes. Si vienes derivado, tu odontólogo
+            tratante recibe el informe y continúa la rehabilitación.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLEGAS ============ -->
+<section class="seccion colegas" id="colegas">
+  <div class="envoltura riel">
+    <span class="marca">Colegas</span>
+    <h2>Derivación</h2>
+    <p>
+      Recibo pacientes derivados por odontólogos, implantólogos y ortodoncistas,
+      principalmente en atrofia maxilar severa, discrepancias esqueléticas y cuadros
+      de ATM que no responden al manejo conservador.
+    </p>
+    <p>
+      La coordinación es directa: podemos revisar el caso antes de que el paciente se
+      traslade, sobre la tomografía.
+    </p>
+    <figure class="caso caso-oscuro">
+      <img src="img/caso-intraoperatoria.jpg" width="1200" height="900" loading="lazy"
+           alt="Vista intraoperatoria de reconstrucción de maxilar atrófico">
+      <p class="caso-pie">
+        Vista intraoperatoria — reconstrucción de maxilar atrófico. Material técnico
+        disponible para revisión de casos entre colegas.
+      </p>
+    </figure>
+
+    <p class="compromiso">
+      El paciente vuelve contigo. Yo resuelvo la etapa quirúrgica; la rehabilitación
+      protésica y el seguimiento odontológico siguen siendo tuyos.
+    </p>
+    <div class="acciones" style="margin-top:26px">
+      <a class="btn btn-a" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20soy%20colega%20y%20quisiera%20comentarle%20un%20caso.">Comentar un caso</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ LEMA ============ -->
+<section class="lema">
+  <div class="lema-brillo" aria-hidden="true"></div>
+  <div class="envoltura lema-in">
+    <span class="lema-regla" aria-hidden="true"></span>
+    <p class="lema-texto">Cirugía que cambia vidas</p>
+    <p class="lema-pie">Dr. Gonzalo Martinovic · Cirugía maxilofacial</p>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="seccion" id="contacto">
+  <div class="envoltura riel">
+    <span class="marca">Contacto</span>
+    <h2>Agendar una evaluación</h2>
+    <p class="gris">
+      Escríbeme por WhatsApp o correo con tu nombre y una descripción breve de tu
+      caso. Si ya tienes tomografía o radiografías, menciónalo.
+    </p>
+    <div class="contacto-grid">
+      <div class="dato">
+        <div class="dato-et">WhatsApp</div>
+        <a href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n.">Escribir ahora</a>
+      </div>
+      <div class="dato">
+        <div class="dato-et">Teléfono</div>
+        <a href="tel:+56229935795">+56 2 2993 5795</a><br>
+        <a href="tel:+56935673359">+56 9 3567 3359</a>
+      </div>
+      <div class="dato">
+        <div class="dato-et">Correo</div>
+        <a href="mailto:drmartinovicg@gmail.com">drmartinovicg@gmail.com</a>
+      </div>
+      <div class="dato">
+        <div class="dato-et">Consulta</div>
+        <a href="https://maps.google.com/?q=Av.+Apoquindo+6314,+Las+Condes,+Santiago" target="_blank" rel="noopener">Av. Apoquindo 6314, of. 1001<br>Las Condes, Santiago</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="envoltura">
+    <p style="margin:0 0 8px">
+      Dr. Gonzalo Martinovic · Cirugía que cambia vidas · Santiago, Chile
+    </p>
+    <p style="margin:0;max-width:72ch">
+      Las imágenes clínicas se publican con consentimiento escrito de los pacientes,
+      otorgado específicamente para su difusión, y han sido editadas para eliminar
+      cualquier dato identificable.<br><br>
+      La información de este sitio es de carácter general y no reemplaza una
+      evaluación clínica. Los resultados de cualquier procedimiento varían según el
+      caso, y solo pueden estimarse después de un examen y las imágenes
+      correspondientes.
+    </p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Physician",
+  "name":"Dr. Gonzalo Martinovic Guzmán",
+  "telephone":"+56229935795",
+  "email":"drmartinovicg@gmail.com",
+  "slogan":"Cirugía que cambia vidas",
+  "medicalSpecialty":"OralAndMaxillofacialSurgery",
+  "description":"Cirujano maxilofacial en Santiago. Implantes cigomáticos, cirugía ortognática, articulación temporomandibular e implantes con reconstrucción ósea.",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Av. Apoquindo 6314, of. 1001",
+    "addressLocality":"Las Condes",
+    "addressRegion":"Región Metropolitana",
+    "addressCountry":"CL"
+  },
+  "availableService":[
+    {"@type":"MedicalProcedure","name":"Implantes cigomáticos"},
+    {"@type":"MedicalProcedure","name":"Cirugía ortognática"},
+    {"@type":"MedicalProcedure","name":"Tratamiento de trastornos temporomandibulares"},
+    {"@type":"MedicalProcedure","name":"Implantes dentales y reconstrucción ósea"}
+  ]
+}
+</script>
+
+</body>
+</html>
