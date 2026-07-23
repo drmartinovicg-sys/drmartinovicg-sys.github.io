@@ -72,8 +72,26 @@ img,svg{display:block;max-width:100%}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;
   max-width:1080px;margin:0 auto;padding:11px 22px}
 .nav-marca{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em;line-height:1.15}
-.nav-lema{font-family:var(--dato);font-size:9.5px;letter-spacing:.17em;
-  text-transform:uppercase;color:#1A4FB5;margin-top:2px;font-weight:500}
+.nav-lema{
+  display:inline-block;position:relative;overflow:hidden;isolation:isolate;
+  font-family:var(--dato);font-size:9.5px;letter-spacing:.17em;font-weight:500;
+  text-transform:uppercase;color:#fff;margin-top:4px;
+  padding:3px 10px 3px 9px;border-radius:2px;
+  background:linear-gradient(135deg,#1A4FB5 0%,#1440A0 55%,#0F3282 100%);
+  box-shadow:0 1px 6px rgba(20,64,160,.28);
+}
+.nav-lema::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,
+    rgba(255,255,255,.22) 47%,
+    rgba(255,255,255,.42) 50%,
+    rgba(255,255,255,.22) 53%,
+    transparent 62%);
+  background-size:260% 100%;background-position:180% 0;
+  animation:destello 7.5s ease-in-out 1.4s infinite;
+}
+@media(prefers-reduced-motion:reduce){.nav-lema::after{animation:none;opacity:.3}}
 .nav-links{display:flex;gap:20px;font-size:13.5px;color:var(--gris)}
 .nav-links a{text-decoration:none}
 .nav-links a:hover{color:var(--azul)}
@@ -691,6 +709,10 @@ p{margin:0 0 15px;max-width:66ch}
         <a href="mailto:drmartinovicg@gmail.com">drmartinovicg@gmail.com</a>
       </div>
       <div class="dato">
+        <div class="dato-et">LinkedIn</div>
+        <a href="https://www.linkedin.com/in/gonzalo-andres-martinovic-guzman" target="_blank" rel="noopener">Perfil profesional</a>
+      </div>
+      <div class="dato">
         <div class="dato-et">Consulta</div>
         <a href="https://maps.google.com/?q=Av.+Apoquindo+6314,+Las+Condes,+Santiago" target="_blank" rel="noopener">Av. Apoquindo 6314, of. 1001<br>Las Condes, Santiago</a>
       </div>
@@ -724,6 +746,7 @@ p{margin:0 0 15px;max-width:66ch}
   "name":"Dr. Gonzalo Martinovic Guzmán",
   "telephone":"+56229935795",
   "email":"drmartinovicg@gmail.com",
+  "sameAs":["https://www.linkedin.com/in/gonzalo-andres-martinovic-guzman"],
   "slogan":"Cirugía que cambia vidas",
   "medicalSpecialty":"OralAndMaxillofacialSurgery",
   "description":"Cirujano maxilofacial en Santiago. Implantes cigomáticos, cirugía ortognática, articulación temporomandibular e implantes con reconstrucción ósea.",
