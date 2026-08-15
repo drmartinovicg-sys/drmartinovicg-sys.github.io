@@ -324,6 +324,24 @@ p{margin:0 0 15px;max-width:66ch}
 
 :focus-visible{outline:2px solid var(--acero);outline-offset:3px}
 </style>
+<!-- Google tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18343247822"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18343247822');
+
+  // Funciones de conversion. Devuelven true para no bloquear la navegacion del enlace.
+  function convWhatsApp(){
+    gtag('event','conversion',{'send_to':'AW-18343247822/HrUOCNyYneIcEM7_3qpE'});
+    return true;
+  }
+  function convTelefono(){
+    gtag('event','conversion',{'send_to':'AW-18343247822/Ro7FCKncoOIcEM7_3qpE'});
+    return true;
+  }
+</script>
 </head>
 <body>
 
@@ -834,7 +852,7 @@ p{margin:0 0 15px;max-width:66ch}
       protésica y el seguimiento odontológico siguen siendo tuyos.
     </p>
     <div class="acciones" style="margin-top:26px">
-      <a class="btn btn-a" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20soy%20colega%20y%20quisiera%20comentarle%20un%20caso.">Comentar un caso</a>
+      <a class="btn btn-a" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20soy%20colega%20y%20quisiera%20comentarle%20un%20caso.">Comentar un caso</a>
     </div>
   </div>
 </section>
@@ -862,12 +880,12 @@ p{margin:0 0 15px;max-width:66ch}
     <div class="contacto-grid">
       <div class="dato">
         <div class="dato-et">WhatsApp</div>
-        <a href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n.">Escribir ahora</a>
+        <a onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n.">Escribir ahora</a>
       </div>
       <div class="dato">
         <div class="dato-et">Teléfono</div>
-        <a href="tel:+56229935795">+56 2 2993 5795</a><br>
-        <a href="tel:+56935673359">+56 9 3567 3359</a>
+        <a onclick="convTelefono()" href="tel:+56229935795">+56 2 2993 5795</a><br>
+        <a onclick="convTelefono()" href="tel:+56935673359">+56 9 3567 3359</a>
       </div>
       <div class="dato">
         <div class="dato-et">Correo</div>
