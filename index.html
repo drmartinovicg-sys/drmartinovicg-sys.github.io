@@ -108,32 +108,52 @@ img,svg{display:block;max-width:100%}
 .portada h1{max-width:16ch}
 .bajada{max-width:50ch}
 
-.indice{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:1px solid rgba(143,176,220,.28);margin-top:56px;
-}
+.indice{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:52px}
 .indice a{
-  display:block;padding:20px 18px 26px 0;text-decoration:none;
-  font-size:14px;line-height:1.4;color:#C3CFE4;
-  border-right:1px solid rgba(143,176,220,.16);
-  transition:color .15s ease;
+  position:relative;display:block;padding:18px 16px 16px;text-decoration:none;
+  background:rgba(255,255,255,.045);border:1px solid rgba(143,176,220,.18);
+  border-radius:3px;overflow:hidden;isolation:isolate;
+  color:#C3CFE4;font-size:14px;line-height:1.35;
+  transition:transform .16s ease,border-color .16s ease,background .16s ease,color .16s ease;
 }
-.indice a:last-child{border-right:0}
-.indice a:hover{color:#fff}
-.indice span{
+.indice a::before{
+  content:"";position:absolute;left:0;top:0;height:2px;width:26px;
+  background:var(--acero);transition:width .24s ease;
+}
+.indice a:hover{
+  transform:translateY(-2px);border-color:rgba(143,176,220,.5);
+  background:rgba(255,255,255,.08);color:#fff;
+}
+.indice a:hover::before{width:100%}
+.indice-num{
   display:block;font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
-  color:var(--acero);margin-bottom:7px;
+  color:var(--acero);margin-bottom:26px;
 }
-@media(max-width:860px){
-  .indice{grid-template-columns:1fr 1fr;margin-top:40px}
-  .indice a:nth-child(2n){border-right:0}
-  .indice a{padding:16px 14px 18px 0;font-size:13px}
-  .indice a:nth-child(2){border-right:0}
+.indice-fantasma{
+  position:absolute;right:10px;top:2px;z-index:-1;
+  font-family:var(--display);font-weight:700;font-size:64px;line-height:1;
+  color:rgba(143,176,220,.10);letter-spacing:-.04em;pointer-events:none;
+  transition:color .16s ease;
 }
+.indice a:hover .indice-fantasma{color:rgba(143,176,220,.17)}
+.indice-nombre{display:block;font-weight:500;padding-right:14px}
+.indice-flecha{
+  position:absolute;right:14px;bottom:13px;font-family:var(--dato);
+  color:var(--acero);opacity:0;transform:translateX(-5px);
+  transition:opacity .16s ease,transform .16s ease;
+}
+.indice a:hover .indice-flecha{opacity:1;transform:none}
+@media(hover:none){.indice-flecha{opacity:.55;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .indice a,.indice a::before,.indice-flecha{transition:none}
+  .indice a:hover{transform:none}
+}
+@media(max-width:860px){.indice{grid-template-columns:1fr 1fr;margin-top:38px}}
 @media(max-width:460px){
-  .indice{grid-template-columns:1fr}
-  .indice a{border-right:0;border-bottom:1px solid rgba(143,176,220,.16);padding:14px 0}
-  .indice a:last-child{border-bottom:0}
+  .indice{grid-template-columns:1fr 1fr;gap:8px}
+  .indice a{padding:14px 12px 13px;font-size:12.5px}
+  .indice-num{margin-bottom:18px}
+  .indice-fantasma{font-size:46px;right:8px}
 }
 .cejilla{
   font-family:var(--dato);font-size:11px;letter-spacing:.22em;
@@ -322,13 +342,18 @@ p{margin:0 0 15px;max-width:66ch}
   font-size:12.5px;line-height:1.7;color:var(--gris);
 }
 
-/* ---------- enlace a página de servicio ---------- */
-.enlace-pagina{
-  display:inline-block;margin-top:18px;font-weight:600;font-size:15px;
-  color:var(--azul);text-decoration:none;border-bottom:2px solid var(--acero);
-  padding-bottom:2px;
+/* ---------- botón a página de servicio ---------- */
+.btn-pagina{
+  display:inline-block;margin-top:20px;
+  font-family:var(--texto);font-size:14.5px;font-weight:600;
+  padding:13px 24px;border-radius:2px;text-decoration:none;
+  background:var(--azul);color:#fff;
+  box-shadow:0 1px 8px rgba(35,71,127,.25);
+  transition:transform .12s ease,background .15s ease;
 }
-.enlace-pagina:hover{color:var(--profundo)}
+.btn-pagina:hover{background:var(--profundo)}
+.btn-pagina:active{transform:translateY(1px)}
+@media(max-width:560px){.btn-pagina{display:block;text-align:center}}
 
 /* ---------- publicaciones ---------- */
 .pub-metricas{display:flex;gap:34px;flex-wrap:wrap;margin:6px 0 24px}
@@ -398,12 +423,12 @@ p{margin:0 0 15px;max-width:66ch}
       </div>
 
       <nav class="indice" aria-label="Ámbitos de trabajo">
-        <a href="#cigomaticos"><span>01</span> Implantes cigomáticos</a>
-        <a href="#subperiosticos"><span>02</span> Implantes subperiósticos</a>
-        <a href="#ortognatica"><span>03</span> Cirugía ortognática</a>
-        <a href="#atm"><span>04</span> Articulación temporomandibular</a>
-        <a href="#implantes"><span>05</span> Implantes y reconstrucción</a>
-        <a href="#apnea"><span>06</span> Apnea del sueño (SAHOS)</a>
+        <a href="#cigomaticos"><span class="indice-num">01</span><span class="indice-fantasma" aria-hidden="true">01</span><span class="indice-nombre">Implantes cigomáticos</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
+        <a href="#subperiosticos"><span class="indice-num">02</span><span class="indice-fantasma" aria-hidden="true">02</span><span class="indice-nombre">Implantes subperiósticos</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
+        <a href="#ortognatica"><span class="indice-num">03</span><span class="indice-fantasma" aria-hidden="true">03</span><span class="indice-nombre">Cirugía ortognática</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
+        <a href="#atm"><span class="indice-num">04</span><span class="indice-fantasma" aria-hidden="true">04</span><span class="indice-nombre">Articulación temporomandibular</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
+        <a href="#implantes"><span class="indice-num">05</span><span class="indice-fantasma" aria-hidden="true">05</span><span class="indice-nombre">Implantes y reconstrucción</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
+        <a href="#apnea"><span class="indice-num">06</span><span class="indice-fantasma" aria-hidden="true">06</span><span class="indice-nombre">Apnea del sueño (SAHOS)</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
       </nav>
     </div>
   </div>
@@ -540,7 +565,7 @@ p{margin:0 0 15px;max-width:66ch}
             pueden estimarse tras evaluación e imágenes.
           </p>
         </figure>
-        <a class="enlace-pagina" href="/implantes-cigomaticos">Guía completa: implantes cigomáticos — candidatos, costos y preguntas frecuentes →</a>
+        <a class="btn-pagina" href="/implantes-cigomaticos">Ver guía completa de implantes cigomáticos →</a>
       </div>
     </article>
 
