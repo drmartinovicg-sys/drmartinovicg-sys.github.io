@@ -471,8 +471,80 @@ p{margin:0 0 15px;max-width:66ch}
   font-size:12.5px;line-height:1.7;color:var(--gris);
 }
 
+/* ---------- guías: banda de acceso destacado ---------- */
+.guias{background:var(--profundo);padding:0 0 54px;border:0}
+.guias-in{max-width:1080px;margin:0 auto;padding:0 22px}
+.guias-et{
+  font-family:var(--dato);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--acero);margin:0 0 16px;
+}
+.guias-par{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.guias-par{grid-template-columns:1fr}}
+.guia{
+  position:relative;overflow:hidden;isolation:isolate;display:block;
+  padding:22px 24px;border-radius:3px;text-decoration:none;color:#fff;
+  background:linear-gradient(135deg,#1A4FB5 0%,#1440A0 55%,#0F3282 100%);
+  box-shadow:0 2px 14px rgba(20,64,160,.3);
+  transition:transform .14s ease,box-shadow .16s ease;
+}
+.guia::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,rgba(255,255,255,.18) 47%,rgba(255,255,255,.34) 50%,
+    rgba(255,255,255,.18) 53%,transparent 62%);
+  background-size:260% 100%;background-position:180% 0;
+  animation:destello 7.5s ease-in-out 1.4s infinite;
+}
+.guia:nth-child(2)::after{animation-delay:3.6s}
+.guia:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(20,64,160,.44)}
+.guia-tit{
+  display:block;font-family:var(--display);font-weight:700;font-size:1.16rem;
+  letter-spacing:-.015em;margin-bottom:5px;
+}
+.guia-sub{display:block;font-size:14px;line-height:1.45;color:rgba(255,255,255,.82)}
+.guia-flecha{
+  position:absolute;right:20px;top:50%;transform:translateY(-50%);
+  font-family:var(--dato);font-size:17px;color:rgba(255,255,255,.85);
+}
+@media(prefers-reduced-motion:reduce){
+  .guia::after{animation:none;opacity:.25}
+  .guia:hover{transform:none}
+}
+
+/* ---------- pestaña lateral flotante ---------- */
+.guias-lat{
+  position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:70;
+  display:flex;flex-direction:column;gap:6px;
+}
+.lat{
+  position:relative;overflow:hidden;isolation:isolate;
+  writing-mode:vertical-rl;text-orientation:mixed;
+  padding:16px 9px;border-radius:0 3px 3px 0;text-decoration:none;color:#fff;
+  font-family:var(--texto);font-size:12.5px;font-weight:600;letter-spacing:.04em;
+  background:linear-gradient(135deg,#1A4FB5 0%,#1440A0 55%,#0F3282 100%);
+  box-shadow:2px 2px 12px rgba(8,26,66,.34);
+  transition:padding-right .16s ease;
+}
+.lat::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,rgba(255,255,255,.2) 47%,rgba(255,255,255,.38) 50%,
+    rgba(255,255,255,.2) 53%,transparent 62%);
+  background-size:100% 260%;background-position:0 180%;
+  animation:destelloVert 6.5s ease-in-out 2s infinite;
+}
+.lat:nth-child(2)::after{animation-delay:3.2s}
+.lat:hover{padding-right:14px}
+@keyframes destelloVert{
+  0%{background-position:0 180%}
+  40%,100%{background-position:0 -90%}
+}
+@media(prefers-reduced-motion:reduce){.lat::after{animation:none;opacity:.25}}
+@media(max-width:1180px){.guias-lat{display:none}}
+
 /* ---------- botón a página de servicio ---------- */
 .btn-pagina{
+  position:relative;overflow:hidden;isolation:isolate;
   display:inline-block;margin-top:20px;
   font-family:var(--texto);font-size:14.5px;font-weight:600;
   padding:13px 24px;border-radius:2px;text-decoration:none;
@@ -480,6 +552,15 @@ p{margin:0 0 15px;max-width:66ch}
   box-shadow:0 1px 8px rgba(35,71,127,.25);
   transition:transform .12s ease,background .15s ease;
 }
+.btn-pagina::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,rgba(255,255,255,.2) 47%,rgba(255,255,255,.38) 50%,
+    rgba(255,255,255,.2) 53%,transparent 62%);
+  background-size:260% 100%;background-position:180% 0;
+  animation:destello 7.5s ease-in-out 2.2s infinite;
+}
+@media(prefers-reduced-motion:reduce){.btn-pagina::after{animation:none;opacity:.2}}
 .btn-pagina:hover{background:var(--profundo)}
 .btn-pagina:active{transform:translateY(1px)}
 @media(max-width:560px){.btn-pagina{display:block;text-align:center}}
@@ -564,6 +645,24 @@ p{margin:0 0 15px;max-width:66ch}
     </div>
   </div>
 </header>
+
+<section class="guias">
+  <div class="guias-in">
+    <p class="guias-et">Guías completas</p>
+    <div class="guias-par">
+      <a class="guia" href="/implantes-cigomaticos">
+        <span class="guia-tit">Implantes cigomáticos</span>
+        <span class="guia-sub">Cuando te dijeron que no hay hueso: candidatos, costos y preguntas frecuentes.</span>
+        <span class="guia-flecha" aria-hidden="true">&#8594;</span>
+      </a>
+      <a class="guia" href="/cirugia-ortognatica">
+        <span class="guia-tit">Cirugía ortognática</span>
+        <span class="guia-sub">Etapas, plazos reales, costos y cobertura. Clase II y clase III explicadas.</span>
+        <span class="guia-flecha" aria-hidden="true">&#8594;</span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <main>
 
@@ -1227,6 +1326,11 @@ p{margin:0 0 15px;max-width:66ch}
   }
 })();
 </script>
+<div class="guias-lat" aria-label="Guías de tratamiento">
+  <a class="lat" href="/implantes-cigomaticos">Implantes cigomáticos</a>
+  <a class="lat" href="/cirugia-ortognatica">Cirugía ortognática</a>
+</div>
+
 <a class="wa-flota" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n." aria-label="Escribir por WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.41 4.4-9.81 9.82-9.81 2.62 0 5.08 1.02 6.93 2.88a9.74 9.74 0 0 1 2.87 6.94c0 5.41-4.4 9.82-9.81 9.82zM20.52 3.45A11.7 11.7 0 0 0 12.05 0C5.55 0 .26 5.29.26 11.79c0 2.08.54 4.11 1.58 5.9L.16 24l6.45-1.69a11.75 11.75 0 0 0 5.43 1.38h.01c6.5 0 11.79-5.29 11.79-11.79 0-3.15-1.23-6.11-3.46-8.34z"/></svg></a>
 
 </body>
