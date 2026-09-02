@@ -588,6 +588,7 @@ p{margin:0 0 15px;max-width:66ch}
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18343247822');
+  gtag('config', 'G-L25Q2L8G50');
 
   // Funciones de conversion. Devuelven true para no bloquear la navegacion del enlace.
   function convWhatsApp(){
@@ -598,6 +599,41 @@ p{margin:0 0 15px;max-width:66ch}
     gtag('event','conversion',{'send_to':'AW-18343247822/Ro7FCKncoOIcEM7_3qpE'});
     return true;
   }
+
+  // --- Medicion de interes real (GA4) ---
+  (function(){
+    var origWA = window.convWhatsApp, origTel = window.convTelefono;
+    window.convWhatsApp = function(){
+      gtag('event','contacto',{'metodo':'whatsapp','pagina':'inicio'});
+      return origWA();
+    };
+    window.convTelefono = function(){
+      gtag('event','contacto',{'metodo':'telefono','pagina':'inicio'});
+      return origTel();
+    };
+
+    // Profundidad de lectura: 25/50/75/100%
+    var hitos = [25,50,75,100], vistos = {};
+    function medirScroll(){
+      var alto = document.documentElement.scrollHeight - window.innerHeight;
+      if (alto <= 0) return;
+      var pct = (window.scrollY / alto) * 100;
+      hitos.forEach(function(m){
+        if (pct >= m && !vistos[m]) {
+          vistos[m] = true;
+          gtag('event','scroll_'+m,{'pagina':'inicio'});
+        }
+      });
+    }
+    var t;
+    window.addEventListener('scroll', function(){
+      clearTimeout(t); t = setTimeout(medirScroll, 200);
+    }, {passive:true});
+
+    // Lectura sostenida
+    setTimeout(function(){ gtag('event','permanencia_30s',{'pagina':'inicio'}); }, 30000);
+    setTimeout(function(){ gtag('event','permanencia_60s',{'pagina':'inicio'}); }, 60000);
+  })();
 </script>
 </head>
 <body>

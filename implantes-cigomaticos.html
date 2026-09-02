@@ -301,11 +301,27 @@ p{margin:0 0 15px;max-width:66ch}
 
 /* ---------- contacto: acciones con color de canal ---------- */
 .contacto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:22px;margin-top:8px}
-.dato{border-top:2px solid var(--profundo);padding-top:13px}
-.dato-et{font-family:var(--dato);font-size:10.5px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--gris);margin-bottom:5px}
-.dato a{font-size:16.5px;text-decoration:none;color:var(--tinta);font-weight:500}
+.dato{
+  position:relative;background:var(--radiografia);border-radius:3px;
+  padding:17px 18px 16px;border-left:2px solid var(--acero);
+  transition:border-color .15s ease,background .15s ease,transform .12s ease;
+}
+.dato:hover{border-left-color:var(--azul);background:#E3E8F1;transform:translateY(-1px)}
+.dato-et{font-family:var(--dato);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gris);margin-bottom:7px}
+.dato a{
+  font-size:15.5px;text-decoration:none;color:var(--tinta);font-weight:500;
+  line-height:1.5;display:inline-block;
+}
 .dato a:hover{color:var(--azul)}
+.dato-nota{
+  display:block;font-family:var(--dato);font-size:11px;letter-spacing:.04em;
+  color:var(--gris);margin-top:6px;font-weight:400;
+}
+.dato-wa{border-left-color:#25D366;background:#E9F8EF}
+.dato-wa:hover{border-left-color:#1FBE5B;background:#DDF3E5}
+.dato-wa a{color:#0B5A31;font-weight:600}
+.dato-wa a:hover{color:#06301A}
 
 .canales{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 34px}
 .canal{
@@ -317,12 +333,20 @@ p{margin:0 0 15px;max-width:66ch}
 }
 .canal svg{width:19px;height:19px;flex:none;fill:currentColor}
 .canal:active{transform:translateY(1px)}
-.canal-wa{background:#25D366;color:#06301A;box-shadow:0 2px 12px rgba(37,211,102,.28)}
+.canal-wa{background:#25D366;color:#06301A;box-shadow:0 2px 12px rgba(37,211,102,.28);
+  animation:destelloVerde 4.2s ease-in-out 3s infinite}
+.canal-wa:hover{animation:none}
+@keyframes destelloVerde{
+  0%,72%,100%{box-shadow:0 2px 12px rgba(37,211,102,.28)}
+  80%{box-shadow:0 2px 12px rgba(37,211,102,.28), 0 0 20px 4px rgba(37,211,102,.5)}
+  88%{box-shadow:0 2px 12px rgba(37,211,102,.28)}
+}
+@media(prefers-reduced-motion:reduce){.canal-wa{animation:none}}
 .canal-wa:hover{background:#1FBE5B;box-shadow:0 4px 18px rgba(37,211,102,.38)}
 .canal-tel{background:var(--profundo);color:#fff}
 .canal-tel:hover{background:var(--azul)}
-.canal-mail{background:transparent;color:var(--tinta);border-color:var(--linea)}
-.canal-mail:hover{border-color:var(--azul);color:var(--azul)}
+.canal-mail{background:var(--radiografia);color:var(--profundo);border-color:var(--linea)}
+.canal-mail:hover{background:var(--acero);border-color:var(--acero);color:var(--profundo)}
 @media(max-width:560px){
   .canales{flex-direction:column;gap:10px}
   .canal{justify-content:center;width:100%}
@@ -338,7 +362,25 @@ p{margin:0 0 15px;max-width:66ch}
   transition:transform .16s ease,box-shadow .16s ease;
 }
 .wa-flota svg{width:29px;height:29px;fill:currentColor}
-.wa-flota:hover{transform:scale(1.06);box-shadow:0 8px 26px rgba(8,40,22,.44)}
+.wa-flota{animation:latido 3.4s ease-in-out 2s infinite}
+.wa-flota:hover{transform:scale(1.06);box-shadow:0 8px 26px rgba(8,40,22,.44);animation:none}
+@keyframes latido{
+  0%,58%,100%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34), 0 0 0 0 rgba(37,211,102,0);
+    background:#25D366}
+  64%{transform:scale(1.13);
+    box-shadow:0 8px 26px rgba(8,40,22,.42), 0 0 22px 6px rgba(37,211,102,.55);
+    background:#2EEA76}
+  70%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34), 0 0 0 0 rgba(37,211,102,0);
+    background:#25D366}
+  76%{transform:scale(1.10);
+    box-shadow:0 8px 26px rgba(8,40,22,.42), 0 0 20px 5px rgba(37,211,102,.48);
+    background:#2EEA76}
+  82%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34), 0 0 0 0 rgba(37,211,102,0);
+    background:#25D366}
+}
 .wa-flota::after{
   content:"";position:absolute;inset:0;border-radius:50%;
   border:2px solid rgba(37,211,102,.55);
@@ -348,7 +390,10 @@ p{margin:0 0 15px;max-width:66ch}
   0%{transform:scale(1);opacity:.7}
   70%,100%{transform:scale(1.5);opacity:0}
 }
-@media(prefers-reduced-motion:reduce){.wa-flota::after{animation:none;opacity:0}}
+@media(prefers-reduced-motion:reduce){
+  .wa-flota::after{animation:none;opacity:0}
+  .wa-flota{animation:none}
+}
 @media(max-width:560px){.wa-flota{right:14px;bottom:14px;width:52px;height:52px}}
 
 .pie{
@@ -366,6 +411,7 @@ p{margin:0 0 15px;max-width:66ch}
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18343247822');
+  gtag('config', 'G-L25Q2L8G50');
 
   function convWhatsApp(){
     gtag('event','conversion',{'send_to':'AW-18343247822/HrUOCNyYneIcEM7_3qpE'});
@@ -375,6 +421,41 @@ p{margin:0 0 15px;max-width:66ch}
     gtag('event','conversion',{'send_to':'AW-18343247822/Ro7FCKncoOIcEM7_3qpE'});
     return true;
   }
+
+  // --- Medicion de interes real (GA4) ---
+  (function(){
+    var origWA = window.convWhatsApp, origTel = window.convTelefono;
+    window.convWhatsApp = function(){
+      gtag('event','contacto',{'metodo':'whatsapp','pagina':'implantes-cigomaticos'});
+      return origWA();
+    };
+    window.convTelefono = function(){
+      gtag('event','contacto',{'metodo':'telefono','pagina':'implantes-cigomaticos'});
+      return origTel();
+    };
+
+    // Profundidad de lectura: 25/50/75/100%
+    var hitos = [25,50,75,100], vistos = {};
+    function medirScroll(){
+      var alto = document.documentElement.scrollHeight - window.innerHeight;
+      if (alto <= 0) return;
+      var pct = (window.scrollY / alto) * 100;
+      hitos.forEach(function(m){
+        if (pct >= m && !vistos[m]) {
+          vistos[m] = true;
+          gtag('event','scroll_'+m,{'pagina':'implantes-cigomaticos'});
+        }
+      });
+    }
+    var t;
+    window.addEventListener('scroll', function(){
+      clearTimeout(t); t = setTimeout(medirScroll, 200);
+    }, {passive:true});
+
+    // Lectura sostenida
+    setTimeout(function(){ gtag('event','permanencia_30s',{'pagina':'implantes-cigomaticos'}); }, 30000);
+    setTimeout(function(){ gtag('event','permanencia_60s',{'pagina':'implantes-cigomaticos'}); }, 60000);
+  })();
 </script>
 </head>
 <body>
@@ -831,18 +912,18 @@ p{margin:0 0 15px;max-width:66ch}
       <a class="canal canal-mail" href="mailto:drmartinovicg@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>Correo</a>
     </div>
     <div class="contacto-grid">
-      <div class="dato">
+      <div class="dato dato-wa">
         <div class="dato-et">WhatsApp</div>
-        <a onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20una%20evaluaci%C3%B3n%20por%20implantes%20cigom%C3%A1ticos.">Escribir ahora</a>
+        <a onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20una%20evaluaci%C3%B3n%20por%20implantes%20cigom%C3%A1ticos.">+56 9 3567 3359<span class="dato-nota">Respuesta directa · Escríbeme</span></a>
       </div>
       <div class="dato">
         <div class="dato-et">Teléfono</div>
-        <a onclick="convTelefono()" href="tel:+56229935795">+56 2 2993 5795</a><br>
-        <a onclick="convTelefono()" href="tel:+56935673359">+56 9 3567 3359</a>
+        <a onclick="convTelefono()" href="tel:+56229935795">+56 2 2993 5795<span class="dato-nota">Consulta</span></a><br>
+        <a onclick="convTelefono()" href="tel:+56935673359">+56 9 3567 3359<span class="dato-nota">Móvil</span></a>
       </div>
       <div class="dato">
         <div class="dato-et">Correo</div>
-        <a href="mailto:drmartinovicg@gmail.com">drmartinovicg@gmail.com</a>
+        <a href="mailto:drmartinovicg@gmail.com">drmartinovicg@gmail.com<span class="dato-nota">Para enviar exámenes o imágenes</span></a>
       </div>
       <div class="dato">
         <div class="dato-et">Consulta</div>
