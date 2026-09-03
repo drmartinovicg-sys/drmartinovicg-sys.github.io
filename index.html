@@ -236,11 +236,15 @@ p{margin:0 0 15px;max-width:66ch}
 .gris{color:var(--gris)}
 
 /* ---------- quién ---------- */
-.perfil{display:grid;grid-template-columns:300px 1fr;gap:38px;align-items:start}
-@media(max-width:860px){
+.perfil{display:grid;grid-template-columns:300px minmax(0,1fr);gap:38px;align-items:start}
+.retrato{margin:0;max-width:300px;width:100%}
+@media(max-width:760px){
   .perfil{grid-template-columns:1fr;gap:24px}
-  .retrato{max-width:300px}
+  .retrato{max-width:250px;margin-inline:auto}
 }
+@media(max-width:860px){
+  
+  }
 .credenciales{
   border-left:2px solid var(--acero);padding-left:18px;margin-top:26px;
   font-family:var(--dato);font-size:12.5px;line-height:1.85;color:var(--gris);
@@ -249,12 +253,8 @@ p{margin:0 0 15px;max-width:66ch}
   letter-spacing:.12em;text-transform:uppercase;margin-top:14px}
 .credenciales b:first-child{margin-top:0}
 
-.retrato{margin:0;position:relative}
-.retrato img{
-  width:100%;height:auto;display:block;border-radius:0;
-  mix-blend-mode:multiply;
-}
-@supports not (mix-blend-mode:multiply){.retrato img{mix-blend-mode:normal}}
+.retrato{position:relative}
+.retrato img{width:100%;height:auto;display:block;border-radius:0}
 .banda-foto{margin:0 0 26px}
 .banda-foto img{width:100%;height:auto;border-radius:2px;display:block;
   filter:saturate(.92) contrast(1.03)}
