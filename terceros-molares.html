@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://drmartinovic.cl/terceros-molares">
+<title>Extracción de muelas del juicio en Las Condes — Dr. Gonzalo Martinovic, cirujano maxilofacial</title>
+<meta name="description" content="Extracción de terceros molares retenidos e incluidos en Las Condes, Santiago. Casos complejos, cercanía al nervio dentario, anestesia local, sedación o pabellón. Planificación con tomografía 3D.">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://drmartinovic.cl/terceros-molares">
+<meta property="og:title" content="Extracción de muelas del juicio en Las Condes — Dr. Gonzalo Martinovic">
+<meta property="og:description" content="Terceros molares retenidos, incluidos o con cercanía al nervio dentario. Evaluación con tomografía y las cuatro en una sesión cuando es posible.">
+<meta name="theme-color" content="#121F38">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --profundo:#121F38;
+  --azul:#23477F;
+  --acero:#8FB0DC;
+  --hueso:#D8CFC0;
+  --radiografia:#EBEEF4;
+  --papel:#F6F8FB;
+  --tinta:#131B2B;
+  --gris:#5E6880;
+  --linea:#D6DBE6;
+
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --texto:'IBM Plex Sans',system-ui,sans-serif;
+  --dato:'IBM Plex Mono',ui-monospace,monospace;
+
+  --rail:76px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:hidden;max-width:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--papel);color:var(--tinta);
+  font-family:var(--texto);font-size:16.5px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+
+.envoltura{max-width:1080px;margin:0 auto;padding:0 22px}
+
+/* ---------- riel de medición ---------- */
+.riel{position:relative;padding-left:var(--rail)}
+.riel::before{
+  content:"";position:absolute;left:34px;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--linea) 12%,var(--linea) 88%,transparent);
+}
+.marca{
+  position:absolute;left:0;top:2px;width:var(--rail);
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.14em;
+  color:var(--acero);text-transform:uppercase;
+}
+@media(max-width:760px){
+  :root{--rail:0px}
+  .riel{padding-left:0}
+  .riel::before{display:none}
+  .envoltura{padding:0 20px}
+  .marca{position:static;width:auto;display:block;margin-bottom:10px;color:var(--azul)}
+}
+
+/* ---------- navegación ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;background:rgba(246,248,251,.93);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:1080px;margin:0 auto;padding:11px 22px}
+.nav-marca{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em;line-height:1.15}
+.nav-marca a{text-decoration:none}
+.nav-lema{
+  display:inline-block;position:relative;overflow:hidden;isolation:isolate;
+  font-family:var(--dato);font-size:9.5px;letter-spacing:.17em;font-weight:500;
+  text-transform:uppercase;color:#fff;margin-top:4px;
+  padding:3px 10px 3px 9px;border-radius:2px;
+  background:linear-gradient(135deg,#1A4FB5 0%,#1440A0 55%,#0F3282 100%);
+  box-shadow:0 1px 6px rgba(20,64,160,.28);
+}
+.nav-lema::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,
+    rgba(255,255,255,.22) 47%,
+    rgba(255,255,255,.42) 50%,
+    rgba(255,255,255,.22) 53%,
+    transparent 62%);
+  background-size:260% 100%;background-position:180% 0;
+  animation:destello 7.5s ease-in-out 1.4s infinite;
+}
+@keyframes destello{
+  0%{background-position:180% 0}
+  38%,100%{background-position:-90% 0}
+}
+@media(prefers-reduced-motion:reduce){.nav-lema::after{animation:none;opacity:.3}}
+.nav-links{display:flex;gap:20px;font-size:13.5px;color:var(--gris)}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--azul)}
+@media(max-width:640px){.nav-links{display:none}}
+
+/* ---------- portada ---------- */
+.portada{background:var(--profundo);color:#fff;position:relative;overflow:hidden}
+.portada-in{max-width:1080px;margin:0 auto;padding:70px 22px 58px}
+@media(max-width:860px){.portada-in{padding:44px 22px 42px}}
+.cejilla{
+  font-family:var(--dato);font-size:11px;letter-spacing:.22em;
+  color:var(--acero);text-transform:uppercase;margin-bottom:20px;
+}
+.portada h1{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(2.05rem,5.4vw,3.5rem);line-height:1.06;
+  letter-spacing:-.025em;margin:0 0 20px;max-width:19ch;
+}
+.portada h1 em{font-style:normal;color:var(--acero)}
+.bajada{font-size:17px;line-height:1.6;color:#C3CFE4;max-width:50ch;margin:0 0 28px}
+.acciones{display:flex;gap:11px;flex-wrap:wrap}
+
+.btn{
+  display:inline-block;font-family:var(--texto);font-size:14.5px;font-weight:600;
+  padding:12px 22px;border-radius:2px;text-decoration:none;
+  border:1px solid transparent;transition:transform .12s ease,background .15s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-a{background:var(--acero);color:var(--profundo)}
+.btn-a:hover{background:#AAC5E8}
+.btn-b{border-color:rgba(255,255,255,.32);color:#fff}
+.btn-b:hover{background:rgba(255,255,255,.08)}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- respuesta rápida: informe de lectura inmediata ---------- */
+.respuesta{
+  margin-top:34px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(143,176,220,.28);border-radius:3px;
+  padding:20px 22px;max-width:760px;
+}
+.respuesta-et{
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--acero);margin-bottom:10px;
+}
+.respuesta p{margin:0;font-size:15.5px;line-height:1.7;color:#DDE6F2;max-width:none}
+
+/* ---------- secciones ---------- */
+.seccion{padding:64px 0;border-top:1px solid var(--linea)}
+.seccion:first-of-type{border-top:0}
+@media(max-width:760px){.seccion{padding:44px 0}}
+
+h2{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.15;
+  letter-spacing:-.02em;margin:0 0 18px;
+}
+h3{font-family:var(--display);font-weight:500;font-size:1.15rem;
+  letter-spacing:-.01em;margin:0 0 8px}
+p{margin:0 0 15px;max-width:66ch}
+.gris{color:var(--gris)}
+
+.indicacion{
+  font-family:var(--dato);font-size:12.5px;line-height:1.7;color:var(--gris);
+  background:var(--radiografia);border-radius:2px;padding:11px 13px;margin-top:14px;max-width:66ch;
+}
+.indicacion span{color:var(--azul)}
+.consultar{list-style:none;padding:0;margin:16px 0 0;max-width:66ch}
+.consultar li{
+  position:relative;padding-left:20px;margin-bottom:7px;
+  font-size:15px;line-height:1.55;
+}
+.consultar li::before{
+  content:"";position:absolute;left:2px;top:9px;
+  width:7px;height:1.5px;background:var(--acero);
+}
+
+/* ---------- casos ---------- */
+.caso{margin:26px 0 0;padding:18px;background:var(--radiografia);border-radius:3px;max-width:820px}
+.caso img{width:100%;height:auto;display:block;border-radius:2px}
+.caso-tit{
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--azul);margin-bottom:12px;
+}
+.caso-par{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.caso-par{grid-template-columns:1fr}}
+.caso-et{
+  display:block;font-family:var(--dato);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gris);margin-top:7px;
+}
+.caso-pie{font-size:12px;line-height:1.65;color:var(--gris);margin:12px 0 0;max-width:62ch}
+
+/* ---------- comparativa: las dos vías ---------- */
+.vias{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:22px;max-width:820px}
+@media(max-width:640px){.vias{grid-template-columns:1fr}}
+.via{background:var(--radiografia);padding:20px 22px}
+.via-et{
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;margin-bottom:12px;color:var(--gris);
+}
+.via-b .via-et{color:var(--azul)}
+.via ul{list-style:none;padding:0;margin:0}
+.via li{
+  position:relative;padding-left:18px;margin-bottom:8px;
+  font-size:14.5px;line-height:1.55;
+}
+.via li::before{
+  content:"";position:absolute;left:0;top:9px;
+  width:7px;height:1.5px;background:var(--gris);
+}
+.via-b li::before{background:var(--acero)}
+
+/* ---------- pasos ---------- */
+.pasos{counter-reset:paso;display:grid;gap:2px;margin-top:6px;max-width:820px}
+.paso{
+  background:var(--radiografia);padding:20px 22px;position:relative;
+  display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start;
+}
+.paso::before{
+  counter-increment:paso;content:counter(paso,decimal-leading-zero);
+  font-family:var(--dato);font-size:12px;color:var(--acero);padding-top:3px;
+}
+
+/* ---------- respaldo científico ---------- */
+.respaldo{background:var(--profundo);color:#fff}
+.respaldo h2{color:#fff}
+.respaldo p{color:#C3CFE4}
+.respaldo .marca{color:var(--acero)}
+.respaldo .riel::before{background:linear-gradient(to bottom,transparent,rgba(143,176,220,.3) 12%,rgba(143,176,220,.3) 88%,transparent)}
+.metricas{display:flex;gap:34px;flex-wrap:wrap;margin:8px 0 26px}
+.metrica-n{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1;color:#fff}
+.metrica-et{font-family:var(--dato);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--acero);margin-top:6px}
+.refs{list-style:none;padding:0;margin:18px 0 0;max-width:72ch}
+.refs li{
+  border-left:2px solid rgba(143,176,220,.45);padding:2px 0 2px 16px;margin-bottom:14px;
+  font-size:14px;line-height:1.6;color:#C3CFE4;
+}
+.refs li b{color:#fff;font-weight:500}
+.refs li a{color:var(--acero);text-decoration:none}
+.refs li a:hover{text-decoration:underline}
+.revision{
+  margin-top:26px;font-family:var(--dato);font-size:12px;line-height:1.7;
+  color:rgba(255,255,255,.62);max-width:72ch;
+}
+
+/* ---------- preguntas frecuentes ---------- */
+.faq{max-width:820px;margin-top:6px}
+.faq details{border-top:1px solid var(--linea)}
+.faq details:last-child{border-bottom:1px solid var(--linea)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:17px 34px 17px 0;position:relative;
+  font-family:var(--display);font-weight:500;font-size:1.02rem;letter-spacing:-.01em;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:4px;top:50%;transform:translateY(-52%);
+  font-family:var(--dato);font-size:17px;color:var(--acero);
+}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:0 0 17px;font-size:15px;color:var(--gris);max-width:66ch}
+.faq details a{color:var(--azul)}
+
+/* ---------- lema ---------- */
+.lema{
+  position:relative;overflow:hidden;isolation:isolate;
+  background:linear-gradient(135deg,#1A4FB5 0%,#1440A0 55%,#0F3282 100%);
+  color:#fff;padding:74px 0;text-align:center;
+}
+.lema-brillo{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,
+    rgba(255,255,255,.16) 47%,
+    rgba(255,255,255,.28) 50%,
+    rgba(255,255,255,.16) 53%,
+    transparent 62%);
+  background-size:260% 100%;background-position:180% 0;
+  animation:destello 7.5s ease-in-out 1.4s infinite;
+}
+.lema-regla{
+  display:block;width:52px;height:2px;background:var(--hueso);
+  margin:0 auto 20px;opacity:.9;
+}
+.lema-texto{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(1.9rem,6vw,3.5rem);line-height:1.04;
+  letter-spacing:-.028em;margin:0;max-width:none;
+  text-shadow:0 1px 24px rgba(8,26,66,.32);
+}
+.lema-pie{
+  font-family:var(--dato);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.72);
+  margin:18px 0 0;max-width:none;
+}
+@media(max-width:560px){.lema{padding:52px 0}}
+@media(prefers-reduced-motion:reduce){.lema-brillo{animation:none;opacity:.35}}
+
+/* ---------- contacto: acciones con color de canal ---------- */
+.contacto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:22px;margin-top:8px}
+.dato{
+  position:relative;background:var(--radiografia);border-radius:3px;
+  padding:17px 18px 16px;border-left:2px solid var(--acero);
+  transition:border-color .15s ease,background .15s ease,transform .12s ease;
+}
+.dato:hover{border-left-color:var(--azul);background:#E3E8F1;transform:translateY(-1px)}
+.dato-et{font-family:var(--dato);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gris);margin-bottom:7px}
+.dato a{
+  font-size:15.5px;text-decoration:none;color:var(--tinta);font-weight:500;
+  line-height:1.5;display:inline-block;
+}
+.dato a:hover{color:var(--azul)}
+.dato-nota{
+  display:block;font-family:var(--dato);font-size:11px;letter-spacing:.04em;
+  color:var(--gris);margin-top:6px;font-weight:400;
+}
+.dato-wa{border-left-color:#25D366;background:#E9F8EF}
+.dato-wa:hover{border-left-color:#1FBE5B;background:#DDF3E5}
+.dato-wa a{color:#0B5A31;font-weight:600}
+.dato-wa a:hover{color:#06301A}
+
+.canales{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 34px}
+.canal{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--texto);font-size:15px;font-weight:600;
+  padding:13px 22px;border-radius:2px;text-decoration:none;
+  border:1px solid transparent;
+  transition:transform .12s ease,background .15s ease,box-shadow .15s ease;
+}
+.canal svg{width:19px;height:19px;flex:none;fill:currentColor}
+.canal:active{transform:translateY(1px)}
+.canal-wa{background:#25D366;color:#06301A;box-shadow:0 2px 12px rgba(37,211,102,.28);
+  animation:destelloVerde 4.2s ease-in-out 3s infinite}
+.canal-wa:hover{animation:none}
+@keyframes destelloVerde{
+  0%,72%,100%{box-shadow:0 2px 12px rgba(37,211,102,.28)}
+  80%{box-shadow:0 2px 12px rgba(37,211,102,.28), 0 0 20px 4px rgba(37,211,102,.5)}
+  88%{box-shadow:0 2px 12px rgba(37,211,102,.28)}
+}
+@media(prefers-reduced-motion:reduce){.canal-wa{animation:none}}
+.canal-wa:hover{background:#1FBE5B;box-shadow:0 4px 18px rgba(37,211,102,.38)}
+.canal-tel{background:var(--profundo);color:#fff}
+.canal-tel:hover{background:var(--azul)}
+.canal-mail{background:var(--radiografia);color:var(--profundo);border-color:var(--linea)}
+.canal-mail:hover{background:var(--acero);border-color:var(--acero);color:var(--profundo)}
+@media(max-width:560px){
+  .canales{flex-direction:column;gap:10px}
+  .canal{justify-content:center;width:100%}
+}
+
+/* botón flotante de WhatsApp */
+.wa-flota{
+  position:fixed;right:18px;bottom:18px;z-index:80;
+  display:flex;align-items:center;justify-content:center;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#06301A;text-decoration:none;
+  box-shadow:0 6px 20px rgba(8,40,22,.34);
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.wa-flota svg{width:29px;height:29px;fill:currentColor}
+.wa-flota{animation:latido 3.4s ease-in-out 2s infinite}
+.wa-flota:hover{transform:scale(1.06);box-shadow:0 8px 26px rgba(8,40,22,.44);animation:none}
+@keyframes latido{
+  0%,58%,100%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34), 0 0 0 0 rgba(37,211,102,0);
+    background:#25D366}
+  64%{transform:scale(1.13);
+    box-shadow:0 8px 26px rgba(8,40,22,.42), 0 0 22px 6px rgba(37,211,102,.55);
+    background:#2EEA76}
+  70%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34), 0 0 0 0 rgba(37,211,102,0);
+    background:#25D366}
+  76%{transform:scale(1.10);
+    box-shadow:0 8px 26px rgba(8,40,22,.42), 0 0 20px 5px rgba(37,211,102,.48);
+    background:#2EEA76}
+  82%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34), 0 0 0 0 rgba(37,211,102,0);
+    background:#25D366}
+}
+.wa-flota::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  border:2px solid rgba(37,211,102,.55);
+  animation:pulso 3.2s ease-out infinite;
+}
+@keyframes pulso{
+  0%{transform:scale(1);opacity:.7}
+  70%,100%{transform:scale(1.5);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .wa-flota::after{animation:none;opacity:0}
+  .wa-flota{animation:none}
+}
+@media(max-width:560px){.wa-flota{right:14px;bottom:14px;width:52px;height:52px}}
+
+.pie{
+  border-top:1px solid var(--linea);padding:26px 0 40px;
+  font-size:12.5px;line-height:1.7;color:var(--gris);
+}
+.pie a{color:var(--gris)}
+
+.caso-video{position:relative}
+.caso-video video{width:100%;max-width:520px;height:auto;display:block;
+  border-radius:2px;background:#000;margin-inline:auto;cursor:pointer}
+
+:focus-visible{outline:2px solid var(--acero);outline-offset:3px}
+</style>
+<!-- Google tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18343247822"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18343247822');
+  gtag('config', 'G-L25Q2L8G50');
+
+  function convWhatsApp(){
+    gtag('event','conversion',{'send_to':'AW-18343247822/HrUOCNyYneIcEM7_3qpE'});
+    return true;
+  }
+  function convTelefono(){
+    gtag('event','conversion',{'send_to':'AW-18343247822/Ro7FCKncoOIcEM7_3qpE'});
+    return true;
+  }
+
+  // --- Medicion de interes real (GA4) ---
+  (function(){
+    var origWA = window.convWhatsApp, origTel = window.convTelefono;
+    window.convWhatsApp = function(){
+      gtag('event','contacto',{'metodo':'whatsapp','pagina':'terceros-molares'});
+      return origWA();
+    };
+    window.convTelefono = function(){
+      gtag('event','contacto',{'metodo':'telefono','pagina':'terceros-molares'});
+      return origTel();
+    };
+
+    // Profundidad de lectura: 25/50/75/100%
+    var hitos = [25,50,75,100], vistos = {};
+    function medirScroll(){
+      var alto = document.documentElement.scrollHeight - window.innerHeight;
+      if (alto <= 0) return;
+      var pct = (window.scrollY / alto) * 100;
+      hitos.forEach(function(m){
+        if (pct >= m && !vistos[m]) {
+          vistos[m] = true;
+          gtag('event','scroll_'+m,{'pagina':'terceros-molares'});
+        }
+      });
+    }
+    var t;
+    window.addEventListener('scroll', function(){
+      clearTimeout(t); t = setTimeout(medirScroll, 200);
+    }, {passive:true});
+
+    // Lectura sostenida
+    setTimeout(function(){ gtag('event','permanencia_30s',{'pagina':'terceros-molares'}); }, 30000);
+    setTimeout(function(){ gtag('event','permanencia_60s',{'pagina':'terceros-molares'}); }, 60000);
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div class="nav-firma">
+      <div class="nav-marca"><a href="/">Dr. Gonzalo Martinovic</a></div>
+      <div class="nav-lema">Cirugía que cambia vidas</div>
+    </div>
+    <div class="nav-links">
+      <a href="/">Inicio</a>
+      <a href="#candidatos">¿Hay que sacarlas?</a>
+      <a href="#costo">Costo</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="portada">
+  <div class="portada-in">
+    <div class="cejilla">Terceros molares · Las Condes, Santiago</div>
+    <h1>Muelas del juicio: <em>las que nadie quiere sacar.</em></h1>
+    <p class="bajada">
+      Retenidas, horizontales, pegadas al nervio dentario o con la raíz dentro del
+      seno maxilar. Los casos que la consulta dental deriva se resuelven en pabellón,
+      planificados sobre tomografía y con la anestesia que corresponda a cada
+      situación.
+    </p>
+    <div class="acciones">
+      <a class="btn btn-a" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20una%20evaluaci%C3%B3n%20por%20mis%20muelas%20del%20juicio.">Agendar evaluación</a>
+      <a class="btn btn-b" href="#candidatos">¿Hay que sacarlas?</a>
+    </div>
+
+    <div class="respuesta">
+      <div class="respuesta-et">Respuesta rápida</div>
+      <p>
+        La extracción de terceros molares está indicada cuando la muela del juicio
+        provoca dolor, infecciones repetidas (pericoronaritis), caries en el molar
+        vecino, quistes o apiñamiento, y también de forma preventiva en molares
+        retenidos con riesgo de complicación. Un cirujano maxilofacial resuelve
+        especialmente los casos complejos: molares incluidos en el hueso, en posición
+        horizontal, con raíces cercanas al nervio dentario inferior o proyectadas
+        hacia el seno maxilar. La evaluación se hace con radiografía panorámica y,
+        cuando hay proximidad al nervio, con tomografía Cone Beam. El procedimiento
+        puede realizarse con anestesia local en consulta, con sedación o en pabellón
+        bajo anestesia general, según la complejidad del caso y la preferencia del
+        paciente. Cuando las condiciones lo permiten, las cuatro se extraen en una
+        sola sesión.
+      </p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ CUÁNDO SACARLAS ============ -->
+<section class="seccion" id="candidatos">
+  <div class="envoltura riel">
+    <span class="marca">Indicación</span>
+    <h2>¿Hay que sacarlas o no?</h2>
+    <p class="gris">
+      No toda muela del juicio debe extraerse. Cuando erupciona en buena posición,
+      tiene espacio y se puede higienizar, puede conservarse. Las señales que sí
+      indican extracción:
+    </p>
+    <ul class="consultar">
+      <li>Dolor o inflamación repetida en la zona de atrás (pericoronaritis)</li>
+      <li>Infecciones a repetición, a veces con dificultad para abrir la boca</li>
+      <li>Caries en la muela del juicio o en el segundo molar por contacto</li>
+      <li>La muela no alcanzó a salir y quedó retenida dentro del hueso</li>
+      <li>Está en posición horizontal, empujando al diente de adelante</li>
+      <li>Apiñamiento de los dientes anteriores o indicación de tu ortodoncista</li>
+      <li>Quiste o lesión asociada al molar detectada en una radiografía</li>
+      <li>Vas a iniciar tratamiento de ortodoncia y tu ortodoncista las indicó</li>
+    </ul>
+    <div class="indicacion">
+      <span>Nota —</span> muchas extracciones se indican de forma preventiva, antes
+      de que aparezcan síntomas. La razón es simple: entre los 18 y los 25 años las
+      raíces están menos formadas, el hueso es más elástico y la recuperación es
+      notoriamente más rápida que a los 40.
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASOS COMPLEJOS ============ -->
+<section class="seccion">
+  <div class="envoltura riel">
+    <span class="marca">Complejidad</span>
+    <h2>Cuándo conviene un cirujano maxilofacial</h2>
+    <p class="gris">
+      Una muela del juicio erupcionada y bien posicionada la resuelve tu odontólogo
+      sin problema. Estas son las situaciones en que la extracción deja de ser una
+      exodoncia y pasa a ser una cirugía:
+    </p>
+    <div class="vias">
+      <div class="via">
+        <div class="via-et">Extracción simple</div>
+        <ul>
+          <li>La muela erupcionó y es visible en boca</li>
+          <li>Está en posición vertical, con espacio</li>
+          <li>Raíces formadas y separadas del nervio</li>
+          <li>Anestesia local en consulta</li>
+          <li>La resuelve el odontólogo general</li>
+        </ul>
+      </div>
+      <div class="via via-b">
+        <div class="via-et">Extracción quirúrgica compleja</div>
+        <ul>
+          <li>Molar retenido o incluido dentro del hueso</li>
+          <li>Posición horizontal, mesioangulada o invertida</li>
+          <li>Raíces en contacto con el nervio dentario inferior</li>
+          <li>Raíz proyectada hacia el seno maxilar</li>
+          <li>Quiste o lesión asociada</li>
+          <li>Extracciones previas fallidas o raíz remanente</li>
+          <li>Requiere tomografía, pabellón o sedación</li>
+        </ul>
+      </div>
+    </div>
+    <p class="gris" style="margin-top:22px">
+      El punto crítico en la mandíbula es el <strong>nervio dentario inferior</strong>,
+      que da la sensibilidad del labio y el mentón. Cuando la radiografía muestra que
+      las raíces lo cruzan, la tomografía Cone Beam permite ver la relación exacta en
+      tres dimensiones y planificar la técnica que minimiza el riesgo. Esa es la
+      diferencia entre operar viendo y operar suponiendo.
+    </p>
+  </div>
+</section>
+
+<!-- ============ ANESTESIA ============ -->
+<section class="seccion" id="anestesia">
+  <div class="envoltura riel">
+    <span class="marca">Modalidad</span>
+    <h2>Tres formas de hacerlo</h2>
+    <p class="gris" style="margin-bottom:22px">
+      La elección depende de la complejidad del caso, de cuántas muelas se extraen y
+      de cuánta ansiedad te genere el procedimiento. Ninguna es mejor que otra en
+      abstracto: se decide contigo en la evaluación.
+    </p>
+    <div class="pasos">
+      <div class="paso">
+        <div>
+          <h3>Anestesia local, en consulta</h3>
+          <p class="gris" style="margin:0">
+            Estás despierto y la zona se anestesia por completo. Es la modalidad
+            habitual para uno o dos molares de complejidad baja o media. Sales
+            caminando y no necesitas acompañante ni ayuno.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>Sedación consciente</h3>
+          <p class="gris" style="margin:0">
+            Con anestesia local más medicación endovenosa administrada por
+            anestesiólogo. Estás relajado y somnoliento, sin registro claro del
+            procedimiento. Indicada cuando hay ansiedad importante o se extraen
+            varias piezas en una sesión. Requiere ayuno y acompañante.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>Pabellón con anestesia general</h3>
+          <p class="gris" style="margin:0">
+            Duermes durante todo el procedimiento. Es la indicación para molares
+            profundamente incluidos, extracción de las cuatro piezas complejas en una
+            sesión, o pacientes con condiciones que lo hagan aconsejable. Requiere
+            exámenes preoperatorios, ayuno y acompañante.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>Las cuatro en una sesión</h3>
+          <p class="gris" style="margin:0">
+            Cuando las condiciones lo permiten, se extraen las cuatro muelas del
+            juicio en un solo procedimiento. La ventaja es concreta: un único
+            postoperatorio, una sola vez de licencia o reposo, en lugar de repetir el
+            proceso cuatro veces. Se define en la evaluación.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECUPERACIÓN ============ -->
+<section class="seccion" id="recuperacion">
+  <div class="envoltura riel">
+    <span class="marca">Postoperatorio</span>
+    <h2>Cómo es la recuperación</h2>
+    <p>
+      Los primeros dos a tres días son los de mayor inflamación: es la respuesta
+      normal del cuerpo, no una complicación. La hinchazón alcanza su máximo alrededor
+      de las 48 a 72 horas y luego cede. Con las indicaciones seguidas al pie de la
+      letra —frío las primeras horas, medicación en horario, dieta blanda y fría— la
+      mayoría de los pacientes retoma actividad normal entre el tercer y el quinto
+      día.
+    </p>
+    <ul class="consultar">
+      <li><strong>Primeras 24 horas:</strong> reposo relativo, frío local, dieta líquida o blanda fría, nada de enjuagues fuertes</li>
+      <li><strong>Días 2 a 3:</strong> peak de inflamación, posible dificultad para abrir la boca y moretón en la mejilla — todo esperable</li>
+      <li><strong>Días 4 a 7:</strong> disminución progresiva, se retoma alimentación blanda tibia y actividad habitual</li>
+      <li><strong>Control:</strong> revisión y retiro de puntos según el caso</li>
+    </ul>
+    <div class="indicacion">
+      <span>Importante —</span> no fumar durante el postoperatorio inmediato y no
+      hacer succión con bombilla. Son las dos causas más frecuentes de alveolitis,
+      la complicación más molesta de esta cirugía y también la más evitable.
+    </div>
+  </div>
+</section>
+
+<!-- ============ COSTO ============ -->
+<section class="seccion" id="costo">
+  <div class="envoltura riel">
+    <span class="marca">Costo</span>
+    <h2>¿Cuánto cuesta sacarse las muelas del juicio?</h2>
+    <p>
+      La extracción de un tercer molar erupcionado, con anestesia local en consulta,
+      parte <strong>desde $90.000 por pieza</strong>. Un molar retenido, en posición
+      horizontal o con cercanía al nervio dentario, requiere planificación con
+      tomografía y mayor tiempo quirúrgico, y se presupuesta caso a caso tras la
+      evaluación.
+    </p>
+    <p>Los factores que determinan el valor:</p>
+    <ul class="consultar">
+      <li><strong>La posición del molar</strong> — erupcionado, semi-retenido o incluido en el hueso son escenarios quirúrgicos distintos</li>
+      <li><strong>Cuántas piezas se extraen</strong> — hacerlas en una sesión suele ser más conveniente que cuatro procedimientos separados</li>
+      <li><strong>La modalidad de anestesia</strong> — la sedación y la anestesia general suman los costos de anestesiólogo y pabellón</li>
+      <li><strong>El estudio previo</strong> — radiografía panorámica, y tomografía Cone Beam cuando hay cercanía al nervio</li>
+      <li><strong>Los insumos quirúrgicos</strong> — material estéril, suturas y elementos desechables del procedimiento, detallados en el presupuesto</li>
+    </ul>
+    <p style="margin-top:16px">
+      Tras la evaluación recibes un <strong>presupuesto detallado por escrito</strong>,
+      con las alternativas de modalidad y sus valores. Sin costos que aparezcan
+      después.
+    </p>
+    <p class="gris">
+      Se atienden todas las previsiones. La cirugía de terceros molares suele tener
+      cobertura parcial de Isapre y seguros complementarios; la consulta entrega la
+      documentación necesaria para gestionar el reembolso según tu plan.
+    </p>
+  </div>
+</section>
+
+<!-- ============ RESPALDO ============ -->
+<section class="seccion respaldo" id="respaldo">
+  <div class="envoltura riel">
+    <span class="marca">Quién opera</span>
+    <h2>Un cirujano maxilofacial, no una extracción más</h2>
+    <p>
+      Soy especialista en Cirugía y Traumatología Bucal y Maxilofacial (Universidad
+      Mayor) y Magíster en Ciencias Médicas con mención en Cirugía (Universidad de La
+      Frontera). Integro el Servicio de Cirugía y Traumatología Bucomaxilofacial del
+      Hospital Militar de Santiago, donde fui residente jefe del Servicio de Urgencia.
+    </p>
+    <p>
+      El volumen hospitalario es lo que da oficio en esta cirugía: los molares
+      profundamente incluidos, los que se fracturaron en un intento previo, los que
+      están sobre el nervio. Es también la razón de que trabaje habitualmente con
+      pacientes derivados por odontólogos que prefieren no asumir un caso complejo.
+    </p>
+    <div class="metricas">
+      <div>
+        <div class="metrica-n">14</div>
+        <div class="metrica-et">Publicaciones científicas</div>
+      </div>
+      <div>
+        <div class="metrica-n">3D</div>
+        <div class="metrica-et">Tomografía en casos complejos</div>
+      </div>
+      <div>
+        <div class="metrica-n">3</div>
+        <div class="metrica-et">Modalidades de anestesia</div>
+      </div>
+    </div>
+    <p class="revision">
+      Última revisión médica: 3 de septiembre de 2026 — Dr. Gonzalo Martinovic
+      Guzmán, especialista en Cirugía y Traumatología Bucal y Maxilofacial, Magíster
+      en Ciencias Médicas (mención Cirugía).
+      <a href="https://www.researchgate.net/profile/Gonzalo-Martinovic" target="_blank" rel="noopener" style="color:var(--acero)">Perfil en ResearchGate</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="seccion" id="faq">
+  <div class="envoltura riel">
+    <span class="marca">Preguntas</span>
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+
+      <details>
+        <summary>¿Duele sacarse las muelas del juicio?</summary>
+        <p>
+          Durante el procedimiento no: la zona está completamente anestesiada, y si
+          eliges sedación o anestesia general no tienes registro del procedimiento.
+          El postoperatorio se maneja con analgésicos indicados, y la mayoría de los
+          pacientes describe más molestia por la inflamación y la dificultad para
+          abrir la boca que por dolor propiamente tal.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cuántos días de reposo necesito?</summary>
+        <p>
+          Con extracciones simples, uno a dos días. Con extracciones quirúrgicas o
+          las cuatro en una sesión, entre tres y cinco días es lo habitual. Conviene
+          programarlas un jueves o viernes para aprovechar el fin de semana. Si
+          necesitas licencia médica, se entrega según el caso.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Me pueden sacar las cuatro de una vez?</summary>
+        <p>
+          Sí, cuando las condiciones lo permiten, y en muchos casos es lo más
+          conveniente: un solo postoperatorio en lugar de cuatro. Se realiza
+          habitualmente con sedación o anestesia general. La decisión depende de la
+          complejidad de cada pieza y se define en la evaluación.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Se me va a dormir el labio? ¿Es permanente?</summary>
+        <p>
+          La alteración transitoria de la sensibilidad del labio y el mentón es el
+          riesgo más conocido de esta cirugía, y ocurre por la proximidad de las
+          raíces al nervio dentario inferior. En la gran mayoría de los casos es
+          temporal y se recupera en semanas o meses. Cuando la radiografía muestra
+          contacto entre la raíz y el nervio, la tomografía Cone Beam permite ver la
+          relación exacta y planificar la técnica que reduce ese riesgo, incluyendo
+          alternativas como la coronectomía en casos seleccionados.
+        </p>
+      </details>
+
+      <details>
+        <summary>Tengo miedo. ¿Puedo dormirme para la cirugía?</summary>
+        <p>
+          Sí. La sedación consciente y la anestesia general existen precisamente para
+          eso, y son alternativas absolutamente válidas — no una exageración. Se
+          realizan con anestesiólogo y requieren ayuno, exámenes previos y
+          acompañante. Coméntalo en la evaluación y lo planificamos así.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Qué es la alveolitis y cómo la evito?</summary>
+        <p>
+          Es la inflamación del alvéolo cuando se pierde el coágulo que protege la
+          herida, y produce un dolor intenso que aparece típicamente al tercer o
+          cuarto día. Tiene tratamiento y se resuelve. Las dos causas más frecuentes
+          y evitables son fumar en el postoperatorio y hacer succión con bombilla.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Tengo que sacármelas si no me duelen?</summary>
+        <p>
+          No siempre. Si están bien posicionadas, erupcionadas y puedes higienizarlas,
+          pueden conservarse con controles. Se indica extracción preventiva cuando
+          están retenidas con riesgo de complicación, cuando comprometen al segundo
+          molar, cuando hay quiste asociado o cuando tu ortodoncista lo requiere. La
+          radiografía y el examen definen cuál es tu caso.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿A qué edad conviene extraerlas?</summary>
+        <p>
+          Entre los 18 y los 25 años el procedimiento suele ser más simple y la
+          recuperación más rápida: las raíces están menos formadas y el hueso es más
+          elástico. Eso no significa que después no se pueda — se extraen a cualquier
+          edad cuando hay indicación, solo que el postoperatorio tiende a ser algo más
+          largo.
+        </p>
+      </details>
+
+      <details>
+        <summary>Mi dentista me derivó. ¿Vuelvo con él después?</summary>
+        <p>
+          Sí. Resuelvo la etapa quirúrgica y tu odontólogo recibe el informe del
+          procedimiento para continuar con tu tratamiento habitual.
+          <a href="/#colegas">Más sobre derivación</a>.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEMA ============ -->
+<section class="lema">
+  <div class="lema-brillo" aria-hidden="true"></div>
+  <div class="envoltura">
+    <span class="lema-regla" aria-hidden="true"></span>
+    <p class="lema-texto">Cirugía que cambia vidas</p>
+    <p class="lema-pie">Dr. Gonzalo Martinovic · Cirugía maxilofacial</p>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="seccion" id="contacto">
+  <div class="envoltura riel">
+    <span class="marca">Contacto</span>
+    <h2>Agendar una evaluación</h2>
+    <p class="gris">
+      Escríbeme por WhatsApp o correo con tu nombre y una descripción breve de tu
+      caso. Si ya tienes radiografía panorámica o tomografía, menciónalo — permite
+      adelantar buena parte del estudio.
+    </p>
+    <div class="canales">
+      <a class="canal canal-wa" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20una%20evaluaci%C3%B3n%20por%20mis%20muelas%20del%20juicio.">WhatsApp</a>
+      <a class="canal canal-tel" onclick="convTelefono()" href="tel:+56935673359">Llamar</a>
+      <a class="canal canal-mail" href="mailto:drmartinovicg@gmail.com">Correo</a>
+    </div>
+    <div class="contacto-grid">
+      <div class="dato dato-wa">
+        <div class="dato-et">WhatsApp</div>
+        <a onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20una%20evaluaci%C3%B3n%20por%20mis%20muelas%20del%20juicio.">+56 9 3567 3359<span class="dato-nota">Respuesta directa · Escríbeme</span></a>
+      </div>
+      <div class="dato">
+        <div class="dato-et">Teléfono</div>
+        <a onclick="convTelefono()" href="tel:+56229935795">+56 2 2993 5795<span class="dato-nota">Consulta</span></a><br>
+        <a onclick="convTelefono()" href="tel:+56935673359">+56 9 3567 3359<span class="dato-nota">Móvil</span></a>
+      </div>
+      <div class="dato">
+        <div class="dato-et">Correo</div>
+        <a href="mailto:drmartinovicg@gmail.com">drmartinovicg@gmail.com<span class="dato-nota">Para enviar exámenes o imágenes</span></a>
+      </div>
+      <div class="dato">
+        <div class="dato-et">Consulta</div>
+        <a href="https://maps.google.com/?q=Av.+Apoquindo+6314,+Las+Condes,+Santiago" target="_blank" rel="noopener">Av. Apoquindo 6314, of. 1001<br>Las Condes, Santiago<br><span style="font-size:13px;color:var(--gris)">Metro Manquehue (L1) · Estacionamientos en el edificio</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="envoltura">
+    <p style="margin:0 0 8px">
+      Dr. Gonzalo Martinovic · Cirugía que cambia vidas · Santiago, Chile ·
+      <a href="/">drmartinovic.cl</a>
+    </p>
+    <p style="margin:0;max-width:72ch">
+      La información de esta página es de carácter general y no reemplaza una
+      evaluación clínica. Los plazos y resultados de cualquier procedimiento varían
+      según el caso, y solo pueden estimarse después de un examen y las imágenes
+      correspondientes.
+    </p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"MedicalWebPage",
+  "url":"https://drmartinovic.cl/terceros-molares",
+  "name":"Extracción de muelas del juicio en Las Condes — Dr. Gonzalo Martinovic",
+  "description":"Extracción de terceros molares retenidos e incluidos en Las Condes, Santiago. Casos complejos con cercanía al nervio dentario, con anestesia local, sedación o anestesia general.",
+  "inLanguage":"es-CL",
+  "lastReviewed":"2026-09-03",
+  "about":{
+    "@type":"MedicalProcedure",
+    "name":"Extracción de terceros molares",
+    "alternateName":"Extracción de muelas del juicio",
+    "procedureType":"https://schema.org/SurgicalProcedure",
+    "bodyLocation":"Maxilar y mandíbula"
+  },
+  "reviewedBy":{
+    "@type":"Physician",
+    "name":"Dr. Gonzalo Martinovic Guzmán",
+    "url":"https://drmartinovic.cl/",
+    "medicalSpecialty":"OralAndMaxillofacialSurgery",
+    "sameAs":[
+      "https://www.linkedin.com/in/gonzalo-andres-martinovic-guzman",
+      "https://www.researchgate.net/profile/Gonzalo-Martinovic"
+    ],
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Av. Apoquindo 6314, of. 1001",
+      "addressLocality":"Las Condes",
+      "addressRegion":"Región Metropolitana",
+      "addressCountry":"CL"
+    },
+    "telephone":"+56229935795"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"¿Duele sacarse las muelas del juicio?","acceptedAnswer":{"@type":"Answer","text":"Durante el procedimiento no, porque la zona está completamente anestesiada, y con sedación o anestesia general no hay registro del procedimiento. El postoperatorio se maneja con analgésicos indicados y la molestia principal suele ser la inflamación más que el dolor."}},
+    {"@type":"Question","name":"¿Cuántos días de reposo se necesitan tras extraer las muelas del juicio?","acceptedAnswer":{"@type":"Answer","text":"Con extracciones simples, uno a dos días. Con extracciones quirúrgicas o las cuatro piezas en una sesión, entre tres y cinco días es lo habitual."}},
+    {"@type":"Question","name":"¿Se pueden extraer las cuatro muelas del juicio de una vez?","acceptedAnswer":{"@type":"Answer","text":"Sí, cuando las condiciones lo permiten, habitualmente con sedación o anestesia general. La ventaja es un solo postoperatorio en lugar de cuatro procedimientos separados."}},
+    {"@type":"Question","name":"¿Se duerme el labio al extraer una muela del juicio? ¿Es permanente?","acceptedAnswer":{"@type":"Answer","text":"La alteración transitoria de la sensibilidad del labio y el mentón ocurre por la proximidad de las raíces al nervio dentario inferior y en la gran mayoría de los casos es temporal. La tomografía Cone Beam permite ver la relación exacta y planificar la técnica que reduce ese riesgo."}},
+    {"@type":"Question","name":"¿Se puede dormir al paciente para extraer las muelas del juicio?","acceptedAnswer":{"@type":"Answer","text":"Sí. Existen la sedación consciente y la anestesia general, realizadas con anestesiólogo. Requieren ayuno, exámenes previos y acompañante."}},
+    {"@type":"Question","name":"¿Qué es la alveolitis y cómo se evita?","acceptedAnswer":{"@type":"Answer","text":"Es la inflamación del alvéolo por pérdida del coágulo que protege la herida, con dolor intenso que aparece al tercer o cuarto día. Tiene tratamiento. Las causas más frecuentes y evitables son fumar en el postoperatorio y hacer succión con bombilla."}},
+    {"@type":"Question","name":"¿Hay que sacarse las muelas del juicio si no duelen?","acceptedAnswer":{"@type":"Answer","text":"No siempre. Si están bien posicionadas, erupcionadas y se pueden higienizar, pueden conservarse con controles. Se indica extracción preventiva cuando están retenidas con riesgo de complicación, comprometen al segundo molar o hay quiste asociado."}},
+    {"@type":"Question","name":"¿A qué edad conviene extraer las muelas del juicio?","acceptedAnswer":{"@type":"Answer","text":"Entre los 18 y los 25 años el procedimiento suele ser más simple y la recuperación más rápida, porque las raíces están menos formadas y el hueso es más elástico. Se pueden extraer a cualquier edad cuando existe indicación."}}
+  ]
+}
+</script>
+
+<div class="guias-lat" aria-label="Guías de tratamiento">
+  <a class="lat" href="/implantes-dentales">Implantes dentales</a>
+  <a class="lat" href="/implantes-cigomaticos">Implantes cigomáticos</a>
+</div>
+
+<a class="wa-flota" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20una%20evaluaci%C3%B3n%20por%20mis%20muelas%20del%20juicio." aria-label="Escribir por WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.41 4.4-9.81 9.82-9.81 2.62 0 5.08 1.02 6.93 2.88a9.74 9.74 0 0 1 2.87 6.94c0 5.41-4.4 9.82-9.81 9.82zM20.52 3.45A11.7 11.7 0 0 0 12.05 0C5.55 0 .26 5.29.26 11.79c0 2.08.54 4.11 1.58 5.9L.16 24l6.45-1.69a11.75 11.75 0 0 0 5.43 1.38h.01c6.5 0 11.79-5.29 11.79-11.79 0-3.15-1.23-6.11-3.46-8.34z"/></svg></a>
+
+</body>
+</html>
