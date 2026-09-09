@@ -415,6 +415,10 @@ p{margin:0 0 15px;max-width:66ch}
 .canal-wa:hover{background:#1FBE5B;box-shadow:0 4px 18px rgba(37,211,102,.38)}
 .canal-tel{background:var(--profundo);color:#fff}
 .canal-tel:hover{background:var(--azul)}
+/* ---------- contacto: mapa ---------- */
+.mapa{margin-top:28px;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+.mapa iframe{height:520px}
+@media (max-width:640px){ .mapa{margin-top:20px} .mapa iframe{height:440px} }
 .canal-mail{background:var(--radiografia);color:var(--profundo);border-color:var(--linea)}
 .canal-mail:hover{background:var(--acero);border-color:var(--acero);color:var(--profundo)}
 @media(max-width:560px){
@@ -1345,6 +1349,16 @@ p{margin:0 0 15px;max-width:66ch}
         <a href="https://maps.google.com/?q=Av.+Apoquindo+6314,+Las+Condes,+Santiago" target="_blank" rel="noopener">Av. Apoquindo 6314, of. 1001<br>Las Condes, Santiago</a>
       </div>
     </div>
+    <div class="mapa">
+      <iframe
+        src="https://storage.googleapis.com/maps-solutions-ndivsdbs2m/locator-plus/hep6/locator-plus.html"
+        width="100%" height="520"
+        style="border:0; display:block; width:100%;"
+        loading="lazy"
+        title="Ubicación de la consulta — Av. Apoquindo 6314, Las Condes"
+        allow="geolocation">
+      </iframe>
+    </div>
   </div>
 </section>
 
@@ -1370,35 +1384,71 @@ p{margin:0 0 15px;max-width:66ch}
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"Physician",
-  "name":"Dr. Gonzalo Martinovic Guzmán",
-  "telephone":"+56229935795",
-  "email":"drmartinovicg@gmail.com",
-  "url":"https://drmartinovic.cl/",
-  "sameAs":[
-    "https://www.linkedin.com/in/gonzalo-andres-martinovic-guzman",
-    "https://www.researchgate.net/profile/Gonzalo-Martinovic"
-  ],
-  "award":"Tercer lugar, categoría Trauma Facial — XVI Congreso Latinoamericano de Cirugía Oral y Maxilofacial",
-  "slogan":"Cirugía que cambia vidas",
-  "medicalSpecialty":"OralAndMaxillofacialSurgery",
-  "description":"Cirujano maxilofacial en Santiago. Implantes cigomáticos y subperiósticos, cirugía ortognática, articulación temporomandibular e implantes con reconstrucción ósea.",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"Av. Apoquindo 6314, of. 1001",
-    "addressLocality":"Las Condes",
-    "addressRegion":"Región Metropolitana",
-    "addressCountry":"CL"
-  },
-  "availableService":[
-    {"@type":"MedicalProcedure","name":"Implantes cigomáticos"},
-    {"@type":"MedicalProcedure","name":"Implantes subperiósticos"},
-    {"@type":"MedicalProcedure","name":"Cirugía ortognática"},
-    {"@type":"MedicalProcedure","name":"Planificación virtual 3D en cirugía ortognática"},
-    {"@type":"MedicalProcedure","name":"Avance maxilomandibular para apnea obstructiva del sueño"},
-    {"@type":"MedicalProcedure","name":"Tratamiento de trastornos temporomandibulares"},
-    {"@type":"MedicalProcedure","name":"Reemplazo protésico de la articulación temporomandibular"},
-    {"@type":"MedicalProcedure","name":"Implantes dentales y reconstrucción ósea"}
+  "@graph":[
+    {
+      "@type":"Dentist",
+      "@id":"https://drmartinovic.cl/#consulta",
+      "name":"Dr. Gonzalo Martinovic — Cirugía Maxilofacial",
+      "alternateName":"MYS Dental Studio",
+      "url":"https://drmartinovic.cl/",
+      "telephone":"+56229935795",
+      "email":"drmartinovicg@gmail.com",
+      "image":"https://drmartinovic.cl/retrato-v3.webp",
+      "priceRange":"$$$",
+      "slogan":"Cirugía que cambia vidas",
+      "description":"Consulta de cirugía maxilofacial en Las Condes, Santiago. Implantes cigomáticos y subperiósticos, cirugía ortognática, articulación temporomandibular, apnea del sueño e implantes con reconstrucción ósea. Planificación virtual 3D.",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Av. Apoquindo 6314, of. 1001",
+        "addressLocality":"Las Condes",
+        "addressRegion":"Región Metropolitana",
+        "postalCode":"7560903",
+        "addressCountry":"CL"
+      },
+      "geo":{
+        "@type":"GeoCoordinates",
+        "latitude":-33.4054,
+        "longitude":-70.5716
+      },
+      "hasMap":"https://maps.google.com/?q=Av.+Apoquindo+6314,+Las+Condes,+Santiago",
+      "areaServed":["Las Condes","Vitacura","Providencia","Lo Barnechea","Santiago"],
+      "contactPoint":[
+        {"@type":"ContactPoint","telephone":"+56229935795","contactType":"reservations","areaServed":"CL","availableLanguage":"es"},
+        {"@type":"ContactPoint","telephone":"+56935673359","contactType":"customer service","areaServed":"CL","availableLanguage":"es"}
+      ],
+      "medicalSpecialty":"OralAndMaxillofacialSurgery",
+      "availableService":[
+        {"@type":"MedicalProcedure","name":"Implantes cigomáticos","url":"https://drmartinovic.cl/implantes-cigomaticos.html"},
+        {"@type":"MedicalProcedure","name":"Implantes subperiósticos"},
+        {"@type":"MedicalProcedure","name":"Cirugía ortognática","url":"https://drmartinovic.cl/cirugia-ortognatica.html"},
+        {"@type":"MedicalProcedure","name":"Planificación virtual 3D en cirugía ortognática"},
+        {"@type":"MedicalProcedure","name":"Avance maxilomandibular para apnea obstructiva del sueño"},
+        {"@type":"MedicalProcedure","name":"Tratamiento de trastornos temporomandibulares"},
+        {"@type":"MedicalProcedure","name":"Reemplazo protésico de la articulación temporomandibular"},
+        {"@type":"MedicalProcedure","name":"Implantes dentales y reconstrucción ósea"}
+      ],
+      "employee":{"@id":"https://drmartinovic.cl/#medico"}
+    },
+    {
+      "@type":"Physician",
+      "@id":"https://drmartinovic.cl/#medico",
+      "name":"Dr. Gonzalo Martinovic Guzmán",
+      "honorificPrefix":"Dr.",
+      "jobTitle":"Cirujano Maxilofacial y Oral",
+      "medicalSpecialty":"OralAndMaxillofacialSurgery",
+      "url":"https://drmartinovic.cl/",
+      "image":"https://drmartinovic.cl/retrato-v3.webp",
+      "telephone":"+56935673359",
+      "email":"drmartinovicg@gmail.com",
+      "description":"Cirujano maxilofacial en Santiago. Implantes cigomáticos y subperiósticos, cirugía ortognática, articulación temporomandibular e implantes con reconstrucción ósea.",
+      "award":"Tercer lugar, categoría Trauma Facial — XVI Congreso Latinoamericano de Cirugía Oral y Maxilofacial",
+      "worksFor":{"@id":"https://drmartinovic.cl/#consulta"},
+      "affiliation":{"@type":"Hospital","name":"Hospital Militar de Santiago"},
+      "sameAs":[
+        "https://www.linkedin.com/in/gonzalo-andres-martinovic-guzman",
+        "https://www.researchgate.net/profile/Gonzalo-Martinovic"
+      ]
+    }
   ]
 }
 </script>
