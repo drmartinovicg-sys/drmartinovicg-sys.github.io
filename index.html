@@ -330,6 +330,7 @@ p{margin:0 0 15px;max-width:66ch}
 
 /* ---------- quién ---------- */
 .perfil{display:grid;grid-template-columns:300px minmax(0,1fr);gap:38px;align-items:start}
+.perfil-sin-foto{grid-template-columns:minmax(0,1fr);max-width:860px}
 .retrato{margin:0;max-width:300px;width:100%}
 @media(max-width:760px){
   .perfil{grid-template-columns:1fr;gap:24px}
@@ -338,6 +339,18 @@ p{margin:0 0 15px;max-width:66ch}
 .credenciales{
   border-left:2px solid var(--acero);padding-left:18px;margin-top:26px;
   font-family:var(--dato);font-size:12.5px;line-height:1.85;color:var(--gris);
+}
+/* sin retrato al lado, las credenciales usan el ancho en dos columnas */
+.perfil-sin-foto .credenciales{
+  border-left:0;padding-left:0;margin-top:34px;
+  display:grid;grid-template-columns:1fr 1fr;gap:24px 44px;
+}
+.perfil-sin-foto .cred-grupo{
+  border-left:2px solid var(--acero);padding-left:18px;
+}
+.perfil-sin-foto .credenciales b{margin-top:0}
+@media(max-width:760px){
+  .perfil-sin-foto .credenciales{grid-template-columns:1fr}
 }
 .credenciales b{display:block;color:var(--tinta);font-weight:500;font-size:11px;
   letter-spacing:.12em;text-transform:uppercase;margin-top:14px}
@@ -882,11 +895,7 @@ p{margin:0 0 15px;max-width:66ch}
 <section class="seccion">
   <div class="envoltura riel">
     <span class="marca">Quién</span>
-    <div class="perfil">
-      <figure class="retrato">
-        <img src="retrato-v3.webp" width="690" height="920" loading="lazy" decoding="async"
-             alt="Dr. Gonzalo Martinovic en su consulta">
-      </figure>
+    <div class="perfil perfil-sin-foto">
       <div>
         <h2>Cirujano maxilofacial</h2>
         <p>
@@ -919,23 +928,33 @@ p{margin:0 0 15px;max-width:66ch}
           implantólogos y ortodoncistas.
         </p>
         <div class="credenciales">
-        <b>Formación</b>
-        Cirujano dentista<br>
-        Especialista en Cirugía y Traumatología Bucal y Maxilofacial — Universidad Mayor, 2013<br>
-        Magíster en Ciencias Médicas, mención Cirugía — Universidad de La Frontera, 2019<br>
-        Diplomado en Cirugía de los Implantes — Universidad Mayor, 2008
-        <b>Experiencia hospitalaria</b>
-        Staff, Servicio de Cirugía y Traumatología Bucomaxilofacial — Hospital Militar de Santiago<br>
-        Coordinador, Servicio de Urgencia Dental y Maxilofacial<br>
-        Residente jefe, Servicio de Urgencia — 2021 a 2023
-        <b>Distinciones</b>
-        Tercer lugar, categoría Trauma Facial — XVI Congreso Latinoamericano de Cirugía Oral y Maxilofacial
-        <b>Actividad académica</b>
-        Autor y coautor de 14 publicaciones en revistas nacionales e internacionales<br>
-        Expositor en cursos nacionales e internacionales
-        <b>Herramientas</b>
-        Tomografía Cone Beam CT<br>
-        Planificación virtual y cirugía guiada
+        <div class="cred-grupo">
+          <b>Formación</b>
+          Cirujano dentista<br>
+          Especialista en Cirugía y Traumatología Bucal y Maxilofacial — Universidad Mayor, 2013<br>
+          Magíster en Ciencias Médicas, mención Cirugía — Universidad de La Frontera, 2019<br>
+          Diplomado en Cirugía de los Implantes — Universidad Mayor, 2008
+        </div>
+        <div class="cred-grupo">
+          <b>Experiencia hospitalaria</b>
+          Staff, Servicio de Cirugía y Traumatología Bucomaxilofacial — Hospital Militar de Santiago<br>
+          Coordinador, Servicio de Urgencia Dental y Maxilofacial<br>
+          Residente jefe, Servicio de Urgencia — 2021 a 2023
+        </div>
+        <div class="cred-grupo">
+          <b>Distinciones</b>
+          Tercer lugar, categoría Trauma Facial — XVI Congreso Latinoamericano de Cirugía Oral y Maxilofacial
+        </div>
+        <div class="cred-grupo">
+          <b>Actividad académica</b>
+          Autor y coautor de 14 publicaciones en revistas nacionales e internacionales<br>
+          Expositor en cursos nacionales e internacionales
+        </div>
+        <div class="cred-grupo">
+          <b>Herramientas</b>
+          Tomografía Cone Beam CT<br>
+          Planificación virtual y cirugía guiada
+        </div>
       </div>
       </div>
     </div>
