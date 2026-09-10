@@ -190,31 +190,44 @@ section[id],article[id]{scroll-margin-top:78px}
 }
 .portada-in{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:64px 22px 34px}
 @media(max-width:860px){.portada-in{padding:44px 22px 28px}}
-.portada-grid{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:48px;align-items:center}
+.portada-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:center}
 @media(max-width:860px){.portada-grid{grid-template-columns:1fr;gap:30px}}
 .portada h1{max-width:16ch}
 .bajada{max-width:50ch}
 
 /* tarjeta del médico en el hero: la confianza va arriba */
-.hero-ficha{margin:0;max-width:270px;width:100%;justify-self:end}
+.hero-ficha{margin:0;max-width:300px;width:100%;justify-self:end;position:relative}
+.hero-ficha::before{
+  content:"";position:absolute;inset:-30px -40px -10px -40px;z-index:-1;
+  background:radial-gradient(55% 55% at 55% 45%,rgba(35,71,127,.5),transparent 75%);
+}
 .hero-ficha img{
-  width:100%;height:auto;display:block;border-radius:3px;
-  border:1px solid rgba(143,176,220,.35);
-  box-shadow:0 14px 40px rgba(5,12,26,.5);
+  width:100%;height:auto;display:block;border-radius:4px 4px 0 0;
+  filter:saturate(.88) contrast(1.02) brightness(.96);
+  -webkit-mask-image:
+    linear-gradient(to bottom,#000 52%,transparent 96%),
+    linear-gradient(to right,transparent 0%,#000 18%);
+          mask-image:
+    linear-gradient(to bottom,#000 52%,transparent 96%),
+    linear-gradient(to right,transparent 0%,#000 18%);
+  -webkit-mask-composite:source-in;
+          mask-composite:intersect;
+}
+@media(max-width:860px){
+  .hero-ficha::before{inset:-20px -20px -8px -20px}
 }
 .hero-ficha figcaption{
-  margin-top:10px;padding:12px 14px;border-radius:3px;
-  background:rgba(13,23,41,.55);border:1px solid rgba(143,176,220,.22);
-  backdrop-filter:blur(3px);
+  position:relative;margin-top:-34px;padding:0 4px 0 18px;
+  border-left:2px solid var(--acero);
 }
-.hero-ficha-nombre{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em}
+.hero-ficha-nombre{font-family:var(--display);font-weight:700;font-size:15.5px;letter-spacing:-.01em}
 .hero-ficha-cargo{font-size:12.5px;color:#C3CFE4;margin-top:2px;line-height:1.45}
 .hero-ficha-hosp{
   font-family:var(--dato);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
   color:var(--acero);margin-top:8px;line-height:1.6;
 }
 @media(max-width:860px){
-  .hero-ficha{justify-self:start;max-width:240px}
+  .hero-ficha{justify-self:start;max-width:250px}
 }
 
 /* tira de confianza: credenciales visibles sin scroll */
