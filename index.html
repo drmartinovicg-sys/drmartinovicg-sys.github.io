@@ -49,18 +49,6 @@ img,svg{display:block;max-width:100%}
 
 .envoltura{max-width:1080px;margin:0 auto;padding:0 22px}
 
-/* destinos de ancla: que la barra sticky no tape los títulos */
-section[id],article[id]{scroll-margin-top:78px}
-
-/* enlace para saltar al contenido (teclado y lectores de pantalla) */
-.salta{
-  position:absolute;left:16px;top:-60px;z-index:100;
-  background:var(--profundo);color:#fff;text-decoration:none;
-  font-size:13.5px;font-weight:600;padding:10px 18px;border-radius:2px;
-  transition:top .15s ease;
-}
-.salta:focus{top:12px}
-
 /* ---------- riel de medición: la regla del corte tomográfico ---------- */
 .riel{position:relative;padding-left:var(--rail)}
 .riel::before{
@@ -70,7 +58,7 @@ section[id],article[id]{scroll-margin-top:78px}
 .marca{
   position:absolute;left:0;top:2px;width:var(--rail);
   font-family:var(--dato);font-size:10.5px;letter-spacing:.14em;
-  color:#54719B;text-transform:uppercase;
+  color:var(--acero);text-transform:uppercase;
 }
 @media(max-width:760px){
   :root{--rail:0px}
@@ -109,45 +97,9 @@ section[id],article[id]{scroll-margin-top:78px}
 }
 @media(prefers-reduced-motion:reduce){.nav-lema::after{animation:none;opacity:.3}}
 .nav-links{display:flex;gap:20px;font-size:13.5px;color:var(--gris)}
-.nav-links a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.nav-links a{text-decoration:none}
 .nav-links a:hover{color:var(--azul)}
-.nav-links a.activo{color:var(--azul);border-bottom-color:var(--acero);font-weight:500}
-.nav-cta{
-  display:inline-block;font-size:13px;font-weight:600;text-decoration:none;
-  padding:8px 16px;border-radius:2px;background:var(--azul);color:#fff;
-  transition:background .15s ease;white-space:nowrap;
-}
-.nav-cta:hover{background:var(--profundo)}
-.nav-derecha{display:flex;align-items:center;gap:18px}
-.nav-toggle{
-  display:none;align-items:center;justify-content:center;
-  width:42px;height:42px;border:1px solid var(--linea);border-radius:3px;
-  background:transparent;cursor:pointer;color:var(--tinta);
-}
-.nav-toggle svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}
-.nav-toggle .ico-cerrar{display:none}
-.nav-toggle[aria-expanded="true"] .ico-abrir{display:none}
-.nav-toggle[aria-expanded="true"] .ico-cerrar{display:block}
-.nav-movil{
-  display:none;flex-direction:column;gap:2px;
-  border-top:1px solid var(--linea);background:var(--papel);
-  padding:10px 22px 16px;
-}
-.nav-movil a{
-  text-decoration:none;color:var(--tinta);font-size:15px;font-weight:500;
-  padding:11px 4px;border-bottom:1px solid var(--linea);
-}
-.nav-movil a:last-of-type{border-bottom:0}
-.nav-movil a:hover{color:var(--azul)}
-.nav-movil .nav-cta-movil{
-  margin-top:10px;text-align:center;background:#25D366;color:#06301A;
-  font-weight:600;padding:12px;border-radius:2px;
-}
-@media(max-width:760px){
-  .nav-links,.nav-cta{display:none}
-  .nav-toggle{display:inline-flex}
-  .nav-movil.abierto{display:flex}
-}
+@media(max-width:640px){.nav-links{display:none}}
 
 /* ---------- portada ---------- */
 .portada{
@@ -188,64 +140,13 @@ section[id],article[id]{scroll-margin-top:78px}
     linear-gradient(to bottom,#0D1729 0%,rgba(13,23,41,.9) 34%,rgba(18,31,56,.72) 100%)}
   .portada::before{background-size:42px 42px}
 }
-.portada-in{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:64px 22px 34px}
-@media(max-width:860px){.portada-in{padding:44px 22px 28px}}
-.portada-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:center}
-@media(max-width:860px){.portada-grid{grid-template-columns:1fr;gap:30px}}
+.portada-in{position:relative;z-index:2}
+.portada-in{max-width:1080px;margin:0 auto;padding:78px 22px 10px}
+@media(max-width:860px){.portada-in{padding:48px 22px 10px}}
 .portada h1{max-width:16ch}
 .bajada{max-width:50ch}
 
-/* tarjeta del médico en el hero: la confianza va arriba */
-.hero-ficha{margin:0;max-width:300px;width:100%;justify-self:end;position:relative}
-.hero-ficha::before{
-  content:"";position:absolute;inset:-30px -40px -10px -40px;z-index:-1;
-  background:radial-gradient(55% 55% at 55% 45%,rgba(35,71,127,.5),transparent 75%);
-}
-.hero-ficha img{
-  width:100%;height:auto;display:block;border-radius:4px 4px 0 0;
-  filter:saturate(.88) contrast(1.02) brightness(.96);
-  -webkit-mask-image:
-    linear-gradient(to bottom,#000 52%,transparent 96%),
-    linear-gradient(to right,transparent 0%,#000 18%);
-          mask-image:
-    linear-gradient(to bottom,#000 52%,transparent 96%),
-    linear-gradient(to right,transparent 0%,#000 18%);
-  -webkit-mask-composite:source-in;
-          mask-composite:intersect;
-}
-@media(max-width:860px){
-  .hero-ficha::before{inset:-20px -20px -8px -20px}
-}
-.hero-ficha figcaption{
-  position:relative;margin-top:-34px;padding:0 4px 0 18px;
-  border-left:2px solid var(--acero);
-}
-.hero-ficha-nombre{font-family:var(--display);font-weight:700;font-size:15.5px;letter-spacing:-.01em}
-.hero-ficha-cargo{font-size:12.5px;color:#C3CFE4;margin-top:2px;line-height:1.45}
-.hero-ficha-hosp{
-  font-family:var(--dato);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--acero);margin-top:8px;line-height:1.6;
-}
-@media(max-width:860px){
-  .hero-ficha{justify-self:start;max-width:250px}
-}
-
-/* tira de confianza: credenciales visibles sin scroll */
-.confianza{
-  display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:14px 0 0;
-  border-top:1px solid rgba(143,176,220,.22);list-style:none;
-}
-.confianza li{
-  position:relative;padding-left:16px;
-  font-family:var(--dato);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  color:#C3CFE4;line-height:1.6;
-}
-.confianza li::before{
-  content:"";position:absolute;left:0;top:7px;width:7px;height:1.5px;background:var(--acero);
-}
-@media(max-width:560px){.confianza{gap:6px 18px}.confianza li{font-size:10px}}
-
-.indice{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:44px}
+.indice{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:52px}
 .indice a{
   position:relative;display:block;padding:18px 16px 16px;text-decoration:none;
   background:rgba(13,23,41,.42);backdrop-filter:blur(3px);border:1px solid rgba(143,176,220,.2);
@@ -316,13 +217,6 @@ section[id],article[id]{scroll-margin-top:78px}
 .btn-a:hover{background:#AAC5E8}
 .btn-b{border-color:rgba(255,255,255,.32);color:#fff}
 .btn-b:hover{background:rgba(255,255,255,.08)}
-.btn-wa{
-  display:inline-flex;align-items:center;gap:9px;
-  background:#25D366;color:#06301A;
-  box-shadow:0 2px 14px rgba(37,211,102,.3);
-}
-.btn-wa:hover{background:#2EEA76}
-.btn-wa svg{width:18px;height:18px;fill:currentColor;flex:none}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
@@ -343,27 +237,17 @@ p{margin:0 0 15px;max-width:66ch}
 
 /* ---------- quién ---------- */
 .perfil{display:grid;grid-template-columns:300px minmax(0,1fr);gap:38px;align-items:start}
-.perfil-sin-foto{grid-template-columns:minmax(0,1fr);max-width:860px}
 .retrato{margin:0;max-width:300px;width:100%}
 @media(max-width:760px){
   .perfil{grid-template-columns:1fr;gap:24px}
   .retrato{max-width:250px;margin-inline:auto}
 }
+@media(max-width:860px){
+  
+  }
 .credenciales{
   border-left:2px solid var(--acero);padding-left:18px;margin-top:26px;
   font-family:var(--dato);font-size:12.5px;line-height:1.85;color:var(--gris);
-}
-/* sin retrato al lado, las credenciales usan el ancho en dos columnas */
-.perfil-sin-foto .credenciales{
-  border-left:0;padding-left:0;margin-top:34px;
-  display:grid;grid-template-columns:1fr 1fr;gap:24px 44px;
-}
-.perfil-sin-foto .cred-grupo{
-  border-left:2px solid var(--acero);padding-left:18px;
-}
-.perfil-sin-foto .credenciales b{margin-top:0}
-@media(max-width:760px){
-  .perfil-sin-foto .credenciales{grid-template-columns:1fr}
 }
 .credenciales b{display:block;color:var(--tinta);font-weight:500;font-size:11px;
   letter-spacing:.12em;text-transform:uppercase;margin-top:14px}
@@ -531,10 +415,6 @@ p{margin:0 0 15px;max-width:66ch}
 .canal-wa:hover{background:#1FBE5B;box-shadow:0 4px 18px rgba(37,211,102,.38)}
 .canal-tel{background:var(--profundo);color:#fff}
 .canal-tel:hover{background:var(--azul)}
-/* ---------- contacto: mapa ---------- */
-.mapa{margin-top:28px;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
-.mapa iframe{height:520px}
-@media (max-width:640px){ .mapa{margin-top:20px} .mapa iframe{height:440px} }
 .canal-mail{background:var(--radiografia);color:var(--profundo);border-color:var(--linea)}
 .canal-mail:hover{background:var(--acero);border-color:var(--acero);color:var(--profundo)}
 @media(max-width:560px){
@@ -552,46 +432,39 @@ p{margin:0 0 15px;max-width:66ch}
   transition:transform .16s ease,box-shadow .16s ease;
 }
 .wa-flota svg{width:29px;height:29px;fill:currentColor}
-.wa-flota{animation:latido 6s ease-in-out 2s infinite}
+.wa-flota{animation:latido 3.4s ease-in-out 2s infinite}
 .wa-flota:hover{transform:scale(1.06);box-shadow:0 8px 26px rgba(8,40,22,.44);animation:none}
-.wa-flota-txt{display:none}
 @keyframes latido{
-  0%,84%,100%{transform:scale(1);
-    box-shadow:0 6px 20px rgba(8,40,22,.34);
+  0%,58%,100%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34), 0 0 0 0 rgba(37,211,102,0);
     background:#25D366}
-  90%{transform:scale(1.09);
-    box-shadow:0 8px 26px rgba(8,40,22,.42), 0 0 20px 5px rgba(37,211,102,.45);
+  64%{transform:scale(1.13);
+    box-shadow:0 8px 26px rgba(8,40,22,.42), 0 0 22px 6px rgba(37,211,102,.55);
     background:#2EEA76}
-  96%{transform:scale(1);
-    box-shadow:0 6px 20px rgba(8,40,22,.34);
+  70%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34), 0 0 0 0 rgba(37,211,102,0);
+    background:#25D366}
+  76%{transform:scale(1.10);
+    box-shadow:0 8px 26px rgba(8,40,22,.42), 0 0 20px 5px rgba(37,211,102,.48);
+    background:#2EEA76}
+  82%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34), 0 0 0 0 rgba(37,211,102,0);
     background:#25D366}
 }
 .wa-flota::after{
   content:"";position:absolute;inset:0;border-radius:50%;
   border:2px solid rgba(37,211,102,.55);
-  animation:pulso 6s ease-out 2s infinite;
+  animation:pulso 3.2s ease-out infinite;
 }
 @keyframes pulso{
-  0%,84%{transform:scale(1);opacity:0}
-  88%{opacity:.6}
-  100%{transform:scale(1.45);opacity:0}
+  0%{transform:scale(1);opacity:.7}
+  70%,100%{transform:scale(1.5);opacity:0}
 }
 @media(prefers-reduced-motion:reduce){
   .wa-flota::after{animation:none;opacity:0}
   .wa-flota{animation:none}
 }
-/* en móvil: barra inferior persistente con texto, no solo un ícono */
-@media(max-width:560px){
-  .wa-flota{
-    left:14px;right:14px;bottom:12px;width:auto;height:auto;
-    border-radius:3px;padding:13px 18px;gap:10px;
-    font-size:15px;font-weight:600;
-  }
-  .wa-flota svg{width:22px;height:22px}
-  .wa-flota-txt{display:inline}
-  .wa-flota::after{border-radius:3px}
-  body{padding-bottom:64px}
-}
+@media(max-width:560px){.wa-flota{right:14px;bottom:14px;width:52px;height:52px}}
 
 .pie{
   border-top:1px solid var(--linea);padding:26px 0 40px;
@@ -609,13 +482,6 @@ p{margin:0 0 15px;max-width:66ch}
   text-transform:uppercase;color:var(--acero);margin-bottom:10px;
 }
 .respuesta p{margin:0;font-size:15px;line-height:1.7;color:#DDE6F2;max-width:none}
-/* variante sobre fondo claro (sección Quién) */
-.respuesta-clara{
-  background:var(--radiografia);border-color:var(--linea);
-  border-left:2px solid var(--acero);max-width:none;
-}
-.respuesta-clara .respuesta-et{color:var(--azul)}
-.respuesta-clara p{color:var(--tinta)}
 
 .ambito-gancho{
   font-family:var(--display);font-weight:500;font-size:1.02rem;line-height:1.35;
@@ -647,9 +513,7 @@ p{margin:0 0 15px;max-width:66ch}
   background-size:260% 100%;background-position:180% 0;
   animation:destello 7.5s ease-in-out 1.4s infinite;
 }
-.guia:nth-child(2)::after{animation-delay:2s}
-.guia:nth-child(3)::after{animation-delay:4s}
-.guia:nth-child(4)::after{animation-delay:6s}
+.guia:nth-child(2)::after{animation-delay:3.6s}
 .guia:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(20,64,160,.44)}
 .guia-tit{
   display:block;font-family:var(--display);font-weight:700;font-size:1.16rem;
@@ -792,36 +656,19 @@ p{margin:0 0 15px;max-width:66ch}
 </head>
 <body>
 
-<a class="salta" href="#contenido">Saltar al contenido principal</a>
-
-<nav class="nav" aria-label="Navegación principal">
+<nav class="nav">
   <div class="nav-in">
     <div class="nav-firma">
       <div class="nav-marca">Dr. Gonzalo Martinovic</div>
       <div class="nav-lema">Cirugía que cambia vidas</div>
     </div>
-    <div class="nav-derecha">
-      <div class="nav-links">
-        <a href="#ambitos">Ámbitos</a>
-        <a href="#proceso">Cómo se trabaja</a>
-        <a href="#publicaciones">Publicaciones</a>
-        <a href="#colegas">Para colegas</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-      <a class="nav-cta" href="#contacto">Agendar</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-movil" aria-label="Abrir menú">
-        <svg class="ico-abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        <svg class="ico-cerrar" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
+    <div class="nav-links">
+      <a href="#ambitos">Ámbitos</a>
+      <a href="#proceso">Cómo se trabaja</a>
+      <a href="#publicaciones">Publicaciones</a>
+      <a href="#colegas">Para colegas</a>
+      <a href="#contacto">Contacto</a>
     </div>
-  </div>
-  <div class="nav-movil" id="nav-movil">
-    <a href="#ambitos">Ámbitos</a>
-    <a href="#proceso">Cómo se trabaja</a>
-    <a href="#publicaciones">Publicaciones</a>
-    <a href="#colegas">Para colegas</a>
-    <a href="#contacto">Contacto</a>
-    <a class="nav-cta-movil" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n." target="_blank" rel="noopener">Agendar por WhatsApp</a>
   </div>
 </nav>
 
@@ -829,39 +676,35 @@ p{margin:0 0 15px;max-width:66ch}
   <div class="portada-foto" aria-hidden="true"></div>
   <div class="portada-velo" aria-hidden="true"></div>
   <div class="portada-in">
-    <div class="portada-grid">
-      <div>
-        <div class="cejilla">Cirugía maxilofacial · Santiago</div>
-        <h1>La cirugía se diseña <em>antes</em> de operar.</h1>
-        <p class="bajada">
-          Opero lo que la odontología general y la implantología convencional derivan:
-          maxilares sin hueso, mordidas que no encajan, articulaciones que dejaron de
-          funcionar. Cada caso se planifica en tres dimensiones sobre tu propia
-          anatomía antes de entrar a pabellón.
-        </p>
-        <div class="acciones">
-          <a class="btn btn-wa" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.41 4.4-9.81 9.82-9.81 2.62 0 5.08 1.02 6.93 2.88a9.74 9.74 0 0 1 2.87 6.94c0 5.41-4.4 9.82-9.81 9.82zM20.52 3.45A11.7 11.7 0 0 0 12.05 0C5.55 0 .26 5.29.26 11.79c0 2.08.54 4.11 1.58 5.9L.16 24l6.45-1.69a11.75 11.75 0 0 0 5.43 1.38h.01c6.5 0 11.79-5.29 11.79-11.79 0-3.15-1.23-6.11-3.46-8.34z"/></svg>Agendar por WhatsApp</a>
-          <a class="btn btn-b" href="#colegas">Derivar un paciente</a>
-        </div>
-        <ul class="confianza">
-          <li>Staff Hospital Militar de Santiago</li>
-          <li>14 publicaciones científicas</li>
-          <li>Planificación virtual 3D</li>
-          <li>Magíster en Ciencias Médicas</li>
-        </ul>
-      </div>
-      <figure class="hero-ficha">
-        <img src="retrato-v3.webp" width="690" height="920" fetchpriority="high" decoding="async"
-             alt="Dr. Gonzalo Martinovic, cirujano maxilofacial, en su consulta">
-        <figcaption>
-          <div class="hero-ficha-nombre">Dr. Gonzalo Martinovic</div>
-          <div class="hero-ficha-cargo">Cirujano y Traumatólogo Bucal y Maxilofacial</div>
-          <div class="hero-ficha-hosp">Staff · Hospital Militar de Santiago</div>
-        </figcaption>
-      </figure>
-    </div>
-
     <div>
+      <div class="cejilla">Cirugía maxilofacial · Santiago</div>
+      <h1>La cirugía se diseña <em>antes</em> de operar.</h1>
+      <p class="bajada">
+        Opero lo que la odontología general y la implantología convencional derivan:
+        maxilares sin hueso, mordidas que no encajan, articulaciones que dejaron de
+        funcionar. Cada caso se planifica en tres dimensiones sobre tu propia
+        anatomía antes de entrar a pabellón.
+      </p>
+      <div class="acciones">
+        <a class="btn btn-a" href="#contacto">Agendar evaluación</a>
+        <a class="btn btn-b" href="#colegas">Derivar un paciente</a>
+      </div>
+
+      <div class="respuesta">
+        <div class="respuesta-et">En resumen</div>
+        <p>
+          Soy el Dr. Gonzalo Martinovic Guzmán, especialista en Cirugía y
+          Traumatología Bucal y Maxilofacial en Las Condes, Santiago. Trabajo el
+          esqueleto facial: maxilar, mandíbula, articulación temporomandibular y el
+          hueso que sostiene los dientes. Mi práctica se centra en casos de alta
+          complejidad —atrofia maxilar severa, deformidades dentofaciales, patología
+          articular y apnea obstructiva de origen esquelético— resueltos mediante
+          planificación virtual 3D a partir de tomografía Cone Beam. Soy staff del
+          Servicio de Cirugía y Traumatología Bucomaxilofacial del Hospital Militar
+          de Santiago.
+        </p>
+      </div>
+
       <nav class="indice" aria-label="Ámbitos de trabajo">
         <a href="#cigomaticos"><span class="indice-num">01</span><span class="indice-fantasma" aria-hidden="true">01</span><span class="indice-nombre">Implantes cigomáticos</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
         <a href="#subperiosticos"><span class="indice-num">02</span><span class="indice-fantasma" aria-hidden="true">02</span><span class="indice-nombre">Implantes subperiósticos</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
@@ -888,27 +731,21 @@ p{margin:0 0 15px;max-width:66ch}
         <span class="guia-sub">Etapas, plazos reales, costos y cobertura. Clase II y clase III explicadas.</span>
         <span class="guia-flecha" aria-hidden="true">&#8594;</span>
       </a>
-      <a class="guia" href="/terceros-molares">
-        <span class="guia-tit">Muelas del juicio</span>
-        <span class="guia-sub">Retenidas, horizontales o sobre el nervio. Anestesia local, sedación o pabellón.</span>
-        <span class="guia-flecha" aria-hidden="true">&#8594;</span>
-      </a>
-      <a class="guia" href="/implantes-dentales">
-        <span class="guia-tit">Implantes dentales</span>
-        <span class="guia-sub">Planificación digital, casos con poco hueso y reintervención de implantes fallidos.</span>
-        <span class="guia-flecha" aria-hidden="true">&#8594;</span>
-      </a>
     </div>
   </div>
 </section>
 
-<main id="contenido">
+<main>
 
 <!-- ============ QUIÉN ============ -->
 <section class="seccion">
   <div class="envoltura riel">
     <span class="marca">Quién</span>
-    <div class="perfil perfil-sin-foto">
+    <div class="perfil">
+      <figure class="retrato">
+        <img src="retrato-v3.webp" width="690" height="920" loading="lazy"
+             alt="Dr. Gonzalo Martinovic en su consulta">
+      </figure>
       <div>
         <h2>Cirujano maxilofacial</h2>
         <p>
@@ -941,49 +778,25 @@ p{margin:0 0 15px;max-width:66ch}
           implantólogos y ortodoncistas.
         </p>
         <div class="credenciales">
-        <div class="cred-grupo">
-          <b>Formación</b>
-          Cirujano dentista<br>
-          Especialista en Cirugía y Traumatología Bucal y Maxilofacial — Universidad Mayor, 2013<br>
-          Magíster en Ciencias Médicas, mención Cirugía — Universidad de La Frontera, 2019<br>
-          Diplomado en Cirugía de los Implantes — Universidad Mayor, 2008
-        </div>
-        <div class="cred-grupo">
-          <b>Experiencia hospitalaria</b>
-          Staff, Servicio de Cirugía y Traumatología Bucomaxilofacial — Hospital Militar de Santiago<br>
-          Coordinador, Servicio de Urgencia Dental y Maxilofacial<br>
-          Residente jefe, Servicio de Urgencia — 2021 a 2023
-        </div>
-        <div class="cred-grupo">
-          <b>Distinciones</b>
-          Tercer lugar, categoría Trauma Facial — XVI Congreso Latinoamericano de Cirugía Oral y Maxilofacial
-        </div>
-        <div class="cred-grupo">
-          <b>Actividad académica</b>
-          Autor y coautor de 14 publicaciones en revistas nacionales e internacionales<br>
-          Expositor en cursos nacionales e internacionales
-        </div>
-        <div class="cred-grupo">
-          <b>Herramientas</b>
-          Tomografía Cone Beam CT<br>
-          Planificación virtual y cirugía guiada
-        </div>
+        <b>Formación</b>
+        Cirujano dentista<br>
+        Especialista en Cirugía y Traumatología Bucal y Maxilofacial — Universidad Mayor, 2013<br>
+        Magíster en Ciencias Médicas, mención Cirugía — Universidad de La Frontera, 2019<br>
+        Diplomado en Cirugía de los Implantes — Universidad Mayor, 2008
+        <b>Experiencia hospitalaria</b>
+        Staff, Servicio de Cirugía y Traumatología Bucomaxilofacial — Hospital Militar de Santiago<br>
+        Coordinador, Servicio de Urgencia Dental y Maxilofacial<br>
+        Residente jefe, Servicio de Urgencia — 2021 a 2023
+        <b>Distinciones</b>
+        Tercer lugar, categoría Trauma Facial — XVI Congreso Latinoamericano de Cirugía Oral y Maxilofacial
+        <b>Actividad académica</b>
+        Autor y coautor de 14 publicaciones en revistas nacionales e internacionales<br>
+        Expositor en cursos nacionales e internacionales
+        <b>Herramientas</b>
+        Tomografía Cone Beam CT<br>
+        Planificación virtual y cirugía guiada
       </div>
       </div>
-    </div>
-    <div class="respuesta respuesta-clara">
-      <div class="respuesta-et">En resumen</div>
-      <p>
-        Soy el Dr. Gonzalo Martinovic Guzmán, especialista en Cirugía y
-        Traumatología Bucal y Maxilofacial en Las Condes, Santiago. Trabajo el
-        esqueleto facial: maxilar, mandíbula, articulación temporomandibular y el
-        hueso que sostiene los dientes. Mi práctica se centra en casos de alta
-        complejidad —atrofia maxilar severa, deformidades dentofaciales, patología
-        articular y apnea obstructiva de origen esquelético— resueltos mediante
-        planificación virtual 3D a partir de tomografía Cone Beam. Soy staff del
-        Servicio de Cirugía y Traumatología Bucomaxilofacial del Hospital Militar
-        de Santiago.
-      </p>
     </div>
   </div>
 </section>
@@ -1320,7 +1133,7 @@ p{margin:0 0 15px;max-width:66ch}
       imágenes y el plan.
     </p>
     <figure class="banda-foto">
-      <img src="pabellon.webp" width="1280" height="665" loading="lazy" decoding="async"
+      <img src="pabellon.webp" width="1280" height="665" loading="lazy"
            alt="Equipo quirúrgico durante una cirugía maxilofacial en pabellón">
     </figure>
 
@@ -1520,16 +1333,6 @@ p{margin:0 0 15px;max-width:66ch}
         <a href="https://maps.google.com/?q=Av.+Apoquindo+6314,+Las+Condes,+Santiago" target="_blank" rel="noopener">Av. Apoquindo 6314, of. 1001<br>Las Condes, Santiago</a>
       </div>
     </div>
-    <div class="mapa">
-      <iframe
-        src="https://storage.googleapis.com/maps-solutions-ndivsdbs2m/locator-plus/hep6/locator-plus.html"
-        width="100%" height="520"
-        style="border:0; display:block; width:100%;"
-        loading="lazy"
-        title="Ubicación de la consulta — Av. Apoquindo 6314, Las Condes"
-        allow="geolocation">
-      </iframe>
-    </div>
   </div>
 </section>
 
@@ -1555,71 +1358,35 @@ p{margin:0 0 15px;max-width:66ch}
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Dentist",
-      "@id":"https://drmartinovic.cl/#consulta",
-      "name":"Dr. Gonzalo Martinovic — Cirugía Maxilofacial",
-      "alternateName":"MYS Dental Studio",
-      "url":"https://drmartinovic.cl/",
-      "telephone":"+56229935795",
-      "email":"drmartinovicg@gmail.com",
-      "image":"https://drmartinovic.cl/retrato-v3.webp",
-      "priceRange":"$$$",
-      "slogan":"Cirugía que cambia vidas",
-      "description":"Consulta de cirugía maxilofacial en Las Condes, Santiago. Implantes cigomáticos y subperiósticos, cirugía ortognática, articulación temporomandibular, apnea del sueño e implantes con reconstrucción ósea. Planificación virtual 3D.",
-      "address":{
-        "@type":"PostalAddress",
-        "streetAddress":"Av. Apoquindo 6314, of. 1001",
-        "addressLocality":"Las Condes",
-        "addressRegion":"Región Metropolitana",
-        "postalCode":"7560903",
-        "addressCountry":"CL"
-      },
-      "geo":{
-        "@type":"GeoCoordinates",
-        "latitude":-33.4054,
-        "longitude":-70.5716
-      },
-      "hasMap":"https://maps.google.com/?q=Av.+Apoquindo+6314,+Las+Condes,+Santiago",
-      "areaServed":["Las Condes","Vitacura","Providencia","Lo Barnechea","Santiago"],
-      "contactPoint":[
-        {"@type":"ContactPoint","telephone":"+56229935795","contactType":"reservations","areaServed":"CL","availableLanguage":"es"},
-        {"@type":"ContactPoint","telephone":"+56935673359","contactType":"customer service","areaServed":"CL","availableLanguage":"es"}
-      ],
-      "medicalSpecialty":"OralAndMaxillofacialSurgery",
-      "availableService":[
-        {"@type":"MedicalProcedure","name":"Implantes cigomáticos","url":"https://drmartinovic.cl/implantes-cigomaticos.html"},
-        {"@type":"MedicalProcedure","name":"Implantes subperiósticos"},
-        {"@type":"MedicalProcedure","name":"Cirugía ortognática","url":"https://drmartinovic.cl/cirugia-ortognatica.html"},
-        {"@type":"MedicalProcedure","name":"Planificación virtual 3D en cirugía ortognática"},
-        {"@type":"MedicalProcedure","name":"Avance maxilomandibular para apnea obstructiva del sueño"},
-        {"@type":"MedicalProcedure","name":"Tratamiento de trastornos temporomandibulares"},
-        {"@type":"MedicalProcedure","name":"Reemplazo protésico de la articulación temporomandibular"},
-        {"@type":"MedicalProcedure","name":"Implantes dentales y reconstrucción ósea"}
-      ],
-      "employee":{"@id":"https://drmartinovic.cl/#medico"}
-    },
-    {
-      "@type":"Physician",
-      "@id":"https://drmartinovic.cl/#medico",
-      "name":"Dr. Gonzalo Martinovic Guzmán",
-      "honorificPrefix":"Dr.",
-      "jobTitle":"Cirujano Maxilofacial y Oral",
-      "medicalSpecialty":"OralAndMaxillofacialSurgery",
-      "url":"https://drmartinovic.cl/",
-      "image":"https://drmartinovic.cl/retrato-v3.webp",
-      "telephone":"+56935673359",
-      "email":"drmartinovicg@gmail.com",
-      "description":"Cirujano maxilofacial en Santiago. Implantes cigomáticos y subperiósticos, cirugía ortognática, articulación temporomandibular e implantes con reconstrucción ósea.",
-      "award":"Tercer lugar, categoría Trauma Facial — XVI Congreso Latinoamericano de Cirugía Oral y Maxilofacial",
-      "worksFor":{"@id":"https://drmartinovic.cl/#consulta"},
-      "affiliation":{"@type":"Hospital","name":"Hospital Militar de Santiago"},
-      "sameAs":[
-        "https://www.linkedin.com/in/gonzalo-andres-martinovic-guzman",
-        "https://www.researchgate.net/profile/Gonzalo-Martinovic"
-      ]
-    }
+  "@type":"Physician",
+  "name":"Dr. Gonzalo Martinovic Guzmán",
+  "telephone":"+56229935795",
+  "email":"drmartinovicg@gmail.com",
+  "url":"https://drmartinovic.cl/",
+  "sameAs":[
+    "https://www.linkedin.com/in/gonzalo-andres-martinovic-guzman",
+    "https://www.researchgate.net/profile/Gonzalo-Martinovic"
+  ],
+  "award":"Tercer lugar, categoría Trauma Facial — XVI Congreso Latinoamericano de Cirugía Oral y Maxilofacial",
+  "slogan":"Cirugía que cambia vidas",
+  "medicalSpecialty":"OralAndMaxillofacialSurgery",
+  "description":"Cirujano maxilofacial en Santiago. Implantes cigomáticos y subperiósticos, cirugía ortognática, articulación temporomandibular e implantes con reconstrucción ósea.",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Av. Apoquindo 6314, of. 1001",
+    "addressLocality":"Las Condes",
+    "addressRegion":"Región Metropolitana",
+    "addressCountry":"CL"
+  },
+  "availableService":[
+    {"@type":"MedicalProcedure","name":"Implantes cigomáticos"},
+    {"@type":"MedicalProcedure","name":"Implantes subperiósticos"},
+    {"@type":"MedicalProcedure","name":"Cirugía ortognática"},
+    {"@type":"MedicalProcedure","name":"Planificación virtual 3D en cirugía ortognática"},
+    {"@type":"MedicalProcedure","name":"Avance maxilomandibular para apnea obstructiva del sueño"},
+    {"@type":"MedicalProcedure","name":"Tratamiento de trastornos temporomandibulares"},
+    {"@type":"MedicalProcedure","name":"Reemplazo protésico de la articulación temporomandibular"},
+    {"@type":"MedicalProcedure","name":"Implantes dentales y reconstrucción ósea"}
   ]
 }
 </script>
@@ -1642,58 +1409,12 @@ p{margin:0 0 15px;max-width:66ch}
   }
 })();
 </script>
-
-<script>
-(function(){
-  // --- menú móvil ---
-  var toggle = document.querySelector('.nav-toggle');
-  var panel = document.getElementById('nav-movil');
-  if(toggle && panel){
-    var setEstado = function(abrir){
-      toggle.setAttribute('aria-expanded', abrir ? 'true' : 'false');
-      toggle.setAttribute('aria-label', abrir ? 'Cerrar menú' : 'Abrir menú');
-      panel.classList.toggle('abierto', abrir);
-    };
-    toggle.addEventListener('click', function(){
-      setEstado(toggle.getAttribute('aria-expanded') !== 'true');
-    });
-    panel.addEventListener('click', function(e){
-      if(e.target.closest('a')) setEstado(false);
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape') setEstado(false);
-    });
-  }
-
-  // --- scroll-spy: resalta el enlace de la sección visible ---
-  var enlaces = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
-  var mapa = {};
-  enlaces.forEach(function(a){ mapa[a.getAttribute('href').slice(1)] = a; });
-  var secciones = Object.keys(mapa)
-    .map(function(id){ return document.getElementById(id); })
-    .filter(Boolean);
-  if('IntersectionObserver' in window && secciones.length){
-    var actual = null;
-    var spy = new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if(e.isIntersecting && actual !== e.target.id){
-          actual = e.target.id;
-          enlaces.forEach(function(a){ a.classList.remove('activo'); a.removeAttribute('aria-current'); });
-          var act = mapa[actual];
-          if(act){ act.classList.add('activo'); act.setAttribute('aria-current','true'); }
-        }
-      });
-    }, {rootMargin:'-30% 0px -55% 0px'});
-    secciones.forEach(function(s){ spy.observe(s); });
-  }
-})();
-</script>
-<nav class="guias-lat" aria-label="Guías de tratamiento">
+<div class="guias-lat" aria-label="Guías de tratamiento">
   <a class="lat" href="/implantes-cigomaticos">Implantes cigomáticos</a>
   <a class="lat" href="/cirugia-ortognatica">Cirugía ortognática</a>
-</nav>
+</div>
 
-<a class="wa-flota" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n." aria-label="Escribir por WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.41 4.4-9.81 9.82-9.81 2.62 0 5.08 1.02 6.93 2.88a9.74 9.74 0 0 1 2.87 6.94c0 5.41-4.4 9.82-9.81 9.82zM20.52 3.45A11.7 11.7 0 0 0 12.05 0C5.55 0 .26 5.29.26 11.79c0 2.08.54 4.11 1.58 5.9L.16 24l6.45-1.69a11.75 11.75 0 0 0 5.43 1.38h.01c6.5 0 11.79-5.29 11.79-11.79 0-3.15-1.23-6.11-3.46-8.34z"/></svg><span class="wa-flota-txt">Agendar por WhatsApp</span></a>
+<a class="wa-flota" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n." aria-label="Escribir por WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.41 4.4-9.81 9.82-9.81 2.62 0 5.08 1.02 6.93 2.88a9.74 9.74 0 0 1 2.87 6.94c0 5.41-4.4 9.82-9.81 9.82zM20.52 3.45A11.7 11.7 0 0 0 12.05 0C5.55 0 .26 5.29.26 11.79c0 2.08.54 4.11 1.58 5.9L.16 24l6.45-1.69a11.75 11.75 0 0 0 5.43 1.38h.01c6.5 0 11.79-5.29 11.79-11.79 0-3.15-1.23-6.11-3.46-8.34z"/></svg></a>
 
 </body>
 </html>
