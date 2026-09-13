@@ -147,6 +147,12 @@ section[id],article[id]{scroll-margin-top:78px}
   margin-top:10px;text-align:center;background:#25D366;color:#06301A;
   font-weight:600;padding:12px;border-radius:2px;
 }
+.nav-lang{display:flex;align-items:center;font-family:var(--dato);font-size:12px;letter-spacing:.1em}
+.nav-lang a,.nav-lang span{padding:3px 5px}
+.nav-lang a{text-decoration:none;color:var(--gris)}
+.nav-lang a:hover{color:var(--azul)}
+.nav-lang .sep{color:var(--linea);padding:3px 0}
+.nav-lang .activo{color:var(--azul);font-weight:600;border-bottom:2px solid var(--acero)}
 @media(max-width:760px){
   .nav-links,.nav-cta{display:none}
   .nav-toggle{display:inline-flex}
@@ -813,6 +819,9 @@ p{margin:0 0 15px;max-width:66ch}
         <a href="#contacto">Contacto</a>
       </div>
       <a class="nav-cta" href="#contacto">Agendar</a>
+      <div class="nav-lang" role="group" aria-label="Idioma / Language">
+        <span class="activo" aria-current="true">ES</span><span class="sep" aria-hidden="true">|</span><a href="/en/" hreflang="en" lang="en">EN</a>
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-movil" aria-label="Abrir menú">
         <svg class="ico-abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         <svg class="ico-cerrar" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -825,6 +834,7 @@ p{margin:0 0 15px;max-width:66ch}
     <a href="#publicaciones">Publicaciones</a>
     <a href="#colegas">Para colegas</a>
     <a href="#contacto">Contacto</a>
+    <a href="/en/" lang="en">Turismo odontológico · English</a>
     <a class="nav-cta-movil" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hola%20Dr.%20Martinovic%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n." target="_blank" rel="noopener">Agendar por WhatsApp</a>
   </div>
 </nav>
@@ -873,6 +883,7 @@ p{margin:0 0 15px;max-width:66ch}
         <a href="#atm"><span class="indice-num">04</span><span class="indice-fantasma" aria-hidden="true">04</span><span class="indice-nombre">Articulación temporomandibular</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
         <a href="#implantes"><span class="indice-num">05</span><span class="indice-fantasma" aria-hidden="true">05</span><span class="indice-nombre">Implantes y reconstrucción</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
         <a href="#apnea"><span class="indice-num">06</span><span class="indice-fantasma" aria-hidden="true">06</span><span class="indice-nombre">Apnea del sueño (SAHOS)</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
+        <a href="/en/"><span class="indice-num">07</span><span class="indice-fantasma" aria-hidden="true">07</span><span class="indice-nombre">Turismo odontológico</span><span class="indice-flecha" aria-hidden="true">&#8594;</span></a>
       </nav>
     </div>
   </div>

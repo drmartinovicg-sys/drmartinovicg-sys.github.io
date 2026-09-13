@@ -143,6 +143,12 @@ section[id],article[id]{scroll-margin-top:78px}
   margin-top:10px;text-align:center;background:#25D366;color:#06301A;
   font-weight:600;padding:12px;border-radius:2px;
 }
+.nav-lang{display:flex;align-items:center;font-family:var(--dato);font-size:12px;letter-spacing:.1em}
+.nav-lang a,.nav-lang span{padding:3px 5px}
+.nav-lang a{text-decoration:none;color:var(--gris)}
+.nav-lang a:hover{color:var(--azul)}
+.nav-lang .sep{color:var(--linea);padding:3px 0}
+.nav-lang .activo{color:var(--azul);font-weight:600;border-bottom:2px solid var(--acero)}
 @media(max-width:760px){
   .nav-links,.nav-cta{display:none}
   .nav-toggle{display:inline-flex}
@@ -157,7 +163,7 @@ section[id],article[id]{scroll-margin-top:78px}
 /* fotografía de pabellón: el trabajo real, al fondo */
 .portada-foto{
   position:absolute;inset:0;pointer-events:none;
-  background-image:url('pabellon-lampara.webp');
+  background-image:url('/pabellon-lampara.webp');
   background-size:cover;background-position:62% 22%;
   opacity:.78;
   -webkit-mask-image:linear-gradient(105deg,transparent 6%,rgba(0,0,0,.55) 34%,#000 62%);
@@ -753,6 +759,9 @@ p{margin:0 0 15px;max-width:66ch}
         <a href="#contact">Contact</a>
       </div>
       <a class="nav-cta" href="#contact">Get a quote</a>
+      <div class="nav-lang" role="group" aria-label="Language / Idioma">
+        <a href="/" hreflang="es" lang="es">ES</a><span class="sep" aria-hidden="true">|</span><span class="activo" aria-current="true">EN</span>
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-movil" aria-label="Open menu">
         <svg class="ico-abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         <svg class="ico-cerrar" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -764,6 +773,7 @@ p{margin:0 0 15px;max-width:66ch}
     <a href="#process">How it works</a>
     <a href="#doctor">Surgeon</a>
     <a href="#contact">Contact</a>
+    <a href="/" lang="es">Versión en español (ES)</a>
     <a class="nav-cta-movil" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hello%20Dr.%20Martinovic%2C%20I%27m%20interested%20in%20a%20remote%20evaluation%20for%20dental%20treatment%20in%20Santiago." target="_blank" rel="noopener">WhatsApp us</a>
   </div>
 </nav>
