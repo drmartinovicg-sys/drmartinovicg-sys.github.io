@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://drmartinovic.cl/en/">
+<link rel="alternate" hreflang="es" href="https://drmartinovic.cl/">
+<link rel="alternate" hreflang="en" href="https://drmartinovic.cl/en/">
+<title>Dr. Gonzalo Martinovic — Maxillofacial Surgery for International Patients | Santiago, Chile</title>
+<meta name="description" content="Zygomatic implants, full-mouth rehabilitation, orthognathic surgery and TMJ replacement in Santiago, Chile. 3D virtual surgical planning, English-speaking care, written quote before you travel.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://drmartinovic.cl/en/">
+<meta property="og:title" content="Maxillofacial Surgery in Santiago, Chile — for International Patients">
+<meta property="og:description" content="Zygomatic implants and complex jaw surgery, planned in 3D before the operating room. Remote evaluation before you travel.">
+<meta property="og:image" content="https://drmartinovic.cl/retrato-v3.webp">
+<meta name="theme-color" content="#121F38">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/IBMPlexSans-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/SpaceGrotesk-700.woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="preload" as="image" href="/retrato-hero.webp" fetchpriority="high"><style>
+:root{
+  --profundo:#121F38;
+  --azul:#23477F;
+  --acero:#8FB0DC;
+  --hueso:#D8CFC0;
+  --radiografia:#EBEEF4;
+  --papel:#F6F8FB;
+  --tinta:#131B2B;
+  --gris:#5E6880;
+  --linea:#D6DBE6;
+
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --texto:'IBM Plex Sans',system-ui,sans-serif;
+  --dato:'IBM Plex Mono',ui-monospace,monospace;
+
+  --rail:76px;
+}
+
+*{box-sizing:border-box}
+html,body{overflow-x:hidden;max-width:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--papel);color:var(--tinta);
+  font-family:var(--texto);font-size:16.5px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+
+.envoltura{max-width:1080px;margin:0 auto;padding:0 22px}
+
+/* destinos de ancla: que la barra sticky no tape los títulos */
+section[id],article[id]{scroll-margin-top:78px}
+
+/* enlace para saltar al contenido (teclado y lectores de pantalla) */
+.salta{
+  position:absolute;left:16px;top:-60px;z-index:100;
+  background:var(--profundo);color:#fff;text-decoration:none;
+  font-size:13.5px;font-weight:600;padding:10px 18px;border-radius:2px;
+  transition:top .15s ease;
+}
+.salta:focus{top:12px}
+
+/* ---------- riel de medición: la regla del corte tomográfico ---------- */
+.riel{position:relative;padding-left:var(--rail)}
+.riel::before{
+  content:"";position:absolute;left:34px;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--linea) 12%,var(--linea) 88%,transparent);
+}
+.marca{
+  position:absolute;left:0;top:2px;width:var(--rail);
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.14em;
+  color:#54719B;text-transform:uppercase;
+}
+@media(max-width:760px){
+  :root{--rail:0px}
+  .riel{padding-left:0}
+  .riel::before{display:none}
+  .envoltura{padding:0 20px}
+  .marca{position:static;width:auto;display:block;margin-bottom:10px;color:var(--azul)}
+}
+
+/* ---------- navegación ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;background:rgba(246,248,251,.93);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:1080px;margin:0 auto;padding:11px 22px}
+.nav-marca{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em;line-height:1.15}
+.nav-lema{
+  display:inline-block;position:relative;overflow:hidden;isolation:isolate;
+  font-family:var(--dato);font-size:9.5px;letter-spacing:.17em;font-weight:500;
+  text-transform:uppercase;color:#fff;margin-top:4px;
+  padding:3px 10px 3px 9px;border-radius:2px;
+  background:linear-gradient(135deg,#1A4FB5 0%,#1440A0 55%,#0F3282 100%);
+  box-shadow:0 1px 6px rgba(20,64,160,.28);
+}
+.nav-lema::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,
+    rgba(255,255,255,.22) 47%,
+    rgba(255,255,255,.42) 50%,
+    rgba(255,255,255,.22) 53%,
+    transparent 62%);
+  background-size:260% 100%;background-position:180% 0;
+  animation:destello 7.5s ease-in-out 1.4s infinite;
+}
+@media(prefers-reduced-motion:reduce){.nav-lema::after{animation:none;opacity:.3}}
+.nav-links{display:flex;gap:20px;font-size:13.5px;color:var(--gris)}
+.nav-links a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.nav-links a:hover{color:var(--azul)}
+.nav-links a.activo{color:var(--azul);border-bottom-color:var(--acero);font-weight:500}
+.nav-cta{
+  display:inline-block;font-size:13px;font-weight:600;text-decoration:none;
+  padding:8px 16px;border-radius:2px;background:var(--azul);color:#fff;
+  transition:background .15s ease;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--profundo)}
+.nav-derecha{display:flex;align-items:center;gap:18px}
+.nav-toggle{
+  display:none;align-items:center;justify-content:center;
+  width:42px;height:42px;border:1px solid var(--linea);border-radius:3px;
+  background:transparent;cursor:pointer;color:var(--tinta);
+}
+.nav-toggle svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}
+.nav-toggle .ico-cerrar{display:none}
+.nav-toggle[aria-expanded="true"] .ico-abrir{display:none}
+.nav-toggle[aria-expanded="true"] .ico-cerrar{display:block}
+.nav-movil{
+  display:none;flex-direction:column;gap:2px;
+  border-top:1px solid var(--linea);background:var(--papel);
+  padding:10px 22px 16px;
+}
+.nav-movil a{
+  text-decoration:none;color:var(--tinta);font-size:15px;font-weight:500;
+  padding:11px 4px;border-bottom:1px solid var(--linea);
+}
+.nav-movil a:last-of-type{border-bottom:0}
+.nav-movil a:hover{color:var(--azul)}
+.nav-movil .nav-cta-movil{
+  margin-top:10px;text-align:center;background:#25D366;color:#06301A;
+  font-weight:600;padding:12px;border-radius:2px;
+}
+.nav-lang{display:flex;align-items:center;font-family:var(--dato);font-size:12px;letter-spacing:.1em}
+.nav-lang a,.nav-lang span{padding:3px 5px}
+.nav-lang a{text-decoration:none;color:var(--gris)}
+.nav-lang a:hover{color:var(--azul)}
+.nav-lang .sep{color:var(--linea);padding:3px 0}
+.nav-lang .activo{color:var(--azul);font-weight:600;border-bottom:2px solid var(--acero)}
+@media(max-width:760px){
+  .nav-links,.nav-cta{display:none}
+  .nav-toggle{display:inline-flex}
+  .nav-movil.abierto{display:flex}
+}
+
+/* ---------- portada ---------- */
+.portada{
+  position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(168deg,#16294A 0%,#121F38 46%,#0D1729 100%);
+}
+/* fotografía de pabellón: el trabajo real, al fondo */
+.portada-foto{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:url('/pabellon-lampara.webp');
+  background-size:cover;background-position:62% 22%;
+  opacity:.78;
+  -webkit-mask-image:linear-gradient(105deg,transparent 6%,rgba(0,0,0,.55) 34%,#000 62%);
+          mask-image:linear-gradient(105deg,transparent 6%,rgba(0,0,0,.55) 34%,#000 62%);
+}
+/* velo de profundidad: asegura contraste del texto sobre la foto */
+.portada-velo{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(100deg,#0D1729 0%,rgba(13,23,41,.90) 28%,rgba(18,31,56,.52) 55%,rgba(18,31,56,.18) 100%),
+    linear-gradient(to bottom,rgba(13,23,41,.35) 0%,transparent 26%,rgba(13,23,41,.55) 100%);
+}
+/* retícula de medición: la grilla del corte tomográfico */
+.portada::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:
+    linear-gradient(rgba(143,176,220,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(143,176,220,.05) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(115% 85% at 24% 14%,#000 0%,transparent 70%);
+          mask-image:radial-gradient(115% 85% at 24% 14%,#000 0%,transparent 70%);
+}
+@media(max-width:860px){
+  .portada-foto{background-position:60% 16%;opacity:.55;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.6) 42%,#000 100%);
+            mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.6) 42%,#000 100%)}
+  .portada-velo{background:
+    linear-gradient(to bottom,#0D1729 0%,rgba(13,23,41,.9) 34%,rgba(18,31,56,.72) 100%)}
+  .portada::before{background-size:42px 42px}
+}
+.portada-in{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:64px 22px 34px}
+@media(max-width:860px){.portada-in{padding:44px 22px 28px}}
+.portada-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:center}
+@media(max-width:860px){.portada-grid{grid-template-columns:1fr;gap:30px}}
+.portada h1{max-width:16ch}
+.bajada{max-width:50ch}
+
+/* tarjeta del médico en el hero: la confianza va arriba */
+.hero-ficha{margin:0;max-width:300px;width:100%;justify-self:end;position:relative}
+.hero-ficha::before{
+  content:"";position:absolute;inset:-30px -40px -10px -40px;z-index:-1;
+  background:radial-gradient(55% 55% at 55% 45%,rgba(35,71,127,.5),transparent 75%);
+}
+.hero-ficha img{
+  width:100%;height:auto;display:block;border-radius:4px 4px 0 0;
+  filter:saturate(.88) contrast(1.02) brightness(.96);
+  -webkit-mask-image:
+    linear-gradient(to bottom,#000 52%,transparent 96%),
+    linear-gradient(to right,transparent 0%,#000 18%);
+          mask-image:
+    linear-gradient(to bottom,#000 52%,transparent 96%),
+    linear-gradient(to right,transparent 0%,#000 18%);
+  -webkit-mask-composite:source-in;
+          mask-composite:intersect;
+}
+@media(max-width:860px){
+  .hero-ficha::before{inset:-20px -20px -8px -20px}
+}
+.hero-ficha figcaption{
+  position:relative;margin-top:-34px;padding:0 4px 0 18px;
+  border-left:2px solid var(--acero);
+}
+.hero-ficha-nombre{font-family:var(--display);font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.hero-ficha-cargo{font-size:12.5px;color:#C3CFE4;margin-top:2px;line-height:1.45}
+.hero-ficha-hosp{
+  font-family:var(--dato);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--acero);margin-top:8px;line-height:1.6;
+}
+@media(max-width:860px){
+  .hero-ficha{justify-self:start;max-width:250px}
+}
+
+/* tira de confianza: credenciales visibles sin scroll */
+.confianza{
+  display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:14px 0 0;
+  border-top:1px solid rgba(143,176,220,.22);list-style:none;
+}
+.confianza li{
+  position:relative;padding-left:16px;
+  font-family:var(--dato);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:#C3CFE4;line-height:1.6;
+}
+.confianza li::before{
+  content:"";position:absolute;left:0;top:7px;width:7px;height:1.5px;background:var(--acero);
+}
+@media(max-width:560px){.confianza{gap:6px 18px}.confianza li{font-size:10px}}
+
+.indice{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:44px}
+.indice a{
+  position:relative;display:block;padding:18px 16px 16px;text-decoration:none;
+  background:rgba(13,23,41,.42);backdrop-filter:blur(3px);border:1px solid rgba(143,176,220,.2);
+  border-radius:3px;overflow:hidden;isolation:isolate;
+  color:#C3CFE4;font-size:14px;line-height:1.35;
+  transition:transform .16s ease,border-color .16s ease,background .16s ease,color .16s ease;
+}
+.indice a::before{
+  content:"";position:absolute;left:0;top:0;height:2px;width:26px;
+  background:var(--acero);transition:width .24s ease;
+}
+.indice a:hover{
+  transform:translateY(-2px);border-color:rgba(143,176,220,.55);
+  background:rgba(35,71,127,.42);color:#fff;
+  box-shadow:0 6px 22px rgba(8,18,38,.35);
+}
+.indice a:hover::before{width:100%}
+.indice-num{
+  display:block;font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
+  color:var(--acero);margin-bottom:26px;
+}
+.indice-fantasma{
+  position:absolute;right:10px;top:2px;z-index:-1;
+  font-family:var(--display);font-weight:700;font-size:64px;line-height:1;
+  color:rgba(143,176,220,.10);letter-spacing:-.04em;pointer-events:none;
+  transition:color .16s ease;
+}
+.indice a:hover .indice-fantasma{color:rgba(143,176,220,.17)}
+.indice-nombre{display:block;font-weight:500;padding-right:14px}
+.indice-flecha{
+  position:absolute;right:14px;bottom:13px;font-family:var(--dato);
+  color:var(--acero);opacity:0;transform:translateX(-5px);
+  transition:opacity .16s ease,transform .16s ease;
+}
+.indice a:hover .indice-flecha{opacity:1;transform:none}
+@media(hover:none){.indice-flecha{opacity:.55;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .indice a,.indice a::before,.indice-flecha{transition:none}
+  .indice a:hover{transform:none}
+}
+@media(max-width:860px){.indice{grid-template-columns:1fr 1fr;margin-top:38px}}
+@media(max-width:460px){
+  .indice{grid-template-columns:1fr 1fr;gap:8px}
+  .indice a{padding:14px 12px 13px;font-size:12.5px}
+  .indice-num{margin-bottom:18px}
+  .indice-fantasma{font-size:46px;right:8px}
+}
+.cejilla{
+  font-family:var(--dato);font-size:11px;letter-spacing:.22em;
+  color:var(--acero);text-transform:uppercase;margin-bottom:20px;
+}
+.portada h1{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(2.05rem,5.4vw,3.5rem);line-height:1.06;
+  letter-spacing:-.025em;margin:0 0 20px;
+}
+.portada h1 em{font-style:normal;color:var(--acero)}
+.bajada{font-size:17px;line-height:1.6;color:#C3CFE4;max-width:44ch;margin:0 0 28px}
+.acciones{display:flex;gap:11px;flex-wrap:wrap}
+
+.btn{
+  display:inline-block;font-family:var(--texto);font-size:14.5px;font-weight:600;
+  padding:12px 22px;border-radius:2px;text-decoration:none;
+  border:1px solid transparent;transition:transform .12s ease,background .15s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-a{background:var(--acero);color:var(--profundo)}
+.btn-a:hover{background:#AAC5E8}
+.btn-b{border-color:rgba(255,255,255,.32);color:#fff}
+.btn-b:hover{background:rgba(255,255,255,.08)}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:9px;
+  background:#25D366;color:#06301A;
+  box-shadow:0 2px 14px rgba(37,211,102,.3);
+}
+.btn-wa:hover{background:#2EEA76}
+.btn-wa svg{width:18px;height:18px;fill:currentColor;flex:none}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- secciones ---------- */
+.seccion{padding:64px 0;border-top:1px solid var(--linea)}
+.seccion:first-of-type{border-top:0}
+@media(max-width:760px){.seccion{padding:44px 0}}
+
+h2{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.15;
+  letter-spacing:-.02em;margin:0 0 18px;
+}
+h3{font-family:var(--display);font-weight:500;font-size:1.15rem;
+  letter-spacing:-.01em;margin:0 0 8px}
+p{margin:0 0 15px;max-width:66ch}
+.gris{color:var(--gris)}
+
+/* ---------- quién ---------- */
+.perfil{display:grid;grid-template-columns:300px minmax(0,1fr);gap:38px;align-items:start}
+.perfil-sin-foto{grid-template-columns:minmax(0,1fr);max-width:860px}
+.retrato{margin:0;max-width:300px;width:100%}
+@media(max-width:760px){
+  .perfil{grid-template-columns:1fr;gap:24px}
+  .retrato{max-width:250px;margin-inline:auto}
+}
+.credenciales{
+  border-left:2px solid var(--acero);padding-left:18px;margin-top:26px;
+  font-family:var(--dato);font-size:12.5px;line-height:1.85;color:var(--gris);
+}
+/* sin retrato al lado, las credenciales usan el ancho en dos columnas */
+.perfil-sin-foto .credenciales{
+  border-left:0;padding-left:0;margin-top:34px;
+  display:grid;grid-template-columns:1fr 1fr;gap:24px 44px;
+}
+.perfil-sin-foto .cred-grupo{
+  border-left:2px solid var(--acero);padding-left:18px;
+}
+.perfil-sin-foto .credenciales b{margin-top:0}
+@media(max-width:760px){
+  .perfil-sin-foto .credenciales{grid-template-columns:1fr}
+}
+.credenciales b{display:block;color:var(--tinta);font-weight:500;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase;margin-top:14px}
+.credenciales b:first-child{margin-top:0}
+
+.retrato{position:relative}
+.retrato img{width:100%;height:auto;display:block;border-radius:0}
+.banda-foto{margin:0 0 26px}
+.banda-foto img{width:100%;height:auto;border-radius:2px;display:block;
+  filter:saturate(.92) contrast(1.03)}
+
+/* ---------- ámbitos ---------- */
+.ambito{
+  border-top:1px solid var(--linea);padding:30px 0;
+  display:grid;grid-template-columns:1fr 1.55fr;gap:34px;
+}
+.ambito:first-of-type{border-top:0;padding-top:6px}
+@media(max-width:860px){.ambito{grid-template-columns:1fr;gap:14px}}
+.ambito-clave{
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--azul);margin-bottom:9px;
+}
+.indicacion{
+  font-family:var(--dato);font-size:12.5px;line-height:1.7;color:var(--gris);
+  background:var(--radiografia);border-radius:2px;padding:11px 13px;margin-top:14px;
+}
+.indicacion span{color:var(--azul)}
+.consultar{list-style:none;padding:0;margin:16px 0 0}
+.consultar li{
+  position:relative;padding-left:20px;margin-bottom:7px;
+  font-size:15px;line-height:1.55;
+}
+.consultar li::before{
+  content:"";position:absolute;left:2px;top:9px;
+  width:7px;height:1.5px;background:var(--acero);
+}
+
+/* ---------- casos clínicos ---------- */
+.caso{margin:26px 0 0;padding:18px;background:var(--radiografia);border-radius:3px}
+.caso img{width:100%;height:auto;display:block;border-radius:2px}
+.caso-tit{
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--azul);margin-bottom:12px;
+}
+.caso-par{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.caso-par{grid-template-columns:1fr}}
+.caso-et{
+  display:block;font-family:var(--dato);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gris);margin-top:7px;
+}
+.caso-rx{margin-top:10px}
+.caso-pie{font-size:12px;line-height:1.65;color:var(--gris);margin:12px 0 0;max-width:62ch}
+.caso-video{position:relative}
+.caso-video video{width:100%;max-width:520px;height:auto;display:block;
+  border-radius:2px;background:#000;margin-inline:auto;cursor:pointer}
+.caso-oscuro{background:rgba(255,255,255,.07);margin:24px 0}
+.caso-oscuro .caso-pie{color:#B7C6DD}
+
+/* ---------- proceso ---------- */
+.pasos{counter-reset:paso;display:grid;gap:2px;margin-top:6px}
+.paso{
+  background:var(--radiografia);padding:20px 22px;position:relative;
+  display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start;
+}
+.paso::before{
+  counter-increment:paso;content:counter(paso,decimal-leading-zero);
+  font-family:var(--dato);font-size:12px;color:var(--acero);padding-top:3px;
+}
+
+/* ---------- colegas ---------- */
+.colegas{background:var(--profundo);color:#fff}
+.colegas h2{color:#fff}
+.colegas p{color:#C3CFE4}
+.colegas .marca{color:var(--acero)}
+.colegas .riel::before{background:linear-gradient(to bottom,transparent,rgba(143,176,220,.3) 12%,rgba(143,176,220,.3) 88%,transparent)}
+.compromiso{
+  border-left:2px solid var(--acero);padding:4px 0 4px 18px;margin:22px 0 0;
+  font-size:16.5px;color:#fff;max-width:60ch;
+}
+
+/* ---------- lema: el momento de marca ---------- */
+.lema{
+  position:relative;overflow:hidden;isolation:isolate;
+  background:linear-gradient(135deg,#1A4FB5 0%,#1440A0 55%,#0F3282 100%);
+  color:#fff;padding:74px 0;text-align:center;
+}
+.lema-brillo{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,
+    rgba(255,255,255,.16) 47%,
+    rgba(255,255,255,.28) 50%,
+    rgba(255,255,255,.16) 53%,
+    transparent 62%);
+  background-size:260% 100%;background-position:180% 0;
+  animation:destello 7.5s ease-in-out 1.4s infinite;
+}
+@keyframes destello{
+  0%{background-position:180% 0}
+  38%,100%{background-position:-90% 0}
+}
+.lema-regla{
+  display:block;width:52px;height:2px;background:var(--hueso);
+  margin:0 auto 20px;opacity:.9;
+}
+.lema-texto{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(1.9rem,6vw,3.5rem);line-height:1.04;
+  letter-spacing:-.028em;margin:0;max-width:none;
+  text-shadow:0 1px 24px rgba(8,26,66,.32);
+}
+.lema-pie{
+  font-family:var(--dato);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.72);
+  margin:18px 0 0;max-width:none;
+}
+@media(max-width:560px){
+  .lema{padding:52px 0}
+}
+@media(prefers-reduced-motion:reduce){.lema-brillo{animation:none;opacity:.35}}
+
+/* ---------- contacto: acciones con color de canal ---------- */
+.contacto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:22px;margin-top:8px}
+.dato{
+  position:relative;background:var(--radiografia);border-radius:3px;
+  padding:17px 18px 16px;border-left:2px solid var(--acero);
+  transition:border-color .15s ease,background .15s ease,transform .12s ease;
+}
+.dato:hover{border-left-color:var(--azul);background:#E3E8F1;transform:translateY(-1px)}
+.dato-et{font-family:var(--dato);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gris);margin-bottom:7px}
+.dato a{
+  font-size:15.5px;text-decoration:none;color:var(--tinta);font-weight:500;
+  line-height:1.5;display:inline-block;
+}
+.dato a:hover{color:var(--azul)}
+.dato-nota{
+  display:block;font-family:var(--dato);font-size:11px;letter-spacing:.04em;
+  color:var(--gris);margin-top:6px;font-weight:400;
+}
+.dato-wa{border-left-color:#25D366;background:#E9F8EF}
+.dato-wa:hover{border-left-color:#1FBE5B;background:#DDF3E5}
+.dato-wa a{color:#0B5A31;font-weight:600}
+.dato-wa a:hover{color:#06301A}
+
+.canales{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 34px}
+.canal{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--texto);font-size:15px;font-weight:600;
+  padding:13px 22px;border-radius:2px;text-decoration:none;
+  border:1px solid transparent;
+  transition:transform .12s ease,background .15s ease,box-shadow .15s ease;
+}
+.canal svg{width:19px;height:19px;flex:none;fill:currentColor}
+.canal:active{transform:translateY(1px)}
+.canal-wa{background:#25D366;color:#06301A;box-shadow:0 2px 12px rgba(37,211,102,.28);
+  animation:destelloVerde 4.2s ease-in-out 3s infinite}
+.canal-wa:hover{animation:none}
+@keyframes destelloVerde{
+  0%,72%,100%{box-shadow:0 2px 12px rgba(37,211,102,.28)}
+  80%{box-shadow:0 2px 12px rgba(37,211,102,.28), 0 0 20px 4px rgba(37,211,102,.5)}
+  88%{box-shadow:0 2px 12px rgba(37,211,102,.28)}
+}
+@media(prefers-reduced-motion:reduce){.canal-wa{animation:none}}
+.canal-wa:hover{background:#1FBE5B;box-shadow:0 4px 18px rgba(37,211,102,.38)}
+.canal-tel{background:var(--profundo);color:#fff}
+.canal-tel:hover{background:var(--azul)}
+/* ---------- contacto: mapa ---------- */
+.mapa{margin-top:28px;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+.mapa iframe{height:520px}
+@media (max-width:640px){ .mapa{margin-top:20px} .mapa iframe{height:440px} }
+.canal-mail{background:var(--radiografia);color:var(--profundo);border-color:var(--linea)}
+.canal-mail:hover{background:var(--acero);border-color:var(--acero);color:var(--profundo)}
+@media(max-width:560px){
+  .canales{flex-direction:column;gap:10px}
+  .canal{justify-content:center;width:100%}
+}
+
+/* botón flotante de WhatsApp */
+.wa-flota{
+  position:fixed;right:18px;bottom:18px;z-index:80;
+  display:flex;align-items:center;justify-content:center;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#06301A;text-decoration:none;
+  box-shadow:0 6px 20px rgba(8,40,22,.34);
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.wa-flota svg{width:29px;height:29px;fill:currentColor}
+.wa-flota{animation:latido 6s ease-in-out 2s infinite}
+.wa-flota:hover{transform:scale(1.06);box-shadow:0 8px 26px rgba(8,40,22,.44);animation:none}
+.wa-flota-txt{display:none}
+@keyframes latido{
+  0%,84%,100%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34);
+    background:#25D366}
+  90%{transform:scale(1.09);
+    box-shadow:0 8px 26px rgba(8,40,22,.42), 0 0 20px 5px rgba(37,211,102,.45);
+    background:#2EEA76}
+  96%{transform:scale(1);
+    box-shadow:0 6px 20px rgba(8,40,22,.34);
+    background:#25D366}
+}
+.wa-flota::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  border:2px solid rgba(37,211,102,.55);
+  animation:pulso 6s ease-out 2s infinite;
+}
+@keyframes pulso{
+  0%,84%{transform:scale(1);opacity:0}
+  88%{opacity:.6}
+  100%{transform:scale(1.45);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .wa-flota::after{animation:none;opacity:0}
+  .wa-flota{animation:none}
+}
+/* en móvil: barra inferior persistente con texto, no solo un ícono */
+@media(max-width:560px){
+  .wa-flota{
+    left:14px;right:14px;bottom:12px;width:auto;height:auto;
+    border-radius:3px;padding:13px 18px;gap:10px;
+    font-size:15px;font-weight:600;
+  }
+  .wa-flota svg{width:22px;height:22px}
+  .wa-flota-txt{display:inline}
+  .wa-flota::after{border-radius:3px}
+  body{padding-bottom:64px}
+}
+
+.pie{
+  border-top:1px solid var(--linea);padding:26px 0 40px;
+  font-size:12.5px;line-height:1.7;color:var(--gris);
+}
+
+/* ---------- bloque de resumen citable ---------- */
+.respuesta{
+  margin-top:34px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(143,176,220,.28);border-radius:3px;
+  padding:20px 22px;max-width:760px;
+}
+.respuesta-et{
+  font-family:var(--dato);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--acero);margin-bottom:10px;
+}
+.respuesta p{margin:0;font-size:15px;line-height:1.7;color:#DDE6F2;max-width:none}
+/* variante sobre fondo claro (sección Quién) */
+.respuesta-clara{
+  background:var(--radiografia);border-color:var(--linea);
+  border-left:2px solid var(--acero);max-width:none;
+}
+.respuesta-clara .respuesta-et{color:var(--azul)}
+.respuesta-clara p{color:var(--tinta)}
+
+.ambito-gancho{
+  font-family:var(--display);font-weight:500;font-size:1.02rem;line-height:1.35;
+  letter-spacing:-.01em;color:var(--azul);margin:8px 0 0;max-width:34ch;
+}
+@media(max-width:860px){.ambito-gancho{font-size:.98rem;margin-bottom:14px}}
+
+/* ---------- guías: banda de acceso destacado ---------- */
+.guias{background:var(--profundo);padding:0 0 54px;border:0}
+.guias-in{max-width:1080px;margin:0 auto;padding:0 22px}
+.guias-et{
+  font-family:var(--dato);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--acero);margin:0 0 16px;
+}
+.guias-par{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.guias-par{grid-template-columns:1fr}}
+.guia{
+  position:relative;overflow:hidden;isolation:isolate;display:block;
+  padding:22px 24px;border-radius:3px;text-decoration:none;color:#fff;
+  background:linear-gradient(135deg,#1A4FB5 0%,#1440A0 55%,#0F3282 100%);
+  box-shadow:0 2px 14px rgba(20,64,160,.3);
+  transition:transform .14s ease,box-shadow .16s ease;
+}
+.guia::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,rgba(255,255,255,.18) 47%,rgba(255,255,255,.34) 50%,
+    rgba(255,255,255,.18) 53%,transparent 62%);
+  background-size:260% 100%;background-position:180% 0;
+  animation:destello 7.5s ease-in-out 1.4s infinite;
+}
+.guia:nth-child(2)::after{animation-delay:2s}
+.guia:nth-child(3)::after{animation-delay:4s}
+.guia:nth-child(4)::after{animation-delay:6s}
+.guia:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(20,64,160,.44)}
+.guia-tit{
+  display:block;font-family:var(--display);font-weight:700;font-size:1.16rem;
+  letter-spacing:-.015em;margin-bottom:5px;
+}
+.guia-sub{display:block;font-size:14px;line-height:1.45;color:rgba(255,255,255,.82)}
+.guia-flecha{
+  position:absolute;right:20px;top:50%;transform:translateY(-50%);
+  font-family:var(--dato);font-size:17px;color:rgba(255,255,255,.85);
+}
+@media(prefers-reduced-motion:reduce){
+  .guia::after{animation:none;opacity:.25}
+  .guia:hover{transform:none}
+}
+
+/* ---------- pestaña lateral flotante ---------- */
+.guias-lat{
+  position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:70;
+  display:flex;flex-direction:column;gap:6px;
+}
+.lat{
+  position:relative;overflow:hidden;isolation:isolate;
+  writing-mode:vertical-rl;text-orientation:mixed;
+  padding:16px 9px;border-radius:0 3px 3px 0;text-decoration:none;color:#fff;
+  font-family:var(--texto);font-size:12.5px;font-weight:600;letter-spacing:.04em;
+  background:linear-gradient(135deg,#1A4FB5 0%,#1440A0 55%,#0F3282 100%);
+  box-shadow:2px 2px 12px rgba(8,26,66,.34);
+  transition:padding-right .16s ease;
+}
+.lat::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,rgba(255,255,255,.2) 47%,rgba(255,255,255,.38) 50%,
+    rgba(255,255,255,.2) 53%,transparent 62%);
+  background-size:100% 260%;background-position:0 180%;
+  animation:destelloVert 6.5s ease-in-out 2s infinite;
+}
+.lat:nth-child(2)::after{animation-delay:3.2s}
+.lat:hover{padding-right:14px}
+@keyframes destelloVert{
+  0%{background-position:0 180%}
+  40%,100%{background-position:0 -90%}
+}
+@media(prefers-reduced-motion:reduce){.lat::after{animation:none;opacity:.25}}
+@media(max-width:1180px){.guias-lat{display:none}}
+
+/* ---------- botón a página de servicio ---------- */
+.btn-pagina{
+  position:relative;overflow:hidden;isolation:isolate;
+  display:inline-block;margin-top:20px;
+  font-family:var(--texto);font-size:14.5px;font-weight:600;
+  padding:13px 24px;border-radius:2px;text-decoration:none;
+  background:var(--azul);color:#fff;
+  box-shadow:0 1px 8px rgba(35,71,127,.25);
+  transition:transform .12s ease,background .15s ease;
+}
+.btn-pagina::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,
+    transparent 38%,rgba(255,255,255,.2) 47%,rgba(255,255,255,.38) 50%,
+    rgba(255,255,255,.2) 53%,transparent 62%);
+  background-size:260% 100%;background-position:180% 0;
+  animation:destello 7.5s ease-in-out 2.2s infinite;
+}
+@media(prefers-reduced-motion:reduce){.btn-pagina::after{animation:none;opacity:.2}}
+.btn-pagina:hover{background:var(--profundo)}
+.btn-pagina:active{transform:translateY(1px)}
+@media(max-width:560px){.btn-pagina{display:block;text-align:center}}
+
+/* ---------- publicaciones ---------- */
+.pub-metricas{display:flex;gap:34px;flex-wrap:wrap;margin:6px 0 24px}
+.pub-n{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1;color:var(--profundo)}
+.pub-et{font-family:var(--dato);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gris);margin-top:6px}
+.pubs{list-style:none;padding:0;margin:14px 0 0;max-width:72ch}
+.pubs li{
+  border-left:2px solid var(--acero);padding:2px 0 2px 16px;margin-bottom:14px;
+  font-size:14.5px;line-height:1.6;color:var(--gris);
+}
+.pubs li b{color:var(--tinta);font-weight:500}
+.pubs li a{color:var(--azul);text-decoration:none}
+.pubs li a:hover{text-decoration:underline}
+
+:focus-visible{outline:2px solid var(--acero);outline-offset:3px}
+</style></head>
+<body>
+
+<a class="salta" href="#contenido">Skip to main content</a>
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-in">
+    <div class="nav-firma">
+      <div class="nav-marca">Dr. Gonzalo Martinovic</div>
+      <div class="nav-lema">International patients</div>
+    </div>
+    <div class="nav-derecha">
+      <div class="nav-links">
+        <a href="#procedures">Procedures</a>
+        <a href="#process">How it works</a>
+        <a href="#doctor">Surgeon</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-cta" href="#contact">Get a quote</a>
+      <div class="nav-lang" role="group" aria-label="Language / Idioma">
+        <a href="/" hreflang="es" lang="es">ES</a><span class="sep" aria-hidden="true">|</span><span class="activo" aria-current="true">EN</span>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-movil" aria-label="Open menu">
+        <svg class="ico-abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="ico-cerrar" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-movil" id="nav-movil">
+    <a href="#procedures">Procedures</a>
+    <a href="#process">How it works</a>
+    <a href="#doctor">Surgeon</a>
+    <a href="#contact">Contact</a>
+    <a href="/" lang="es">Versión en español (ES)</a>
+    <a class="nav-cta-movil" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hello%20Dr.%20Martinovic%2C%20I%27m%20interested%20in%20a%20remote%20evaluation%20for%20dental%20treatment%20in%20Santiago." target="_blank" rel="noopener">WhatsApp us</a>
+  </div>
+</nav>
+
+<header class="portada">
+  <div class="portada-foto" aria-hidden="true"></div>
+  <div class="portada-velo" aria-hidden="true"></div>
+  <div class="portada-in">
+    <div class="portada-grid">
+      <div>
+        <div class="cejilla">Oral &amp; maxillofacial surgery · Santiago, Chile</div>
+        <h1>Complex jaw surgery, <em>planned in 3D</em> before the operating room.</h1>
+        <p class="bajada">
+          Zygomatic implants for severe bone loss, full-mouth rehabilitation,
+          jaw correction surgery and total TMJ replacement. Every case is
+          planned virtually on your own CT scan before surgery — and your
+          treatment plan, timeline and quote are defined before you fly.
+        </p>
+        <div class="acciones">
+          <a class="btn btn-wa" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hello%20Dr.%20Martinovic%2C%20I%27m%20interested%20in%20a%20remote%20evaluation%20for%20dental%20treatment%20in%20Santiago." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.41 4.4-9.81 9.82-9.81 2.62 0 5.08 1.02 6.93 2.88a9.74 9.74 0 0 1 2.87 6.94c0 5.41-4.4 9.82-9.81 9.82zM20.52 3.45A11.7 11.7 0 0 0 12.05 0C5.55 0 .26 5.29.26 11.79c0 2.08.54 4.11 1.58 5.9L.16 24l6.45-1.69a11.75 11.75 0 0 0 5.43 1.38h.01c6.5 0 11.79-5.29 11.79-11.79 0-3.15-1.23-6.11-3.46-8.34z"/></svg>Start on WhatsApp</a>
+          <a class="btn btn-b" href="#process">How it works</a>
+        </div>
+        <ul class="confianza">
+          <li>Staff surgeon, Military Hospital of Santiago</li>
+          <li>14 scientific publications</li>
+          <li>3D virtual surgical planning</li>
+          <li>Care in English</li>
+        </ul>
+      </div>
+      <figure class="hero-ficha">
+        <img src="/retrato-hero.webp" width="690" height="920" fetchpriority="high" decoding="async"
+             alt="Dr. Gonzalo Martinovic, oral and maxillofacial surgeon, in his practice">
+        <figcaption>
+          <div class="hero-ficha-nombre">Dr. Gonzalo Martinovic</div>
+          <div class="hero-ficha-cargo">Oral &amp; Maxillofacial Surgeon</div>
+          <div class="hero-ficha-hosp">Staff · Military Hospital of Santiago</div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section class="seccion">
+  <div class="envoltura riel">
+    <span class="marca">Why Chile</span>
+    <h2>Why patients fly to Santiago</h2>
+    <div class="ambito">
+      <div>
+        <div class="ambito-clave">Value</div>
+        <p class="ambito-gancho">Specialist-level surgery at a fraction of typical US or EU costs.</p>
+      </div>
+      <div>
+        <p>
+          Santiago is a modern, safe capital with direct flights from most major
+          US and European cities. World-class private clinics, advanced imaging
+          and 3D planning — at costs typically far below comparable treatment
+          in the United States or Europe. You receive a detailed written quote
+          before deciding anything.
+        </p>
+        <p class="gris">
+          You deal directly with the surgeon, not an agency: your evaluation,
+          your plan and your surgery are all with the same doctor.
+        </p>
+      </div>
+    </div>
+    <div class="ambito">
+      <div>
+        <div class="ambito-clave">Planning</div>
+        <p class="ambito-gancho">The surgery is designed before you buy a plane ticket.</p>
+      </div>
+      <div>
+        <p>
+          Your first consultation is remote: send your CT scan and dental
+          history, and you receive an honest assessment of whether your case is
+          surgical, what the options are, and a written plan with timelines and
+          costs. You only travel once the plan is defined.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="procedures">
+  <div class="envoltura riel">
+    <span class="marca">Procedures</span>
+    <h2>What we treat</h2>
+    <p class="gris" style="margin-bottom:30px">
+      Complex cases that general dentistry and conventional implantology refer out.
+    </p>
+
+    <article class="ambito">
+      <div>
+        <div class="ambito-clave">Severe bone loss</div>
+        <h3>Zygomatic implants</h3>
+        <p class="ambito-gancho">"You don't have enough bone for implants" is not the final word.</p>
+      </div>
+      <div>
+        <p>
+          When the upper jaw has lost too much bone for conventional implants,
+          zygomatic implants anchor in the cheekbone, which never resorbs. Fixed
+          teeth without months of bone grafting — often with immediate loading.
+        </p>
+        <p class="gris">
+          High-complexity surgery that requires CT imaging, virtual planning and
+          a team that performs it regularly.
+        </p>
+        <figure class="caso">
+          <figcaption class="caso-tit">Documented case — zygomatic implants</figcaption>
+          <div class="caso-par">
+            <div>
+              <img src="/img/caso-cigomaticos-antes.webp" width="1100" height="550" loading="lazy" decoding="async"
+                   alt="Severely atrophic upper jaw before treatment">
+              <span class="caso-et">Before — atrophic maxilla</span>
+            </div>
+            <div>
+              <img src="/img/caso-cigomaticos-despues.webp" width="1100" height="516" loading="lazy" decoding="async"
+                   alt="Zygomatic implants with fixed full-arch rehabilitation">
+              <span class="caso-et">After — full rehabilitation</span>
+            </div>
+          </div>
+          <p class="caso-pie">
+            The two long, angled implants anchor in the zygomatic bone, bypassing
+            a maxilla that could no longer support conventional implants. Both
+            arches were restored with fixed prostheses. Results vary by case and
+            can only be estimated after evaluation and imaging.
+          </p>
+        </figure>
+      </div>
+    </article>
+
+    <article class="ambito">
+      <div>
+        <div class="ambito-clave">Rehabilitation</div>
+        <h3>Full-mouth implants &amp; bone reconstruction</h3>
+        <p class="ambito-gancho">Rebuild the foundation before replacing the tooth.</p>
+      </div>
+      <div>
+        <p>
+          Implants where surgery goes beyond placement: grafting, sinus lifts,
+          guided bone regeneration, or full rehabilitation of an entire arch —
+          planned digitally from the start.
+        </p>
+      </div>
+    </article>
+
+    <article class="ambito">
+      <div>
+        <div class="ambito-clave">Facial skeleton</div>
+        <h3>Orthognathic (jaw) surgery</h3>
+        <p class="ambito-gancho">When the problem is the bone, not the teeth.</p>
+      </div>
+      <div>
+        <p>
+          Corrects the position of the upper and lower jaws — for bite problems,
+          facial asymmetry and skeletal sleep apnea. Planned virtually so the
+          skeletal result is simulated before you decide.
+        </p>
+      </div>
+    </article>
+
+    <article class="ambito">
+      <div>
+        <div class="ambito-clave">Joint</div>
+        <h3>Total TMJ replacement</h3>
+        <p class="ambito-gancho">When the jaw joint is destroyed, it can be replaced.</p>
+      </div>
+      <div>
+        <p>
+          For end-stage arthritis, ankylosis or failed previous surgeries: the
+          joint is replaced with a patient-specific prosthesis designed on your
+          own CT scan. A major, rarely performed operation — and the only real
+          solution when there is no joint left to preserve.
+        </p>
+        <figure class="caso">
+          <figcaption class="caso-tit">Technical material — prosthesis design</figcaption>
+          <img src="/img/componente-atm.webp" width="750" height="750" loading="lazy" decoding="async"
+               alt="Three-dimensional design of a custom temporomandibular joint prosthesis on the patient's bone model">
+          <p class="caso-pie">
+            The component is designed on the patient's CT scan before it is
+            manufactured: each piece is unique and exists only for that anatomy.
+          </p>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="seccion" id="process">
+  <div class="envoltura riel">
+    <span class="marca">Process</span>
+    <h2>How it works</h2>
+    <p class="gris" style="margin-bottom:26px">
+      Nothing is decided before your imaging and your written plan exist.
+    </p>
+    <div class="pasos">
+      <div class="paso">
+        <div>
+          <h3>1 · Remote evaluation</h3>
+          <p class="gris" style="margin:0">
+            Send your CT scan and dental history by email or WhatsApp. You
+            receive an honest assessment — surgical or not, options, timelines —
+            before booking any travel.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>2 · Written plan &amp; quote</h3>
+          <p class="gris" style="margin:0">
+            A written treatment plan with alternatives, real timelines and a
+            detailed cost estimate. You decide with complete information.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>3 · Your trip to Santiago</h3>
+          <p class="gris" style="margin:0">
+            Surgery is scheduled around your travel. Most implant cases require
+            a stay of about one to two weeks; complex jaw surgery may require
+            longer. Recovery happens in a modern, walkable city.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>4 · Surgery &amp; follow-up</h3>
+          <p class="gris" style="margin:0">
+            With follow-up defined before you travel, and a written report for
+            your dentist back home so your long-term care continues where you live.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="doctor">
+  <div class="envoltura riel">
+    <span class="marca">Surgeon</span>
+    <h2>Your surgeon</h2>
+    <div class="perfil perfil-sin-foto">
+      <div>
+        <p>
+          Dr. Gonzalo Martinovic is a Chilean specialist in Oral and
+          Maxillofacial Surgery, trained at Universidad Mayor (Santiago) with a
+          Master of Medical Sciences (Universidad de La Frontera). He is staff
+          surgeon at the Oral and Maxillofacial Surgery Service of the Military
+          Hospital of Santiago — the hospital volume that builds skill in
+          trauma and complex cases.
+        </p>
+        <p>
+          He works with Cone Beam CT and virtual surgical planning in every
+          complex case: implant positions and osteotomy lines are resolved on
+          the computer before surgery, and arrive in the operating room as
+          patient-specific surgical guides.
+        </p>
+        <div class="credenciales">
+          <div class="cred-grupo">
+            <b>Training</b>
+            DDS, Universidad Mayor<br>
+            Specialist in Oral &amp; Maxillofacial Surgery — Universidad Mayor, 2013<br>
+            Master of Medical Sciences, Surgery — Universidad de La Frontera, 2019
+          </div>
+          <div class="cred-grupo">
+            <b>Hospital practice</b>
+            Staff, Oral &amp; Maxillofacial Surgery Service — Military Hospital of Santiago<br>
+            Former chief resident, Emergency Service (2021–2023)
+          </div>
+          <div class="cred-grupo">
+            <b>Academic activity</b>
+            Author or co-author of 14 publications in national and international journals
+          </div>
+          <div class="cred-grupo">
+            <b>Recognition</b>
+            Third place, Facial Trauma category — XVI Latin American Congress of Oral &amp; Maxillofacial Surgery
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="respuesta respuesta-clara">
+      <div class="respuesta-et">In short</div>
+      <p>
+        One surgeon, one plan, direct communication in English — from your
+        remote evaluation to your surgery in Santiago and your follow-up back
+        home.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="lema">
+  <div class="lema-brillo" aria-hidden="true"></div>
+  <div class="envoltura lema-in">
+    <span class="lema-regla" aria-hidden="true"></span>
+    <p class="lema-texto">Surgery that changes lives</p>
+    <p class="lema-pie">Dr. Gonzalo Martinovic · Oral &amp; Maxillofacial Surgery · Santiago, Chile</p>
+  </div>
+</section>
+
+<section class="seccion" id="contact">
+  <div class="envoltura riel">
+    <span class="marca">Contact</span>
+    <h2>Request a remote evaluation</h2>
+    <p class="gris">
+      Write to us on WhatsApp or by email with a short description of your case.
+      If you already have a CT scan or X-rays, mention it — and we'll reply in English.
+    </p>
+    <div class="canales">
+      <a class="canal canal-wa" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hello%20Dr.%20Martinovic%2C%20I%27m%20interested%20in%20a%20remote%20evaluation%20for%20dental%20treatment%20in%20Santiago." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.41 4.4-9.81 9.82-9.81 2.62 0 5.08 1.02 6.93 2.88a9.74 9.74 0 0 1 2.87 6.94c0 5.41-4.4 9.82-9.81 9.82zM20.52 3.45A11.7 11.7 0 0 0 12.05 0C5.55 0 .26 5.29.26 11.79c0 2.08.54 4.11 1.58 5.9L.16 24l6.45-1.69a11.75 11.75 0 0 0 5.43 1.38h.01c6.5 0 11.79-5.29 11.79-11.79 0-3.15-1.23-6.11-3.46-8.34z"/></svg>WhatsApp</a>
+      <a class="canal canal-mail" href="mailto:drmartinovicg@gmail.com?subject=International%20patient%20consultation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>Email</a>
+    </div>
+    <div class="contacto-grid">
+      <div class="dato dato-wa">
+        <div class="dato-et">WhatsApp</div>
+        <a onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hello%20Dr.%20Martinovic%2C%20I%27m%20interested%20in%20a%20remote%20evaluation%20for%20dental%20treatment%20in%20Santiago." target="_blank" rel="noopener">+56 9 3567 3359<span class="dato-nota">Replies in English · Send your CT if you have one</span></a>
+      </div>
+      <div class="dato">
+        <div class="dato-et">Email</div>
+        <a href="mailto:drmartinovicg@gmail.com?subject=International%20patient%20consultation">drmartinovicg@gmail.com<span class="dato-nota">For scans and X-rays</span></a>
+      </div>
+      <div class="dato">
+        <div class="dato-et">Practice</div>
+        <a href="https://maps.google.com/?q=Av.+Apoquindo+6314,+Las+Condes,+Santiago" target="_blank" rel="noopener">Av. Apoquindo 6314, of. 1001<br>Las Condes, Santiago, Chile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="envoltura">
+    <p style="margin:0 0 8px">
+      Dr. Gonzalo Martinovic · Oral &amp; Maxillofacial Surgery · Santiago, Chile
+    </p>
+    <p style="margin:0;max-width:72ch">
+      Clinical images are published with the written consent of the patients,
+      granted specifically for publication, and have been edited to remove any
+      identifiable data.<br><br>
+      The information on this page is general and does not replace a clinical
+      evaluation. The results of any procedure vary by case and can only be
+      estimated after an examination and the corresponding imaging. Travel and
+      accommodation are the patient's responsibility; the practice does not act
+      as a travel agency.
+    </p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Dentist",
+  "name":"Dr. Gonzalo Martinovic — Oral & Maxillofacial Surgery",
+  "url":"https://drmartinovic.cl/en/",
+  "telephone":"+56935673359",
+  "email":"drmartinovicg@gmail.com",
+  "image":"https://drmartinovic.cl/retrato-v3.webp",
+  "priceRange":"$$$",
+  "description":"Oral and maxillofacial surgery in Santiago, Chile for international patients: zygomatic implants, full-mouth rehabilitation, orthognathic surgery and total TMJ replacement, with 3D virtual surgical planning.",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Av. Apoquindo 6314, of. 1001",
+    "addressLocality":"Las Condes",
+    "addressRegion":"Región Metropolitana",
+    "addressCountry":"CL"
+  },
+  "medicalSpecialty":"OralAndMaxillofacialSurgery",
+  "availableLanguage":["es","en"]
+}
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18343247822"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18343247822');
+  gtag('config', 'G-L25Q2L8G50');
+  function convWhatsApp(){
+    gtag('event','contacto',{'metodo':'whatsapp','pagina':'en-international'});
+    gtag('event','conversion',{'send_to':'AW-18343247822/HrUOCNyYneIcEM7_3qpE'});
+    return true;
+  }
+</script>
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var panel = document.getElementById('nav-movil');
+  if(toggle && panel){
+    var setEstado = function(abrir){
+      toggle.setAttribute('aria-expanded', abrir ? 'true' : 'false');
+      toggle.setAttribute('aria-label', abrir ? 'Close menu' : 'Open menu');
+      panel.classList.toggle('abierto', abrir);
+    };
+    toggle.addEventListener('click', function(){
+      setEstado(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    panel.addEventListener('click', function(e){
+      if(e.target.closest('a')) setEstado(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') setEstado(false);
+    });
+  }
+  var enlaces = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var mapa = {};
+  enlaces.forEach(function(a){ mapa[a.getAttribute('href').slice(1)] = a; });
+  var secciones = Object.keys(mapa).map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  if('IntersectionObserver' in window && secciones.length){
+    var actual = null;
+    var spy = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting && actual !== e.target.id){
+          actual = e.target.id;
+          enlaces.forEach(function(a){ a.classList.remove('activo'); a.removeAttribute('aria-current'); });
+          var act = mapa[actual];
+          if(act){ act.classList.add('activo'); act.setAttribute('aria-current','true'); }
+        }
+      });
+    }, {rootMargin:'-30% 0px -55% 0px'});
+    secciones.forEach(function(s){ spy.observe(s); });
+  }
+})();
+</script>
+
+<a class="wa-flota" onclick="convWhatsApp()" href="https://wa.me/56935673359?text=Hello%20Dr.%20Martinovic%2C%20I%27m%20interested%20in%20a%20remote%20evaluation%20for%20dental%20treatment%20in%20Santiago." aria-label="Write to us on WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.41 4.4-9.81 9.82-9.81 2.62 0 5.08 1.02 6.93 2.88a9.74 9.74 0 0 1 2.87 6.94c0 5.41-4.4 9.82-9.81 9.82zM20.52 3.45A11.7 11.7 0 0 0 12.05 0C5.55 0 .26 5.29.26 11.79c0 2.08.54 4.11 1.58 5.9L.16 24l6.45-1.69a11.75 11.75 0 0 0 5.43 1.38h.01c6.5 0 11.79-5.29 11.79-11.79 0-3.15-1.23-6.11-3.46-8.34z"/></svg><span class="wa-flota-txt">WhatsApp us</span></a>
+
+
+<!-- ===== BOTON WHATSAPP CON CAPTURA DE LEAD (Dr. Martinovic) ===== -->
+<!-- Pegar ESTE BLOQUE COMPLETO justo antes del </body> de la página -->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .demo-nota {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    color: #664d03;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 24px;
+    max-width: 420px;
+    text-align: center;
+  }
+  /* ===== BOTÓN FLOTANTE (opcional: fijo abajo a la derecha) ===== */
+  .btn-whatsapp {
+    background: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 28px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.55);
+  }
+  .btn-whatsapp svg { width: 26px; height: 26px; fill: #fff; }
+
+  /* ===== MODAL DEL FORMULARIO ===== */
+  .modal-fondo {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .modal-fondo.activo { display: flex; }
+  .modal-caja {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    animation: aparecer 0.25s ease;
+  }
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .modal-caja h2 { font-size: 20px; color: #1a1a1a; margin-bottom: 6px; }
+  .modal-caja p.sub { font-size: 14px; color: #666; margin-bottom: 18px; }
+  .campo { margin-bottom: 14px; }
+  .campo label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  .campo input, .campo select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .campo input:focus, .campo select:focus { border-color: #25d366; }
+  .btn-enviar {
+    width: 100%;
+    background: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background 0.15s ease;
+  }
+  .btn-enviar:hover { background: #1eb85a; }
+  .btn-enviar:disabled { background: #9be3bb; cursor: wait; }
+  .cerrar {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .legal {
+    font-size: 12px;
+    color: #999;
+    margin-top: 12px;
+    text-align: center;
+  }
+  .estado {
+    display: none;
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .estado.ok { display: block; background: #e7f9ef; color: #1e7e46; }
+  .estado.error { display: block; background: #fdecea; color: #b3261e; }
+</style>
+
+<!-- ===== BOTÓN: copiar desde aquí ===== -->
+<button class="btn-whatsapp" id="btnAbrirForm" type="button">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.83 9.83 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88a9.83 9.83 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.88 9.88zm8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.44h.01c6.55 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></svg>
+  Agendar consulta por WhatsApp
+</button>
+
+<!-- Modal -->
+<div class="modal-fondo" id="modalFondo">
+  <div class="modal-caja">
+    <button class="cerrar" id="btnCerrar" type="button" aria-label="Cerrar">×</button>
+    <h2>Dejanos tus datos 👋</h2>
+    <p class="sub">Completá y te abrimos WhatsApp con el mensaje listo.</p>
+    <form id="formLead" novalidate>
+      <div class="campo">
+        <label for="nombre">Nombre y apellido *</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Ej.: María Pérez">
+      </div>
+      <div class="campo">
+        <label for="telefono">Tu WhatsApp *</label>
+        <input type="tel" id="telefono" name="telefono" required placeholder="Ej.: 11 5555 5555">
+      </div>
+      <div class="campo">
+        <label for="motivo">Motivo</label>
+        <select id="motivo" name="motivo">
+          <option value="Quiero agendar una hora con el Dr Gonzalo Martinovic">Agendar hora</option>
+          <option value="Quiero consultar precios">Consultar precios</option>
+          <option value="Tengo una consulta">Otra consulta</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-enviar" id="btnEnviar">Abrir WhatsApp</button>
+      <div class="estado" id="estadoMsg"></div>
+      <p class="legal">Al continuar aceptás que usemos tus datos para contactarte sobre tu consulta.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   CONFIG — Cambiá solo estas 2 líneas antes de publicar
+   ============================================================ */
+const CONFIG = {
+  WHATSAPP_NUMBER: "56935673359",       // ✅ Número de la consulta configurado — no editar
+  WEB3FORMS_KEY: "e4565483-d3c9-4ed6-a11c-5b55b771095a", // ✅ Clave Web3Forms configurada — no editar
+  EMAIL_FALLBACK: ""                        // Opcional: dejar vacío
+};
+
+const modalFondo  = document.getElementById('modalFondo');
+const formLead    = document.getElementById('formLead');
+const btnEnviar   = document.getElementById('btnEnviar');
+const estadoMsg   = document.getElementById('estadoMsg');
+
+document.getElementById('btnAbrirForm').addEventListener('click', () => {
+  modalFondo.classList.add('activo');
+  document.getElementById('nombre').focus();
+});
+document.getElementById('btnCerrar').addEventListener('click', () => modalFondo.classList.remove('activo'));
+modalFondo.addEventListener('click', (e) => { if (e.target === modalFondo) modalFondo.classList.remove('activo'); });
+
+formLead.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const nombre   = document.getElementById('nombre').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const motivo   = document.getElementById('motivo').value;
+
+  if (!nombre || !telefono) {
+    mostrarEstado('error', 'Completá nombre y teléfono para continuar.');
+    return;
+  }
+
+  btnEnviar.disabled = true;
+  btnEnviar.textContent = 'Abriendo WhatsApp…';
+  mostrarEstado('ok', '¡Gracias! Abriendo WhatsApp…');
+
+  // 1) Respaldo por email vía Web3Forms (CORS habilitado, sin cookies ni sesiones)
+  if (CONFIG.WEB3FORMS_KEY && !CONFIG.WEB3FORMS_KEY.includes('TU_CLAVE')) {
+    const datos = new URLSearchParams();
+    datos.append('access_key', CONFIG.WEB3FORMS_KEY);
+    datos.append('subject', '📱 Nuevo lead web — ' + nombre);
+    datos.append('nombre', nombre);
+    datos.append('telefono', telefono);
+    datos.append('motivo', motivo);
+    datos.append('fecha', new Date().toLocaleString('es-CL'));
+    datos.append('mensaje_whatsapp', `Hola, soy ${nombre}. ${motivo}. Mi número es ${telefono}.`);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: datos
+    }).then(r => r.json()).then(j => {
+      if (!j.success) mostrarEstado('error', 'Aviso: el correo de respaldo no se pudo enviar.');
+    }).catch(() => { /* aun falle, el paciente sigue a WhatsApp */ });
+  }
+
+  // 2) Redirección a WhatsApp con mensaje prellenado
+  const texto = encodeURIComponent(`Hola, soy ${nombre}. ${motivo}. Mi número es ${telefono}.`);
+  window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${texto}`, '_blank');
+
+  setTimeout(() => {
+    btnEnviar.disabled = false;
+    btnEnviar.textContent = 'Abrir WhatsApp';
+    formLead.reset();
+    modalFondo.classList.remove('activo');
+    mostrarEstado('', '');
+  }, 1500);
+});
+
+function mostrarEstado(tipo, texto) {
+  estadoMsg.className = 'estado' + (tipo ? ' ' + tipo : '');
+  estadoMsg.textContent = texto;
+}
+</script>
+<!-- ===== FIN BOTON WHATSAPP ===== -->
+
+<!-- Integración: los botones de WhatsApp del sitio abren el formulario de captura de leads -->
+<script>
+(function(){
+  var btn = document.getElementById('btnAbrirForm');
+  if (!btn) return;
+  btn.style.display = 'none';
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(function(a){
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('colega') !== -1) return; // derivación de colegas sigue directa a WhatsApp
+    a.addEventListener('click', function(ev){
+      ev.preventDefault();
+      btn.click();
+    });
+  });
+})();
+</script>
+</body>
+</html>
