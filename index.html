@@ -1747,17 +1747,7 @@ p{margin:0 0 15px;max-width:66ch}
 <!-- ===== BOTON WHATSAPP CON CAPTURA DE LEAD (Dr. Martinovic) ===== -->
 <!-- Pegar ESTE BLOQUE COMPLETO justo antes del </body> de la página -->
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f0f2f5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 24px;
-  }
+  /* NOTA: sin reglas globales (* ni body) para no alterar el diseño del sitio */
   .demo-nota {
     background: #fff3cd;
     border: 1px solid #ffc107;
@@ -1888,16 +1878,16 @@ p{margin:0 0 15px;max-width:66ch}
 <div class="modal-fondo" id="modalFondo">
   <div class="modal-caja">
     <button class="cerrar" id="btnCerrar" type="button" aria-label="Cerrar">×</button>
-    <h2>Dejanos tus datos 👋</h2>
-    <p class="sub">Completá y te abrimos WhatsApp con el mensaje listo.</p>
+    <h2>Déjanos tus datos 👋</h2>
+    <p class="sub">Completa el formulario y te abrimos WhatsApp con el mensaje listo.</p>
     <form id="formLead" novalidate>
       <div class="campo">
         <label for="nombre">Nombre y apellido *</label>
-        <input type="text" id="nombre" name="nombre" required placeholder="Ej.: María Pérez">
+        <input type="text" id="nombre" name="nombre" required placeholder="Ej.: María González">
       </div>
       <div class="campo">
         <label for="telefono">Tu WhatsApp *</label>
-        <input type="tel" id="telefono" name="telefono" required placeholder="Ej.: 11 5555 5555">
+        <input type="tel" id="telefono" name="telefono" required placeholder="Ej.: 9 5555 5555">
       </div>
       <div class="campo">
         <label for="motivo">Motivo</label>
@@ -1909,7 +1899,7 @@ p{margin:0 0 15px;max-width:66ch}
       </div>
       <button type="submit" class="btn-enviar" id="btnEnviar">Abrir WhatsApp</button>
       <div class="estado" id="estadoMsg"></div>
-      <p class="legal">Al continuar aceptás que usemos tus datos para contactarte sobre tu consulta.</p>
+      <p class="legal">Al continuar aceptas que usemos tus datos para contactarte sobre tu consulta.</p>
     </form>
   </div>
 </div>
@@ -1943,7 +1933,7 @@ formLead.addEventListener('submit', function (e) {
   const motivo   = document.getElementById('motivo').value;
 
   if (!nombre || !telefono) {
-    mostrarEstado('error', 'Completá nombre y teléfono para continuar.');
+    mostrarEstado('error', 'Completa nombre y teléfono para continuar.');
     return;
   }
 
