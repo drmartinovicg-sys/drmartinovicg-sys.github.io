@@ -1911,7 +1911,11 @@ p{margin:0 0 15px;max-width:66ch}
 const CONFIG = {
   WHATSAPP_NUMBER: "56935673359",       // ✅ Número de la consulta configurado — no editar
   WEB3FORMS_KEY: "e4565483-d3c9-4ed6-a11c-5b55b771095a", // ✅ Clave Web3Forms configurada — no editar
-  EMAIL_FALLBACK: ""                        // Opcional: dejar vacío
+  EMAIL_FALLBACK: "",                       // Opcional: dejar vacío
+  // Etiqueta de conversión de Google Ads para "lead real" (formulario enviado).
+  // Se obtiene en Google Ads → Herramientas → Conversiones → Nueva conversión (manual).
+  // Dejar vacío mientras tanto: el evento GA4 'lead_enviado' igual queda registrado.
+  ADS_LEAD_LABEL: ""
 };
 
 const modalFondo  = document.getElementById('modalFondo');
@@ -1940,6 +1944,14 @@ formLead.addEventListener('submit', function (e) {
   btnEnviar.disabled = true;
   btnEnviar.textContent = 'Abriendo WhatsApp…';
   mostrarEstado('ok', '¡Gracias! Abriendo WhatsApp…');
+
+  // 0) Métrica de lead REAL: solo se dispara cuando el formulario se envía (no en el simple click)
+  if (typeof gtag === 'function') {
+    gtag('event', 'lead_enviado', { 'metodo': 'formulario_whatsapp' });
+    if (CONFIG.ADS_LEAD_LABEL) {
+      gtag('event', 'conversion', { 'send_to': 'AW-18343247822/' + CONFIG.ADS_LEAD_LABEL });
+    }
+  }
 
   // 1) Respaldo por email vía Web3Forms (CORS habilitado, sin cookies ni sesiones)
   if (CONFIG.WEB3FORMS_KEY && !CONFIG.WEB3FORMS_KEY.includes('TU_CLAVE')) {
